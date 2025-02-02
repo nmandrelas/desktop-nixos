@@ -178,7 +178,8 @@
     kitty # terminal emulator #
     yazi # terminal file manager #
     neovim # god save us #
-    git
+    git 
+    obsidian # used for note taking #
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     mangohud
