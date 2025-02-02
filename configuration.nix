@@ -8,6 +8,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./essentials.nix
+      ./graphics.nix
+      ./games.nix
+      ./programming.nix
+      ./work.nix
     ];
 
   # Bootloader.
@@ -54,51 +59,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; #flake support#
 
-   # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-  };
-  hardware.graphics = {
-    enable = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
-
-    # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -161,45 +121,6 @@
 
   programs.dconf.enable = true; 
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vscode # code editor #
-    brave # browser #
-    gnome-tweaks    
-    discord 
-    gnome-extension-manager # setup gnome essentials #
-    spotify # music #
-    elixir # functional langeuage #
-    erlang # beam vm <3 #
-    podman # docker alt -> more features #
-    postgresql #psql client#
-    pgadmin4-desktopmode #postgres sql ui# 
-    kitty # terminal emulator #
-    yazi # terminal file manager #
-    neovim # god save us #
-    git 
-    obsidian # used for note taking #
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    mangohud
-    protonup-qt
-    lutris 
-    bottles 
-    heroic
-    citrix_workspace # the devil#
-  ];
-
-  programs.steam = {
-    enable = true;
-    dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamemode.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
   environment.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "brave";
