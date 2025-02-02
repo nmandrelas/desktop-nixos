@@ -13,6 +13,7 @@
       ./games.nix
       ./programming.nix
       ./work.nix
+      ./tuxedo.nix
     ];
 
   # Bootloader.
