@@ -18,7 +18,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.neovim
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -78,6 +77,11 @@
   #  /etc/profiles/per-user/makys/etc/profile.d/hm-session-vars.sh
   #
 
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
   # basically copy the whole nvchad that is fetched from github to ~/.config/nvim
   xdg.configFile."nvim/" = {
     source = (pkgs.callPackage ./nvchad/default.nix{}).nvchad;
