@@ -9,7 +9,6 @@
         pgadmin4-desktopmode #postgres sql ui# 
         kitty # terminal emulator #
         yazi # terminal file manager #
-        neovim # god save us #
         git 
     ];
     programs.neovim = {
