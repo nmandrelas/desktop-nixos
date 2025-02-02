@@ -9,8 +9,8 @@ nvchad = stdenv.mkDerivation rec {
   src = pkgs.fetchFromGitHub {
     owner = "NvChad";
     repo = "NvChad";
-    rev = "sha256-w/ZRxWxuU/ECq3ntkXek5BgJiBcUCBOjrvNBc4U94V4=";
-    sha256 = "";
+    rev = "6f25b2739684389ca69ea8229386c098c566c408";
+    sha256 = "sha256-w/ZRxWxuU/ECq3ntkXek5BgJiBcUCBOjrvNBc4U94V4=";
   };
 
   installPhase = ''
