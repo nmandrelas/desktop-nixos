@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -50,11 +50,11 @@
   # Docker
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
+      enable = true;
+      setSocketVariable = true;
   };
   virtualisation.docker.daemon.settings = {
-    data-root = "~/docker";
+      data-root = "~/docker";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; #flake support#
@@ -91,6 +91,9 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
