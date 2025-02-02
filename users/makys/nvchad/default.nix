@@ -3,13 +3,13 @@
 {
 nvchad = stdenv.mkDerivation rec {
   pname = "nvchad";
-  version = "";
+  version = "2.5";
   dontBuild = true;
 
   src = pkgs.fetchFromGitHub {
     owner = "NvChad";
     repo = "NvChad";
-    rev = "v2.5";
+    rev = "6f25b2739684389ca69ea8229386c098c566c408";
     sha256 = "";
   };
 
