@@ -10,6 +10,7 @@
         kitty # terminal emulator #
         yazi # terminal file manager #
         git 
+        gcc
     ];
     programs.neovim = {
         enable = true;
