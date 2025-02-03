@@ -10,6 +10,6 @@
         spotify # music #
         obsidian # used for note taking #
 	piper # UI for  mouse config #
-	libratbag # deamon required for piper #
     ];
+    services.ratbagd.enable = true; # deamon required for piper #
 }
