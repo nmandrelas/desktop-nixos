@@ -9,6 +9,7 @@
         gnome-extension-manager # setup gnome essentials #
         spotify # music #
         obsidian # used for note taking #
-	piper # ratbagd mouse config daemon #
+	piper # UI for  mouse config #
+	libratbag # deamon required for piper #
     ];
 }
