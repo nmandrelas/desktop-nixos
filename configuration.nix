@@ -169,6 +169,7 @@
     pkgs.hyprpaper
     pkgs.rofi-wayland
     pkgs.hyprshot
+    pkgs.swaynotificationcenter
   ];
 
 
