@@ -3,6 +3,7 @@
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
+    nvidia_anti_flicker = false;
   };
   hardware.graphics = {
     enable = true;
