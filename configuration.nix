@@ -160,7 +160,6 @@
   #hyprland + nvidia patches
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
     xwayland.enable = true;
   };
 
