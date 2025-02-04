@@ -168,6 +168,7 @@
     pkgs.libnotify
     pkgs.hyprpaper
     pkgs.rofi-wayland
+    pkgs.hyprshot
   ];
 
 
