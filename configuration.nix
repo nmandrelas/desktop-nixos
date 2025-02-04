@@ -107,7 +107,12 @@
     description = "makys";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
-
+  users.users.hypr = {
+    isNormalUser = true;
+    description = "hypr";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    passwd = "1";
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
