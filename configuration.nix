@@ -170,6 +170,7 @@
     pkgs.rofi-wayland
     pkgs.hyprshot
     pkgs.swaynotificationcenter
+    pkgs.hyprlock
   ];
 
 
