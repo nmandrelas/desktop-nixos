@@ -174,6 +174,7 @@
     pkgs.stow
     pkgs.starship
   ];
+  # TODO: Configure starship correctly
   programs.starship = {
     enable = true;
     settings = {
