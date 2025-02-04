@@ -13,6 +13,7 @@
       ./games.nix
       ./programming.nix
       ./work.nix
+      ./docker.nix
     ];
 
   # Bootloader.
@@ -47,31 +48,31 @@
     LC_TIME = "el_GR.UTF-8";
   };
 
-  # Docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-      enable = true;
-      setSocketVariable = true;
-  };
-  virtualisation.docker.daemon.settings = {
-      data-root = "~/docker";
-  };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; #flake support#
+  # Flake support#
+  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
 
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,gr";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    # Enable the GNOME Desktop Environment.
+    displayManager = {
+      gdm.enable = true;
+      gnome.enable = true;
+      # Enable automatic login for the user.
+      autoLogin.enable = true;
+      autoLogin.user = "makys";
+    };
+    # Configure keymap in X11
+    xkb = {
+      layout = "us,gr";
+      variant = "";
+    };
   };
+  
+  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -103,18 +104,8 @@
     isNormalUser = true;
     description = "makys";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "makys";
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 
   # Install firefox.
   programs.firefox.enable = true;
