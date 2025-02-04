@@ -6,7 +6,7 @@
         lutris #Lutris is a video game preservation platform#
         bottles #Bottles introduces a new way to handle Windows prefixes using environments#
         heroic #heroic games launcher#
-        minecraft
+        prismlauncher #used to manage minecraft#
     ];
     programs.steam = {
         enable = true;
