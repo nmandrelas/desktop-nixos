@@ -21,10 +21,6 @@
     pkgs.waybar
     pkgs.mako
     pkgs.libnotify
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-            mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-        })
-    )
     pkgs.hyprpaper
     pkgs.rofi-wayland
   ];
