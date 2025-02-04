@@ -89,11 +89,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  #hyprland + nvidia patches
-  programs.hyprland = {
-    enable = true;
-    nvidiaPatches = true;
-    xwayland.enable = true;
-  };
 }

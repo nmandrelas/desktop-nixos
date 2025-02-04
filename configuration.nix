@@ -157,5 +157,11 @@
     #Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
   };
+  #hyprland + nvidia patches
+  programs.hyprland = {
+    enable = true;
+    nvidiaPatches = true;
+    xwayland.enable = true;
+  };
 
 }
