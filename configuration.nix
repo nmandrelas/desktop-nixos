@@ -168,13 +168,13 @@
     pkgs.mako
     pkgs.libnotify
     pkgs.hyprpaper
-    pkgs.rofi-wayland
+    #pkgs.rofi-wayland this or wofi
+    pkgs.wofi
     pkgs.hyprshot
     pkgs.swaynotificationcenter
     pkgs.hyprlock
     pkgs.stow
     pkgs.starship
-    pkgs.nwg-look
   ];
   # TODO: Configure starship correctly
   # programs.starship = {
