@@ -27,8 +27,6 @@
               catppuccin.homeManagerModules.catppuccin
             ];
           };
-          home-manager.users.hypr = import ./users/hypr/home.nix;
-
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
 
