@@ -172,6 +172,7 @@
     pkgs.swaynotificationcenter
     pkgs.hyprlock
     pkgs.stow
+    pkgs.starship
   ];
 
 
