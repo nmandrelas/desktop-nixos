@@ -174,6 +174,7 @@
     pkgs.hyprlock
     pkgs.stow
     pkgs.starship
+    pkgs.nwg-look
   ];
   # TODO: Configure starship correctly
   # programs.starship = {
