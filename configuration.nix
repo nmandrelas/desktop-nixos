@@ -58,6 +58,7 @@
     # Enable the GNOME Desktop Environment.
     displayManager = {
       gdm.enable = true;
+      gdm.settings.daemon.DefaultSession = "gnome-xorg.desktop";
       # Enable automatic login for the user.
       autoLogin.enable = true;
       autoLogin.user = "makys";
