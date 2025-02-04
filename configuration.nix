@@ -148,4 +148,14 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+
+  #Only for hyprland should be moved in user file
+  environment.sessionVariables = {
+    #If your cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+    #Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
 }
