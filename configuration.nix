@@ -162,5 +162,13 @@
     enable = true;
     xwayland.enable = true;
   };
+  environment.systemPackages = with pkgs; [
+    pkgs.waybar
+    pkgs.mako
+    pkgs.libnotify
+    pkgs.hyprpaper
+    pkgs.rofi-wayland
+  ];
+
 
 }
