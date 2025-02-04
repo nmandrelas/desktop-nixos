@@ -171,6 +171,7 @@
     pkgs.hyprshot
     pkgs.swaynotificationcenter
     pkgs.hyprlock
+    pkgs.stow
   ];
 
 
