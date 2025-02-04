@@ -21,10 +21,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.makys = imports =[
-            ./users/makys/home.nix
-            catppuccin.homeManagerModules.catppuccin
-          ];
+          home-manager.users.makys = {
+            imports =[
+              ./users/makys/home.nix
+              catppuccin.homeManagerModules.catppuccin
+            ];
+          };
           home-manager.users.hypr = import ./users/hypr/home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
