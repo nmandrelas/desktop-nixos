@@ -58,10 +58,12 @@
     # Enable the GNOME Desktop Environment.
     displayManager = {
       gdm.enable = true;
-      gnome.enable = true;
       # Enable automatic login for the user.
       autoLogin.enable = true;
       autoLogin.user = "makys";
+    };
+    desktopManager ={
+      gnome.enable = true;
     };
     # Configure keymap in X11
     xkb = {
