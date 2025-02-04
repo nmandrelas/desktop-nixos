@@ -111,7 +111,7 @@
     isNormalUser = true;
     description = "hypr";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    password = "";
+    password = "1";
   };
 
   # Install firefox.
