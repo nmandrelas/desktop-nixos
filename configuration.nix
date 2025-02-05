@@ -15,6 +15,7 @@
       ./work.nix
       ./docker.nix
       ./hyprland.nix
+      ./fonts.nix
     ];
 
   # Bootloader.
