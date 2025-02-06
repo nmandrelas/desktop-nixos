@@ -28,7 +28,7 @@
     pkgs.stow
     pkgs.starship
     pkgs.fastfetch
-
+    pkgs.nwg-look
   ];
   # programs.starship.enable = true;
   # programs.starship.settings = {
