@@ -27,6 +27,8 @@
     pkgs.hyprlock
     pkgs.stow
     pkgs.starship
+    pkgs.fastfetch
+
   ];
   # programs.starship.enable = true;
   # programs.starship.settings = {
