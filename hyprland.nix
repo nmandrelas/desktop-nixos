@@ -29,6 +29,7 @@
     pkgs.starship
     pkgs.fastfetch
     pkgs.nwg-look
+    pkgs.libxcrypt-legacy
   ];
   # programs.starship.enable = true;
   # programs.starship.settings = {
