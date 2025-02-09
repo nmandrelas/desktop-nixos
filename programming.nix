@@ -13,7 +13,7 @@
         gcc
     ];
     programs.neovim = {
-        enable = true;
-        defaultEditor = true;
+        enable = false;
+        defaultEditor = false;
     };    
 }
