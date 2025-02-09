@@ -77,11 +77,11 @@
   #  /etc/profiles/per-user/makys/etc/profile.d/hm-session-vars.sh
   #
 
-  # programs.neovim = {
-  #   enable = true;
-  #   viAlias = true;
-  #   vimAlias = true;
-  # };
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   home.sessionVariables = {
     # EDITOR = "emacs";
