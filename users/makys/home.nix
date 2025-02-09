@@ -70,18 +70,18 @@
       source = dotfiles/wofi;
       recursive = true;
     };
-    ".themes" = {
-      source = dotfiles/themes/.themes;
-      recursive = true;
-    };
-    ".icons" = {
-      source = dotfiles/themes/.icons;
-      recursive = true;
-    };
-    ".local/share/icons" = {
-      source = dotfiles/themes/.local/share/icons;
-      recursive = true;
-    };
+    # ".themes" = {
+    #   source = dotfiles/themes/.themes;
+    #   recursive = true;
+    # };
+    # ".icons" = {
+    #   source = dotfiles/themes/.icons;
+    #   recursive = true;
+    # };
+    # ".local/share/icons" = {
+    #   source = dotfiles/themes/.local/share/icons;
+    #   recursive = true;
+    # };
   };
   programs.git = {
     enable = true;
