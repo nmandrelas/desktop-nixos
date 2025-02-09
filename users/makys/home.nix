@@ -50,6 +50,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/wofi" = {
+      source = dotfiles/wofi;
+      recursive = true;
+    };
   };
   programs.git = {
     enable = true;
