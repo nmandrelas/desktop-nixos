@@ -12,8 +12,4 @@
         git 
         gcc
     ];
-    #programs.neovim = {
-    #    enable = false;
-    #    defaultEditor = false;
-    #};    
 }
