@@ -10,7 +10,8 @@
         spotify # music #
         obsidian # used for note taking #
 	    piper # UI for  mouse config #
-        pavucontrol
+        pavucontrol #Volume control#
+        nixfmt #formatter for nix files#
     ];
     services.ratbagd.enable = true; # deamon required for piper #
 }
