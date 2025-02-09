@@ -50,26 +50,28 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/backgrounds" = {
-      source = dotfiles/backgrounds;
-      recursive = true;
-    };
-    ".config/kitty" = {
-      source = dotfiles/kitty;
-      recursive = true;
-    };
-    ".config/hypr" = {
-      source = dotfiles/hypr;
-      recursive = true;
-    };
-    ".config/waybar" = {
-      source = dotfiles/waybar;
-      recursive = true;
-    };
-    ".config/wofi" = {
-      source = dotfiles/wofi;
-      recursive = true;
-    };
+
+    # TODO: something is taking forever here
+    # ".config/backgrounds" = {
+    #   source = dotfiles/backgrounds;
+    #   recursive = true;
+    # };
+    # ".config/kitty" = {
+    #   source = dotfiles/kitty;
+    #   recursive = true;
+    # };
+    # ".config/hypr" = {
+    #   source = dotfiles/hypr;
+    #   recursive = true;
+    # };
+    # ".config/waybar" = {
+    #   source = dotfiles/waybar;
+    #   recursive = true;
+    # };
+    # ".config/wofi" = {
+    #   source = dotfiles/wofi;
+    #   recursive = true;
+    # };
     # ".themes" = {
     #   source = dotfiles/themes/.themes;
     #   recursive = true;
