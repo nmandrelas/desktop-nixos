@@ -31,9 +31,9 @@
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
-    (pkgs.writeShellScriptBin "my-hello" ''
-      echo "Hello, ${config.xdg.configHome}!"
-    '')
+    # (pkgs.writeShellScriptBin "my-hello" ''
+    #   echo "Hello, ${config.xdg.configHome}!"
+    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -50,8 +50,36 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/backgrounds" = {
+      source = dotfiles/backgrounds;
+      recursive = true;
+    };
+    ".config/kitty" = {
+      source = dotfiles/kitty;
+      recursive = true;
+    };
+    ".config/hypr" = {
+      source = dotfiles/hypr;
+      recursive = true;
+    };
+    ".config/waybar" = {
+      source = dotfiles/waybar;
+      recursive = true;
+    };
     ".config/wofi" = {
       source = dotfiles/wofi;
+      recursive = true;
+    };
+    ".themes" = {
+      source = dotfiles/themes/.themes;
+      recursive = true;
+    };
+    ".icons" = {
+      source = dotfiles/themes/.icons;
+      recursive = true;
+    };
+    ".local/share/icons" = {
+      source = dotfiles/themes/.local/share/icons;
       recursive = true;
     };
   };
