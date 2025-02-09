@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, catppuccin, home-manager,... }@inputs: {
+  outputs = { self, nixpkgs, catppuccin, home-manager, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -22,7 +22,7 @@
           home-manager.useUserPackages = true;
 
           home-manager.users.makys = {
-            imports =[
+            imports = [
               ./users/makys/home.nix
               catppuccin.homeManagerModules.catppuccin
             ];

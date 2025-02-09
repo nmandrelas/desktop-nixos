@@ -5,18 +5,17 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./system/essentials.nix
-      ./system/graphics.nix
-      ./system/games.nix
-      ./system/programming.nix
-      ./system/work.nix
-      ./system/docker.nix
-      ./system/hyprland.nix
-      ./system/fonts.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./system/essentials.nix
+    ./system/graphics.nix
+    ./system/games.nix
+    ./system/programming.nix
+    ./system/work.nix
+    ./system/docker.nix
+    ./system/hyprland.nix
+    ./system/fonts.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -51,19 +50,14 @@
   };
 
   # Flake support#
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
     # Enable the GNOME Desktop Environment.aa
-    displayManager = {
-      gdm.enable = true;
-    };
-    desktopManager ={
-      gnome.enable = true;
-    };
+    displayManager = { gdm.enable = true; };
+    desktopManager = { gnome.enable = true; };
     # Configure keymap in X11
     xkb = {
       layout = "us,gr";
@@ -71,9 +65,9 @@
     };
   };
   services.displayManager.autoLogin = {
-      # Enable automatic login for the user.
-      enable = true;
-      user = "makys";
+    # Enable automatic login for the user.
+    enable = true;
+    user = "makys";
   };
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -117,7 +111,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.dconf.enable = true; 
+  programs.dconf.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
