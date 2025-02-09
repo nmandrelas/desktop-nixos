@@ -42,6 +42,7 @@
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
+    "${config.xdg.configHome}/backgrounds".source = dotfiles/backgrounds;
     #"${config.xdg.configHome}/wofi".source = dotfiles/wofi;
 
     # # You can also set the file content immediately.
