@@ -8,14 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      .system/essentials.nix
-      .system/graphics.nix
-      .system/games.nix
-      .system/programming.nix
-      .system/work.nix
-      .system/docker.nix
-      .system/hyprland.nix
-      .system/fonts.nix
+      ./system/essentials.nix
+      ./system/graphics.nix
+      ./system/games.nix
+      ./system/programming.nix
+      ./system/work.nix
+      ./system/docker.nix
+      ./system/hyprland.nix
+      ./system/fonts.nix
     ];
 
   # Bootloader.
