@@ -52,38 +52,38 @@
     # '';
 
     # TODO: something is taking forever here
-    # ".config/backgrounds" = {
-    #   source = dotfiles/backgrounds;
-    #   recursive = true;
-    # };
-    # ".config/kitty" = {
-    #   source = dotfiles/kitty;
-    #   recursive = true;
-    # };
-    # ".config/hypr" = {
-    #   source = dotfiles/hypr;
-    #   recursive = true;
-    # };
-    # ".config/waybar" = {
-    #   source = dotfiles/waybar;
-    #   recursive = true;
-    # };
-    # ".config/wofi" = {
-    #   source = dotfiles/wofi;
-    #   recursive = true;
-    # };
-    # ".themes" = {
-    #   source = dotfiles/themes/.themes;
-    #   recursive = true;
-    # };
-    # ".icons" = {
-    #   source = dotfiles/themes/.icons;
-    #   recursive = true;
-    # };
-    # ".local/share/icons" = {
-    #   source = dotfiles/themes/.local/share/icons;
-    #   recursive = true;
-    # };
+    ".config/backgrounds" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/backgrounds;
+      recursive = true;
+    };
+    ".config/kitty" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/kitty;
+      recursive = true;
+    };
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/hypr;
+      recursive = true;
+    };
+    ".config/waybar" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/waybar;
+      recursive = true;
+    };
+    ".config/wofi" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/wofi;
+      recursive = true;
+    };
+    ".themes" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes;
+      recursive = true;
+    };
+    ".icons" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons;
+      recursive = true;
+    };
+    ".local/share/icons" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons;
+      recursive = true;
+    };
   };
   programs.git = {
     enable = true;
