@@ -18,9 +18,7 @@
   # enable fonts
   fonts = {
     fontconfig = {
-      cache32Bit = true;
-      allowBitmaps = true;
-      useEmbeddedBitmaps = true;
+      enable = true;
       defaultFonts = {
         serif = [ "MesloLGS Nerd Font" ];
         sansSerif = [ "MesloLGS Nerd Font" ];
