@@ -41,7 +41,7 @@
     "on-click": "pavucontrol"
   },
   "cpu": {
-    "format": "　{usage}%",
+    "format": "\uf4bc　{usage}%",
     "on-click": "gnome-system-monitor"
   },
   "memory": {
