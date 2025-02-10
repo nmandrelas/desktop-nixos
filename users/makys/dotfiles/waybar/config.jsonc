@@ -45,7 +45,7 @@
     "on-click": "gnome-system-monitor"
   },
   "memory": {
-    "format": "\uefc5　{}%",
+    "format": "{icon} {}%",
     "on-click": "gnome-system-monitor"
   },
   "hyprland/language": {
