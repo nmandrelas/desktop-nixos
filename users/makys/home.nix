@@ -139,19 +139,7 @@
     # cursorTheme.name = "macOS";
     # cursorTheme.size = 20;
     font.name = "MesloLGS Nerd Font";
-    gtk3.extraConfig = {
-      Settings = ''
-                				gtk-application-prefer-dark-theme=1
-        					      gtk-font-name=MesloLGS Nerd Font
-              				'';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-                				gtk-application-prefer-dark-theme=1
-        					      gkt-font-name=MesloLGS Nerd Font
-              				'';
-    };
+    font.size = 24;
   };
 
   # Let Home Manager install and manage itself.
