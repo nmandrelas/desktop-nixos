@@ -1,7 +1,7 @@
 @import "twitch.css";
 * {
     font-family: "MesloLGS Nerd Font";
-    font-size: 18px;
+    font-size: 16px;
     min-height: 0;
     font-weight: bold;
 }
