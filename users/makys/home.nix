@@ -134,12 +134,6 @@
     # EDITOR = "emacs";
   };
   catppuccin.flavor = "mocha";
-  gtk = {
-    enable = true;
-    # cursorTheme.name = "macOS";
-    # cursorTheme.size = 20;
-    font.name = "MesloLGS Nerd Font Mono";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
