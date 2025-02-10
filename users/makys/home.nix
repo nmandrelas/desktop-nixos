@@ -138,8 +138,8 @@
     enable = true;
     # cursorTheme.name = "macOS";
     # cursorTheme.size = 20;
-    font.name = "MesloLGS Nerd Font";
-    font.size = 24;
+    font.name = "MesloLGS Nerd Font Mono";
+    font.size = 16;
   };
 
   # Let Home Manager install and manage itself.
