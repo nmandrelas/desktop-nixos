@@ -23,7 +23,7 @@
           home-manager.backupFileExtension = "home-manager-backup";
           home-manager.users.makys = {
             imports = [
-              ./users/makys/home.nix
+              # ./users/makys/home.nix
               catppuccin.homeManagerModules.catppuccin
             ];
           };
