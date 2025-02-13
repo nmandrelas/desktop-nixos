@@ -20,7 +20,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          #home-manager.backupFileExtension = "home-manager-backup";
+          home-manager.backupFileExtension = "home-manager-backup";
           home-manager.users.makys = {
             imports = [
               ./users/makys/home.nix
