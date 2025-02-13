@@ -15,20 +15,20 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        catppuccin.nixosModules.catppuccin
-        inputs.home-manager.nixosModules.default
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "home-manager-backup";
-          home-manager.users.makys = {
-            imports = [
-              ./users/makys/home.nix
-              catppuccin.homeManagerModules.catppuccin
-            ];
-          };
-          # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-        }
+        #catppuccin.nixosModules.catppuccin
+        # inputs.home-manager.nixosModules.default
+        # {
+        #   home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.backupFileExtension = "home-manager-backup";
+        #   home-manager.users.makys = {
+        #     imports = [
+        #       ./users/makys/home.nix
+        #       catppuccin.homeManagerModules.catppuccin
+        #     ];
+        #   };
+        #   # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+        # }
       ];
     };
   };
