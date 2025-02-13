@@ -122,7 +122,7 @@
   #       config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-mocha-green;
   #     recursive = true;
   #   };
-  # };
+  };
   programs.git = {
     enable = true;
     userName = "Naoum Mandrelas";
