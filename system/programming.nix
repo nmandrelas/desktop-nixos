@@ -18,5 +18,6 @@
     wine64Packages.waylandFull
     p7zip
     wget
+    mono
   ];
 }
