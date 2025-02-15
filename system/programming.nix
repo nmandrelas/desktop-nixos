@@ -19,5 +19,6 @@
     p7zip
     wget
     mono
+    virtualglLib
   ];
 }
