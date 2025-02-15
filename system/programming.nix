@@ -14,5 +14,6 @@
     ripgrep
     unzip
     xclip
+    dotnetCorePackages.dotnet_8.runtime
   ];
 }
