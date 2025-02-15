@@ -20,4 +20,3 @@
     wget
   ];
 }
-wget -qO- https://monogame.net/downloads/net8_mgfxc_wine_setup.sh | bash
