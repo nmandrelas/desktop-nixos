@@ -11,5 +11,8 @@
     git
     gcc
     dotnet-sdk
+    ripgrep
+    unzip
+    xclip
   ];
 }
