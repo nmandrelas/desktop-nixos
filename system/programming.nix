@@ -10,5 +10,6 @@
     yazi # terminal file manager #
     git
     gcc
+    unityhub
   ];
 }
