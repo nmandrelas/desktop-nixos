@@ -17,5 +17,7 @@
     dotnetCorePackages.dotnet_8.runtime
     wine64Packages.waylandFull
     p7zip
+    wget
   ];
 }
+wget -qO- https://monogame.net/downloads/net8_mgfxc_wine_setup.sh | bash
