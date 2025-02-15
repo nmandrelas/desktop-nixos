@@ -15,5 +15,7 @@
     unzip
     xclip
     dotnetCorePackages.dotnet_8.runtime
+    wine64Packages.waylandFull
+    p7zip
   ];
 }
