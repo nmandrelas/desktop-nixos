@@ -15,6 +15,7 @@
     unzip
     xclip
     dotnetCorePackages.dotnet_8.runtime
+    dotnetCorePackages.dotnet_8.sdk
     wine64Packages.waylandFull
     p7zip
     wget
