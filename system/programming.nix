@@ -11,15 +11,16 @@
     git
     gcc
     dotnet-sdk
-    ripgrep
-    unzip
-    xclip
-    dotnetCorePackages.dotnet_8.runtime
-    dotnetCorePackages.dotnet_8.sdk
-    wine64Packages.waylandFull
-    p7zip
-    wget
-    mono
-    virtualglLib
+    # bellow may be used for monogame #
+    # ripgrep
+    # unzip
+    # xclip
+    # dotnetCorePackages.dotnet_8.runtime
+    # dotnetCorePackages.dotnet_8.sdk
+    # wine64Packages.waylandFull
+    # p7zip
+    # wget
+    # mono
+    # virtualglLib
   ];
 }
