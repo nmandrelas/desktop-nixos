@@ -23,8 +23,8 @@
     # mono
     # virtualglLib
     # above may be used for monogame #
-    gtk3
-
+    gtk3  # Multi-platform toolkit for creating graphical user interfaces
+    gtk3-x11
   ];
   environment.sessionVariables = { 
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
