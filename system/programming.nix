@@ -22,6 +22,9 @@
     # wget
     # mono
     # virtualglLib
+    # above may be used for monogame #
+    gtk3
+
   ];
   environment.sessionVariables = { 
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
