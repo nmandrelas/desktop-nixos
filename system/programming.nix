@@ -23,5 +23,7 @@
     # mono
     # virtualglLib
   ];
-  environment.sessionVariables = { DOTNET_ROOT = "${pkgs.dotnet-sdk}"; };
+  environment.sessionVariables = { 
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+  };
 }
