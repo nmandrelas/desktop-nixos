@@ -11,6 +11,7 @@
     git
     gcc
     dotnet-sdk
+    neofetch
     # bellow may be used for monogame #
     # ripgrep
     # unzip
