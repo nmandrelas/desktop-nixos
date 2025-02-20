@@ -29,7 +29,6 @@
     gsettings-desktop-schemas
     glibc
     libGL
-    libXcursor
     libXrandr
     libXi
     mesa
