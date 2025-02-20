@@ -8,6 +8,7 @@
     prismlauncher # used to manage minecraft#
     dotnet-sdk_7
   ];
+  nixpkgs.config.permittedInsecurePackages = [ "dotnet-sdk-7.0.410" ];
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
