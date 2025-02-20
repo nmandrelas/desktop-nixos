@@ -15,7 +15,7 @@
   };
   
   environment.sessionVariables = {
-    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}/share/dotnet";
   };
 
   programs.gamemode.enable = true;
