@@ -155,7 +155,7 @@
   };
 
   home.sessionVariables = {
-    PATH="$HOME/.dotnet/tools:$PATH"
+    PATH="$HOME/.dotnet/tools:$PATH";
   };
   catppuccin.flavor = "mocha";
 
