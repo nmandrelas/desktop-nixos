@@ -10,7 +10,7 @@
     yazi # terminal file manager #
     git
     gcc
-    dotnet-sdk
+    #dotnet-sdk
     neofetch
     # bellow may be used for monogame #
     # ripgrep
