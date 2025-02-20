@@ -154,9 +154,9 @@
     vimAlias = true;
   };
 
-  home.sessionVariables = {
-    PATH="$HOME/.dotnet/tools:$PATH";
-  };
+  # home.sessionVariables = {
+  #   PATH="$HOME/.dotnet/tools:$PATH";
+  # };
   catppuccin.flavor = "mocha";
 
   # Let Home Manager install and manage itself.
