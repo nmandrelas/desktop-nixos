@@ -27,7 +27,17 @@
     gtk3  # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
     gsettings-desktop-schemas
+    glibc
+    libGL
+    libX11
+    libXcursor
+    libXrandr
+    libXi
+    mesa
     mono
+    alsa-lib
+    libpulseaudio
+    libxkbcommon
   ];
   environment.sessionVariables = { 
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
