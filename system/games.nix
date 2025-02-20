@@ -16,5 +16,8 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  nixpkgs.config.permittedInsecurePackages = [
+                "dotnet-runtime-7.0.20"
+              ];
   programs.gamemode.enable = true;
 }
