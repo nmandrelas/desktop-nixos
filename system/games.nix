@@ -13,9 +13,7 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
-  permittedInsecurePackages = [
-                "dotnet-sdk-7.0.410"
-              ];
+  nixpkgs.config.permittedInsecurePackages = [ "dotnet-sdk-7.0.410" ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk_7}/share/dotnet";
   };
