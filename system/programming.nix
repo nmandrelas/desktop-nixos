@@ -24,7 +24,7 @@
     # mono
     # virtualglLib
     # above may be used for monogame #
-    gtk3  # Multi-platform toolkit for creating graphical user interfaces
+    gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
     gsettings-desktop-schemas
     glibc
@@ -34,19 +34,19 @@
     alsa-lib
     libpulseaudio
     libxkbcommon
+    freetype
   ];
-  environment.sessionVariables = { 
+  environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
   environment.variables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-    freetype
-    libGL
-    pulseaudio
-    libX11
-    libXrandr
-    dotnetSdk
-    gtk3
-    gtk3X11
+    pkgs.freetype
+    pkgs.libGL
+    pkgs.pulseaudio
+    pkgs.xorg.libX11
+    pkgs.xorg.libXrandr
+    pkgs.dotnet-sdk
+    pkgs.gtk3
+    pkgs.gtk3-x11
   ];
-
 }
