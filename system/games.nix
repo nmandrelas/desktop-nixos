@@ -6,9 +6,7 @@
     bottles # Bottles introduces a new way to handle Windows prefixes using environments#
     heroic # heroic games launcher#
     prismlauncher # used to manage minecraft#
-    dotnet-sdk_7
   ];
-  nixpkgs.config.permittedInsecurePackages = [ "dotnet-sdk-7.0.410" ];
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
