@@ -9,6 +9,7 @@
     mono
     mono4
     mono5
+    dotnet-runtime_7
   ];
   programs.steam = {
     enable = true;
