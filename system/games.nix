@@ -6,18 +6,17 @@
     bottles # Bottles introduces a new way to handle Windows prefixes using environments#
     heroic # heroic games launcher#
     prismlauncher # used to manage minecraft#
-    mono
-    mono4
-    mono5
-    dotnet-runtime_7
+    dotnet-sdk_7
   ];
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
-  nixpkgs.config.permittedInsecurePackages = [
-                "dotnet-runtime-7.0.20"
-              ];
+  
+  environment.sessionVariables = {
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+  };
+
   programs.gamemode.enable = true;
 }
