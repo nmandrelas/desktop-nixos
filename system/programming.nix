@@ -10,7 +10,7 @@
     yazi # terminal file manager #
     git
     gcc
-    #dotnet-sdk
+    dotnet-sdk
     neofetch
     # bellow may be used for monogame #
     # ripgrep
@@ -35,11 +35,9 @@
     libpulseaudio
     libxkbcommon
     freetype
-        dotnet-sdk_7
-
   ];
   environment.sessionVariables = {
-    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}/share/dotnet";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
   # environment.variables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
   #   pkgs.freetype
