@@ -29,8 +29,6 @@
     gsettings-desktop-schemas
     glibc
     libGL
-    libXrandr
-    libXi
     mesa
     mono
     alsa-lib
