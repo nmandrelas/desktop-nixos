@@ -38,4 +38,15 @@
   environment.sessionVariables = { 
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
+  environment.variables.LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+    freetype
+    libGL
+    pulseaudio
+    libX11
+    libXrandr
+    dotnetSdk
+    gtk3
+    gtk3X11
+  ];
+
 }
