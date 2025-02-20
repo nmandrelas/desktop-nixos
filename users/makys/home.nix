@@ -155,7 +155,7 @@
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    PATH="$HOME/.dotnet/tools:$PATH"
   };
   catppuccin.flavor = "mocha";
 
