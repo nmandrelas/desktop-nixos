@@ -40,7 +40,7 @@
           "min-length"= 18;
         };
         "network" = {
-          "format-wifi"= "󰶣{bandwidthUpBits:>5} 󰶡{bandwidthDownBits:>5} <span size='13000' foreground='#18393D'>  </span>{essid}";
+          "format-wifi"= " {bandwidthUpBits:>5} {bandwidthDownBits:>5} <span size='13000' foreground='#18393D'>  </span>{essid}";
           "format-ethernet"= "<span size='13000' foreground='#18393D'>󰤭  </span> Disconnected";
           "format-linked"= "{ifname} (No IP) ";
           "format-disconnected"= "<span size='13000' foreground='#18393D'>  </span>Disconnected";
