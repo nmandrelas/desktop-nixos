@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      size= "14";
+      size= 14;
       name= "MesloLGSNerdFontMono";
     };
     themeFile = "Catppuccin-Mocha";
