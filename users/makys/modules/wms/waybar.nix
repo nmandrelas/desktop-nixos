@@ -241,6 +241,7 @@
         background: transparent;
         background-color: @crust;
         color: @sea-green;
+        border-bottom: 2px solid @sea-green;
       }
 
       #temperature.critical {
