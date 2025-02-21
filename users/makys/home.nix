@@ -148,6 +148,7 @@
   imports = [
     ./modules/wms/waybar.nix
     ./modules/wms/wofi.nix
+    ./modules/wms/hyprland.nix
     ./modules/kitty.nix
   ];
 

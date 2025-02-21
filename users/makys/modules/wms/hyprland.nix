@@ -26,6 +26,7 @@
         explicit_sync = 2;
         explicit_sync_kms = 0;
       };
+      
       opengl = {
         nvidia_anti_flicker = 0;
         force_introspection = 2;
