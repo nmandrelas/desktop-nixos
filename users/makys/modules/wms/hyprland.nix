@@ -65,7 +65,7 @@
       decoration = {
         rounding = 10;
         active_opacity = 1.0;
-        inactive_opacity = 0.9;
+        inactive_opacity = 0.95;
 
         blur = {
           enabled = true;
@@ -89,7 +89,7 @@
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
 
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
