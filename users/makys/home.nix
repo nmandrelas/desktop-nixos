@@ -152,7 +152,7 @@
   imports = [
     ./modules/wms/waybar.nix
     ./modules/wms/wofi.nix
-
+    ./modules/kitty.nix
   ];
 
   # Let Home Manager install and manage itself.
