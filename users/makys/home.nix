@@ -77,10 +77,6 @@
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/hypr;
       recursive = true;
     };
-    ".config/wofi" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/wofi;
-      recursive = true;
-    };
     ".themes/Material-Black-Blueberry" = {
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
       recursive = true;
