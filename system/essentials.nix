@@ -11,6 +11,7 @@
     piper # UI for  mouse config #
     pavucontrol # Volume control#
     nixfmt-classic # formatter for nix files#
+    home-manager
   ];
   services.ratbagd.enable = true; # deamon required for piper #
 }
