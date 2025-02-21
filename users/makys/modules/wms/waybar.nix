@@ -58,7 +58,7 @@
         };
         "hyprland/language"= {
           "format"= "󰌌　{short}";
-          "min-length"= 10;
+          "min-length"= 8;
         };
         "tray"= {
           "icon-size"= 21;
