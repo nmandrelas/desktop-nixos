@@ -6,8 +6,8 @@
       name= "MesloLGSNerdFontMono";
     };
     themeFile = "Catppuccin-Mocha";
-    programs.kitty.settings = {
-      background_opacity = 0.9
+    settings = {
+      background_opacity = 0.9;
     };
   };
 }
