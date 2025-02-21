@@ -71,7 +71,7 @@
           enabled = true;
           size = 3;
           passes = 1;
-          new_optimizations = true;
+          
           vibrancy = 0.1696;
         };
         shadow = {
@@ -81,6 +81,11 @@
           color = "rgba(11111bee)";
         };
 
+      };
+
+      device = {
+        name = epic-mouse-v1;
+        sensitivity = -0.5;
       };
 
       animations = {
