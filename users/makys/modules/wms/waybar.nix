@@ -241,8 +241,7 @@
       }
 
       #temperature {
-        background: transparent;
-        background-color: @crust;
+        border-bottom: 2px solid @sea-green;
         color: @sea-green;
       }
 
