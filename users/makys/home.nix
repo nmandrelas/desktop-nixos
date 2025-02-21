@@ -77,10 +77,6 @@
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/hypr;
       recursive = true;
     };
-    ".config/waybar" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/waybar;
-      recursive = true;
-    };
     ".config/wofi" = {
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/wofi;
       recursive = true;
@@ -157,6 +153,9 @@
   # home.sessionVariables = {
   #   PATH="$HOME/.dotnet/tools:$PATH";
   # };
+  imports = [
+    ./modules/wms/waybar.nix
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
