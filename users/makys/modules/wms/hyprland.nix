@@ -81,10 +81,10 @@
           vibrancy = 0.1696;
         };
         shadow = {
-          drop_shadow = true;
-          shadow_range = 4;
-          shadow_render_power = 3;
-          "col.shadow" = "rgba(11111bee)";
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          color = "rgba(11111bee)";
         };
 
         
