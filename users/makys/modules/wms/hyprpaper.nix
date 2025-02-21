@@ -2,8 +2,6 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      ipc = "off";
-      splash = false;
       preload = [ "~/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png" ];
 
       wallpapers = [
