@@ -1,6 +1,5 @@
-{ config, pkgs, ... }:
-{
-  fonts.packages = with pkgs; [
+{ pkgs, ... }: {
+    fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
@@ -12,4 +11,5 @@
     proggyfonts
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
+
 }
