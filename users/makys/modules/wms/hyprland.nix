@@ -158,7 +158,7 @@
       ];
 
       exec-once = [
-        "hyprpaper"
+        "swww img /home/makys/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png"
         "waybar & swaync"
         "hyprctl setcursor nordzy-latte-green 24"
       ];
