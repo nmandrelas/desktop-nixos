@@ -48,15 +48,15 @@
           "min-length"= 14;
         };
         "cpu"= {
-          "format"= "\uf4bc　{usage}%";
+          "format"= "󰍛　{usage}%";
           "on-click"= "gnome-system-monitor";
         };
         "memory"= {
-          "format"= "\uefc5　{}%";
+          "format"= "　{}%";
           "on-click"= "gnome-system-monitor";
         };
         "hyprland/language"= {
-          "format"= "\uf1ab　{short}";
+          "format"= "󰌌　{short}";
         };
         "tray"= {
           "icon-size"= 21;
