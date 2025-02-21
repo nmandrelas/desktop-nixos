@@ -1,7 +1,9 @@
 {
   programs.kitty = {
     enable = true;
-    font = "MesloLGSNerdFont";
+    font = {
+      name= "MesloLGSNerdFontMono";
+    };
     themeFile = "Catppuccin-Mocha";
   };
 }
