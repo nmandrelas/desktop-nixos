@@ -157,7 +157,6 @@
   # home.sessionVariables = {
   #   PATH="$HOME/.dotnet/tools:$PATH";
   # };
-  catppuccin.flavor = "mocha";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
