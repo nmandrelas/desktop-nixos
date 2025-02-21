@@ -65,7 +65,6 @@
         resize_on_border = true;
         layout= "dwindle";
         allow_tearing = false;
-        no_cursor_warps = false;
       };
 
       decoration = {
@@ -91,7 +90,7 @@
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
         # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
@@ -112,7 +111,7 @@
       };
 
       master = {
-        new_is_master = true;
+        new_status = true;
       };
 
       gestures = {
