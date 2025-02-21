@@ -155,6 +155,8 @@
   # };
   imports = [
     ./modules/wms/waybar.nix
+    ./modules/wms/wofi.nix
+
   ];
 
   # Let Home Manager install and manage itself.
