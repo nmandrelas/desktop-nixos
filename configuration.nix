@@ -5,16 +5,17 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./essentials.nix
-      ./graphics.nix
-      ./games.nix
-      ./programming.nix
-      ./work.nix
-      ./docker.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./system/essentials.nix
+    ./system/graphics.nix
+    ./system/games.nix
+    ./system/programming.nix
+    ./system/work.nix
+    ./system/docker.nix
+    ./system/hyprland.nix
+    ./system/fonts.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -49,30 +50,25 @@
   };
 
   # Flake support#
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; 
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    # Enable the GNOME Desktop Environment.
-    displayManager = {
-      gdm.enable = true;
-      gdm.settings.daemon.DefaultSession = "gnome-xorg.desktop";
-      # Enable automatic login for the user.
-      autoLogin.enable = true;
-      autoLogin.user = "makys";
-    };
-    desktopManager ={
-      gnome.enable = true;
-    };
+    # Enable the GNOME Desktop Environment.aa
+    displayManager = { gdm.enable = true; };
+    desktopManager = { gnome.enable = true; };
     # Configure keymap in X11
     xkb = {
       layout = "us,gr";
       variant = "";
     };
   };
-  
+  services.displayManager.autoLogin = {
+    # Enable automatic login for the user.
+    enable = true;
+    user = "makys";
+  };
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
@@ -109,14 +105,17 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
-
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.dconf.enable = true; 
+  programs.dconf.enable = true;
+
+  #execute non nix executables#
+  #https://github.com/nix-community/nix-ld#
+  programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
