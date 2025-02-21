@@ -37,7 +37,7 @@
         "clock" = {
           "format"= "<span foreground='#21B16B'>   </span>{:%a %d %H:%M}";
           "tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "min-length"= 24;
+          "min-length"= 18;
         };
         "network" = {
           "format-wifi"= "󰶣{bandwidthUpBits:>5} 󰶡{bandwidthDownBits:>5} <span size='13000' foreground='#18393D'>  </span>{essid}";
