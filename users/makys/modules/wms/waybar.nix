@@ -238,7 +238,6 @@
       }
 
       #temperature {
-        transition: none;
         color: @sea-green;
       }
 
