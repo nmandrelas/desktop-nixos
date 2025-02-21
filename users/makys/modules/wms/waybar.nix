@@ -61,6 +61,7 @@
         "tray"= {
           "icon-size"= 21;
           "spacing"= 10;
+          "min-length"= 32;
         };
         "pulseaudio"= {
           # scroll-step = 1; # %, can be a float
@@ -241,7 +242,6 @@
         background: transparent;
         background-color: @crust;
         color: @sea-green;
-        border-bottom: 2px solid @sea-green;
       }
 
       #temperature.critical {
