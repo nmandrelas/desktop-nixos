@@ -30,7 +30,7 @@
             # hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
             critical-threshold = 80;
             # format-critical = "{temperatureC}°C {icon}";
-            format = "{temperatureC}°C {icon}";
+            format = "{icon} {temperatureC}°C";
             format-icons = ["" "" "" "" ""];
             tooltip = false;
         };
@@ -238,6 +238,8 @@
       }
 
       #temperature {
+        background: transparent;
+        background-color: @crust;
         color: @sea-green;
       }
 
