@@ -10,8 +10,8 @@
       "$menu" = "wofi --show drun --allow-images --insensitive";
 
       monitor = [
-       "DP-3, 1920x1080x60.00Hz,0x0, 1"
-       "DP-1, 2560x1440@164.96Hz, 1920x0, 1"
+        "DP-3, 1920x1080x60.00Hz,0x0, 1"
+        "DP-1, 2560x1440@164.96Hz, 1920x0, 1"
       ];
 
       env = [
@@ -21,20 +21,17 @@
         "ELECTRON_OZONE_PLATFORM_HINT,1"
       ];
 
-
       render = {
         explicit_sync = 2;
         explicit_sync_kms = 0;
       };
-      
+
       opengl = {
         nvidia_anti_flicker = 0;
         force_introspection = 2;
       };
 
-      misc = {
-        vfr = 0;
-      };
+      misc = { vfr = 0; };
 
       debug = {
         disable_logs = false;
@@ -49,9 +46,7 @@
 
         follow_mouse = 1;
 
-        touchpad = {
-          natural_scroll = false;
-        };
+        touchpad = { natural_scroll = false; };
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
@@ -63,7 +58,7 @@
         "col.active_border" = "rgba(21B16Bee) rgba(66CDAAee) 45deg";
         "col.inactive_border" = "rgba(11111baa)";
         resize_on_border = true;
-        layout= "dwindle";
+        layout = "dwindle";
         allow_tearing = false;
       };
 
@@ -86,7 +81,6 @@
           color = "rgba(11111bee)";
         };
 
-        
       };
 
       animations = {
@@ -106,29 +100,21 @@
       };
 
       dwindle = {
-        pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        pseudotile =
+          true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
       };
 
-      master = {
-        new_status = true;
-      };
+      master = { new_status = true; };
 
-      gestures = {
-        workspace_swipe = false;
-      };
+      gestures = { workspace_swipe = false; };
 
       misc = {
-        animate_manual_resizes = true;
-        animate_mouse_windowdragging = true;
-        enable_swallow = true;
-        render_ahead_of_time = false;
+        force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
 
-      windowrule = [
-        "tile, ^(kitty)$"
-      ];
+      windowrule = [ "tile, ^(kitty)$" ];
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
@@ -196,7 +182,7 @@
         # Example special workspace (scratchpad)
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
-        
+
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
