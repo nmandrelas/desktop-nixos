@@ -71,7 +71,7 @@
           enabled = true;
           size = 3;
           passes = 1;
-          
+
           vibrancy = 0.1696;
         };
         shadow = {
@@ -84,7 +84,7 @@
       };
 
       device = {
-        name = epic-mouse-v1;
+        name = "epic-mouse-v1";
         sensitivity = -0.5;
       };
 
