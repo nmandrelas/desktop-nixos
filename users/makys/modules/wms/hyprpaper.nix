@@ -2,11 +2,15 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "~/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png" ];
+      ipc = "on";
+      splash = false;
+      splash_offset = 2.0;
 
-      wallpapers = [
-        ", ~/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png"
-      ];
+      preload =
+        [ "~/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png" ];
+
+      wallpapers =
+        [ ", ~/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png" ];
     };
   };
 }
