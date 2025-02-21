@@ -25,5 +25,5 @@
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ ./users/makys/home.nix ];
     };
-  }
+  };
 }
