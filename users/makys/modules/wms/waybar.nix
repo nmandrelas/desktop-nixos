@@ -46,7 +46,7 @@
           "format-disconnected"= "<span size='13000' foreground='#18393D'>  </span>Disconnected";
           "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%";
           "interval"= 1;
-          "min-length"= 14
+          "min-length"= 14;
         };
         "cpu"= {
           "format"= "\uf4bc　{usage}%";
