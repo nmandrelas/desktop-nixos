@@ -237,19 +237,14 @@
           padding-right: 6px;
       }
 
-            #temperature {
-                margin-right: 8px;
-                padding-left: 16px;
-                padding-right: 16px;
-                border-radius: 10px;
-                transition: none;
-                color: #ffffff;
-                background: #383c4a;
-            }
+      #temperature {
+        transition: none;
+        color: @sea-green;
+      }
 
-            #temperature.critical {
-                background-color: #eb4d4b;
-            }
+      #temperature.critical {
+          background-color: #eb4d4b;
+      }
 
            
     '';
