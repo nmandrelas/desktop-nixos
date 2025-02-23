@@ -6,12 +6,12 @@
 										monitor = "";
 										path = "screenshot";
 										color = "rgba(25, 20, 20, 1.0)";
-										blur_passes = 2
+										blur_passes = 2;
 						};
 						input-field = {
 										monitor = "";
 										size = "30%, 10%";
-										outline_thickness = 3
+										outline_thickness = 3;
 										inner_color = "rgba(0, 0, 0, 0.0)"; # no fill
 
 										outer_color = "rgba(33ccffee) rgba(00ff99ee) 45deg";
