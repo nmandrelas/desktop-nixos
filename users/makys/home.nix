@@ -69,10 +69,6 @@
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/backgrounds/my_bgs;
       recursive = true;
     };
-    # ".config/hypr" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/hypr;
-    #   recursive = true;
-    # };
     ".themes/Material-Black-Blueberry" = {
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
       recursive = true;
