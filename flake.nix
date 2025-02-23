@@ -22,6 +22,9 @@
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
+          config.permittedInsecurePackages = [
+            "dotnet-runtime-7.0.20"
+          ];
         };
         inherit inputs system;
       };
