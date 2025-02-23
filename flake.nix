@@ -25,7 +25,6 @@
 
     homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
       modules = [ ./users/makys/home.nix ];
     };
   };
