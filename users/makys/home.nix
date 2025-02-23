@@ -149,7 +149,7 @@
     ./modules/wms/waybar.nix
     ./modules/wms/wofi.nix
     ./modules/wms/hyprland.nix
-    ./modules/wms/hyprpaper.nix
+    ./modules/wms/hyprlock.nix
     ./modules/kitty.nix
   ];
 
