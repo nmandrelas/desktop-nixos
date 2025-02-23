@@ -146,6 +146,7 @@
     ./modules/wms/wofi.nix
     ./modules/wms/hyprland.nix
     ./modules/wms/hyprlock.nix
+    ./modules/wms/gtk.nix
     ./modules/kitty.nix
   ];
 
