@@ -11,5 +11,7 @@
       proggyfonts
       nerdfonts
   ];
-
+  environment.systemPackages = with pkgs-unstable; [
+    vintagestory
+  ];
 }
