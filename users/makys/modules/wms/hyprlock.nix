@@ -26,6 +26,17 @@
 										halign = "center";
 										valign = "center";
 						};
+						# TIME
+						label = {
+								monitor =;
+								text = "$TIME";
+								color = "$text";
+								font_size = 90;
+								font_family = "$font";
+								position = "-30, 0";
+								halign = "right";
+								valign = "top";
+						};
 				};
 		};
 }
