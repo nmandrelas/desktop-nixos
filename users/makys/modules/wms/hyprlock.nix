@@ -28,7 +28,7 @@
 						};
 						# TIME
 						label = {
-								monitor =;
+								monitor = "";
 								text = "$TIME";
 								color = "$text";
 								font_size = 90;
