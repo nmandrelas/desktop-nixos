@@ -19,7 +19,7 @@
     # nixos - system hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        pkgs-stable = import nixpkgs-unstable {
+        pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
         };
