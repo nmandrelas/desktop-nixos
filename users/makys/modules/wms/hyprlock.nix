@@ -9,7 +9,7 @@
       };
       background = {
         monitor = "";
-        path = "screenshot";
+        path = "$HOME/.config/backgrounds/my_bgs/nix-wallpaper-binary-green.png";
         color = "rgba(25, 20, 20, 1.0)";
         blur_passes = 2;
       };
