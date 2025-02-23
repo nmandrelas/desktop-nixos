@@ -1,4 +1,11 @@
 { pkgs, pkgs-unstable, ... }: {
+    nixpkgs.config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "dotnet-runtime-7.0.20"
+      ];
+    };
+
     fonts.packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
