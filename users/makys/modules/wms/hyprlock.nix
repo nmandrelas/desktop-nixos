@@ -25,7 +25,7 @@
 										position = "0, -20";
 										halign = "center";
 										valign = "center";
-						}
+						};
 				};
 		};
 }
