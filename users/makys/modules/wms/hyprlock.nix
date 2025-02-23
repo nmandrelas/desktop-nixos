@@ -44,5 +44,19 @@
         valign = "top";
       };
     };
+		extraConfig = ''
+		# DATE
+		label {
+			monitor =
+			text = cmd[update:43200000] date +"%A, %d %B %Y"
+			color = $text
+			font_size = 25
+			font_family = $font
+			position = -30, -150
+			halign = right
+			valign = top
+		}
+
+		'';
   };
 }
