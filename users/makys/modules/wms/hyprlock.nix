@@ -2,6 +2,12 @@
 		programs.hyprlock = {
 				enable = true;
 				settings = {
+						path = "screenshot";
+						general = {
+								grace = 0;
+								ignore_empty_input = true;
+						};
+
 						background = {
 										monitor = "";
 										path = "screenshot";

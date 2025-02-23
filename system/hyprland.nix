@@ -19,7 +19,6 @@
     pkgs.waybar
     pkgs.mako
     pkgs.libnotify
-    pkgs.hyprpaper
     pkgs.swww
     #pkgs.rofi-wayland this or wofi
     pkgs.wofi
