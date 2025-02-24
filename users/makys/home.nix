@@ -149,7 +149,7 @@
     ./modules/wms/hyprland.nix
     ./modules/wms/hyprlock.nix
     ./modules/wms/gtk.nix
-    ./modules/kitty.ni
+    ./modules/kitty.nix
     ./modules/packages.nix
   ];
 
