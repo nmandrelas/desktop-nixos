@@ -30,6 +30,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.swwww
+
     #pkgs.nerdfonts
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -148,7 +150,6 @@
     ./modules/wms/hyprlock.nix
     ./modules/wms/gtk.nix
     ./modules/kitty.nix
-    ./modules/packages.nix
   ];
 
   # Let Home Manager install and manage itself.
