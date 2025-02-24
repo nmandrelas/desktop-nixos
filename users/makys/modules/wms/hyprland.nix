@@ -1,6 +1,16 @@
 {
   services.hyprpaper={
     enable = true;
+    settings = {
+      preload =
+        [ "/share/wallpapers/buttons.png" "/share/wallpapers/cat_pacman.png" ];
+
+      wallpaper = [
+        "DP-3,/share/wallpapers/buttons.png"
+        "DP-1,/share/wallpapers/cat_pacman.png"
+      ];
+
+    };
   };
   wayland.windowManager.hyprland = {
     enable = true;
