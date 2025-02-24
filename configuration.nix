@@ -15,6 +15,7 @@
     ./system/docker.nix
     ./system/hyprland.nix
     ./system/packages.nix
+    ./system/appimage.nix
   ];
 
   # Bootloader.
