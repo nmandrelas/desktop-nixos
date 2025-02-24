@@ -3,11 +3,11 @@
     enable = true;
     settings = {
       preload =
-        [ "/share/wallpapers/buttons.png" "/share/wallpapers/cat_pacman.png" ];
+        [ "~/.config/backgrounds/my_bgs/hyprpaper" ];
 
       wallpaper = [
-        "DP-3,/share/wallpapers/buttons.png"
-        "DP-1,/share/wallpapers/cat_pacman.png"
+        "DP-3,~/.config/backgrounds/my_bgs/hyprpaper"
+        "DP-1,~/.config/backgrounds/my_bgs/hyprpaper"
       ];
 
     };
