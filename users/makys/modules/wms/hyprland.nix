@@ -3,11 +3,11 @@
     enable = true;
     settings = {
       preload =
-        [ "~/.config/backgrounds/my_bgs/hyprpaper" ];
+        [ "~/.config/backgrounds/my_bgs/shaded.png" ];
 
       wallpaper = [
-        "DP-3,~/.config/backgrounds/my_bgs/hyprpaper"
-        "DP-1,~/.config/backgrounds/my_bgs/hyprpaper"
+        "DP-3,~/.config/backgrounds/my_bgs/shaded.png"
+        "DP-1,~/.config/backgrounds/my_bgs/shaded.png"
       ];
 
     };
