@@ -148,6 +148,7 @@
     ./modules/wms/hyprlock.nix
     ./modules/wms/gtk.nix
     ./modules/kitty.nix
+    ./modules/packages.nix
   ];
 
   # Let Home Manager install and manage itself.
