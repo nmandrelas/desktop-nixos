@@ -13,6 +13,8 @@
       dina-font
       proggyfonts
       nerdfonts
+      corefonts
+      vistafonts
   ];
   environment.systemPackages = with pkgs-unstable; [
     vintagestory
