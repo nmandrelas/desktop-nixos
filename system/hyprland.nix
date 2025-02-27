@@ -20,7 +20,6 @@
     pkgs.mako
     pkgs.libnotify
     pkgs.swww
-    #pkgs.rofi-wayland this or wofi
     pkgs.wofi
     pkgs.hyprshot
     pkgs.swaynotificationcenter
