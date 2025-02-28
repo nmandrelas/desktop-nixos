@@ -26,6 +26,6 @@
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
-    SDL_VIDEODRIVER = "wayland";
   };
+  systemd.coredump.enable = true;
 }
