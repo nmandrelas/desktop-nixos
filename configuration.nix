@@ -56,6 +56,10 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
+    environment = {
+      SDL_VIDEODRIVER = "wayland";
+    };
+
     # Enable the GNOME Desktop Environment.aa
     displayManager = { gdm.enable = true; };
     desktopManager = { gnome.enable = true; };
