@@ -13,6 +13,7 @@
     nerdfonts
     corefonts
     vistafonts
+    raylib
   ];
 
   environment.systemPackages = [ 
