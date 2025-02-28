@@ -26,5 +26,6 @@
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+    SDL_VIDEODRIVER = "wayland";
   };
 }
