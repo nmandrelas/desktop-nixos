@@ -21,5 +21,6 @@
     pkgs.SDL2
     pkgs.SDL2_ttf
     pkgs.raylib
+    pkgs.make
   ];
 }
