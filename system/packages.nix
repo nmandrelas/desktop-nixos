@@ -22,5 +22,6 @@
     pkgs.SDL2_ttf
     pkgs.raylib
     pkgs.gnumake
+    pkgs.gdb
   ];
 }
