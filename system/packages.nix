@@ -23,5 +23,6 @@
     pkgs.raylib
     pkgs.gnumake
     pkgs.gdb
+    pkgs.gimp
   ];
 }
