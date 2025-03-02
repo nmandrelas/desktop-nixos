@@ -174,6 +174,7 @@
         "hyprpaper"
         "waybar & swaync"
         "hyprctl setcursor nordzy-latte-green 24"
+        "ratbagctl hooting-chinchilla dpi set 8000"
       ];
 
       bind = [
