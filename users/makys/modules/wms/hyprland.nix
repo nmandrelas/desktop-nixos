@@ -247,8 +247,8 @@
         "SHIFT , PRINT, exec, hyprshot -m window"
         " $SUPER_SHIFT, l, exec, hyprlock"
         "$mainMod, F, fullscreen,"
-        "ALT Shift,Q, workspace, -1"
-        "ALT Shift,E, workspace, +1"
+        "ALT TAB,Q, workspace, -1"
+        "ALT TAB,E, workspace, +1"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
