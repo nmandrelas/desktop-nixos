@@ -18,7 +18,6 @@
 
     settings = {
       "$mainMod" = "SUPER";
-      "$secondaryMod" = "TAB";
       "$terminal" = "kitty";
       "$fileManager" = "nautilus";
       "$menu" = "wofi --show drun --allow-images --insensitive";
@@ -248,8 +247,8 @@
         "SHIFT , PRINT, exec, hyprshot -m window"
         " $SUPER_SHIFT, l, exec, hyprlock"
         "$mainMod, F, fullscreen,"
-        "$secondaryMod, Q, workspace, -1"
-        "$secondaryMod, E, workspace, +1"
+        "ALT, TAB, workspace, -1"
+        "ALT, TAB, workspace, +1"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
