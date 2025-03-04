@@ -249,6 +249,9 @@
         "$mainMod, F, fullscreen,"
         "ALT, A, workspace, -1"
         "ALT, D, workspace, +1"
+        "ALT SHIFT, A, movetoworkspace, -1"
+        "ALT SHIFT, D, movetoworkspace, +1"
+
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
