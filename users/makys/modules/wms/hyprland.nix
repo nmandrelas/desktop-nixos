@@ -23,7 +23,7 @@
       "$menu" = "wofi --show drun --allow-images --insensitive";
 
       monitor = [
-        "DP-3, 1920x1080x60.00Hz,0x500, 1"
+        "DP-3, 1920x1080x60.00Hz,0x1000, 1"
         "DP-1, 2560x1440@164.96Hz, 1920x0, 1"
       ];
 
