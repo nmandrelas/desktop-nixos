@@ -23,6 +23,7 @@
     libpulseaudio
     libxkbcommon
     freetype
+    libreoffice-qt6-fresh
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
