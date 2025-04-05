@@ -24,6 +24,7 @@
     libxkbcommon
     freetype
     libreoffice-qt6-fresh
+    ntfs3g #mount drives for read/write#
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
