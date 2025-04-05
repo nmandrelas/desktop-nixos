@@ -108,6 +108,10 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
+  boot.kernel.sysctl = {
+    "net.ipv4.ping_group_range" = "0 2147483647";
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
