@@ -25,6 +25,7 @@
     freetype
     libreoffice-qt6-fresh
     ntfs3g #mount drives for read/write#
+    wireshark
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
