@@ -27,7 +27,7 @@
     ntfs3g #mount drives for read/write#
     wireshark
     iftop #network monitoring#
-    nethods #network monitoring#
+    nethogs #network monitoring#
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
