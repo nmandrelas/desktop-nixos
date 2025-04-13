@@ -28,6 +28,9 @@
     wireshark
     iftop #network monitoring#
     nethogs #network monitoring#
+    networkmanager
+    networkmanagerapplet
+    nm-connection-editor
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
