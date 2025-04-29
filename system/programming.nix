@@ -30,6 +30,7 @@
     nethogs #network monitoring#
     networkmanager
     networkmanagerapplet
+    pstree
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
