@@ -24,6 +24,7 @@
           config.allowUnfree = true;
           config.permittedInsecurePackages = [
             "dotnet-runtime-7.0.20"
+            "electron-33.4.11"
           ];
         };
         inherit inputs system;
