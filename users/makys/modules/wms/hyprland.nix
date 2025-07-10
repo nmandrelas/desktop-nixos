@@ -179,7 +179,7 @@
 
       bind = [
         "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, kill -9 $(hyprctl activewindow |awk '/pid:/ {print $2}'),"
+        "$mainMod, C, exec, kill -9 $(hyprctl activewindow |awk '/pid:/ {print $2}'),"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
