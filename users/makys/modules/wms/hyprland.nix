@@ -41,7 +41,6 @@
 
       opengl = {
         nvidia_anti_flicker = 0;
-        force_introspection = 2;
       };
 
       misc = { vfr = 0; };
@@ -91,7 +90,7 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "0x11111bee";
+          color = "rgba(11111bee)";
         };
 
       };
