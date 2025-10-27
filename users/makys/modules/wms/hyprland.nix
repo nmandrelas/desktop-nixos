@@ -91,7 +91,7 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "rgba(11111bee)";
+          color = "0x11111bee";
         };
 
       };
