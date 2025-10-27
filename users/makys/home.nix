@@ -13,7 +13,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   # enable fonts
   fonts = {
@@ -30,10 +30,12 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    #pkgs.swwww
+
     #pkgs.nerdfonts
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # pkgs.hello
+    #pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -69,47 +71,43 @@
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/backgrounds/my_bgs;
       recursive = true;
     };
-    # ".config/hypr" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/hypr;
+    # ".themes/Material-Black-Blueberry" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
     #   recursive = true;
     # };
-    ".themes/Material-Black-Blueberry" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
-      recursive = true;
-    };
-    ".icons/kora-green-1-7-0" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/kora-green-1-7-0;
-      recursive = true;
-    };
-    ".icons/nordzy" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
-      recursive = true;
-    };
-    ".icons/OpenZone_Black_Slim" = {
-      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/OpenZone_Black_Slim;
-      recursive = true;
-    };
+    # ".icons/kora-green-1-7-0" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/kora-green-1-7-0;
+    #   recursive = true;
+    # };
+    # ".icons/nordzy" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
+    #   recursive = true;
+    # };
+    # ".icons/OpenZone_Black_Slim" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/OpenZone_Black_Slim;
+    #   recursive = true;
+    # };
 
-    ".local/share/icons/nordzy-frappe-green" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-frappe-green;
-      recursive = true;
-    };
-    ".local/share/icons/nordzy-latte-green" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-latte-green;
-      recursive = true;
-    };
-    ".local/share/icons/nordzy-macchiato-green" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-macchiato-green;
-      recursive = true;
-    };
-    ".local/share/icons/nordzy-mocha-green" = {
-      source =
-        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-mocha-green;
-      recursive = true;
-    };
+    # ".local/share/icons/nordzy-frappe-green" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-frappe-green;
+    #   recursive = true;
+    # };
+    # ".local/share/icons/nordzy-latte-green" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-latte-green;
+    #   recursive = true;
+    # };
+    # ".local/share/icons/nordzy-macchiato-green" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-macchiato-green;
+    #   recursive = true;
+    # };
+    # ".local/share/icons/nordzy-mocha-green" = {
+    #   source =
+    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-mocha-green;
+    #   recursive = true;
+    # };
   };
   programs.git = {
     enable = true;
@@ -149,8 +147,10 @@
     ./modules/wms/waybar.nix
     ./modules/wms/wofi.nix
     ./modules/wms/hyprland.nix
-    ./modules/wms/hyprpaper.nix
+    ./modules/wms/hyprlock.nix
+    ./modules/wms/gtk.nix
     ./modules/kitty.nix
+    ./modules/packages.nix
   ];
 
   # Let Home Manager install and manage itself.

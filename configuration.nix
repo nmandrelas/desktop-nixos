@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs,pkgs-unstable, inputs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -14,7 +14,8 @@
     ./system/work.nix
     ./system/docker.nix
     ./system/hyprland.nix
-    ./system/fonts.nix
+    ./system/packages.nix
+    ./system/appimage.nix
   ];
 
   # Bootloader.
@@ -55,9 +56,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
+
     # Enable the GNOME Desktop Environment.aa
     displayManager = { gdm.enable = true; };
     desktopManager = { gnome.enable = true; };
+    windowManager = { icewm.enable = true; };
     # Configure keymap in X11
     xkb = {
       layout = "us,gr";
@@ -77,7 +80,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -104,6 +107,10 @@
     description = "makys";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
+
+  # boot.kernel.sysctl = {
+  #   "net.ipv4.ping_group_range" = "0 2147483647";
+  # };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -135,6 +142,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.enableIPv6 = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -142,5 +150,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

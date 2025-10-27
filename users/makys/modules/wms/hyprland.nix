@@ -1,4 +1,17 @@
 {
+  services.hyprpaper={
+    enable = true;
+    settings = {
+      preload =
+        [ "~/.config/backgrounds/my_bgs/shaded.png" ];
+
+      wallpaper = [
+        "DP-3,~/.config/backgrounds/my_bgs/shaded.png"
+        "DP-1,~/.config/backgrounds/my_bgs/shaded.png"
+      ];
+
+    };
+  };
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -65,7 +78,7 @@
       decoration = {
         rounding = 10;
         active_opacity = 1.0;
-        inactive_opacity = 0.9;
+        inactive_opacity = 0.95;
 
         blur = {
           enabled = true;
@@ -91,31 +104,48 @@
       animations = {
         enabled = true;
 
-        bezier = [
-          "easeOutQuint,0.23,1,0.32,1"
-          "easeInOutCubic,0.65,0.05,0.36,1"
-          "linear,0,0,1,1"
-          "almostLinear,0.5,0.5,0.75,1.0"
-          "quick,0.15,0,0.1,1"
-        ];
+        # bezier = [
+        #   "easeOutQuint,0.23,1,0.32,1"
+        #   "easeInOutCubic,0.65,0.05,0.36,1"
+        #   "linear,0,0,1,1"
+        #   "almostLinear,0.5,0.5,0.75,1.0"
+        #   "quick,0.15,0,0.1,1"
+        # ];
 
+        # animation = [
+        #   "global, 1, 10, default"
+        #   "border, 1, 5.39, easeOutQuint"
+        #   "windows, 1, 4.79, easeOutQuint"
+        #   "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+        #   "windowsOut, 1, 1.49, linear, popin 87%"
+        #   "fadeIn, 1, 1.73, almostLinear"
+        #   "fadeOut, 1, 1.46, almostLinear"
+        #   "fade, 1, 3.03, quick"
+        #   "layers, 1, 3.81, easeOutQuint"
+        #   "layersIn, 1, 4, easeOutQuint, fade"
+        #   "layersOut, 1, 1.5, linear, fade"
+        #   "fadeLayersIn, 1, 1.79, almostLinear"
+        #   "fadeLayersOut, 1, 1.39, almostLinear"
+        #   "workspaces, 1, 1.94, almostLinear, fade"
+        #   "workspacesIn, 1, 1.21, almostLinear, fade"
+        #   "workspacesOut, 1, 1.94, almostLinear, fade"
+        # ];
+
+        bezier =[
+          "wind, 0.05, 0.9, 0.1, 1.05"
+          "winIn, 0.1, 1.1, 0.1, 1.1"
+          "winOut, 0.3, -0.3, 0, 1"
+          "liner, 1, 1, 1, 1"
+        ];
         animation = [
-          "global, 1, 10, default"
-          "border, 1, 5.39, easeOutQuint"
-          "windows, 1, 4.79, easeOutQuint"
-          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-          "windowsOut, 1, 1.49, linear, popin 87%"
-          "fadeIn, 1, 1.73, almostLinear"
-          "fadeOut, 1, 1.46, almostLinear"
-          "fade, 1, 3.03, quick"
-          "layers, 1, 3.81, easeOutQuint"
-          "layersIn, 1, 4, easeOutQuint, fade"
-          "layersOut, 1, 1.5, linear, fade"
-          "fadeLayersIn, 1, 1.79, almostLinear"
-          "fadeLayersOut, 1, 1.39, almostLinear"
-          "workspaces, 1, 1.94, almostLinear, fade"
-          "workspacesIn, 1, 1.21, almostLinear, fade"
-          "workspacesOut, 1, 1.94, almostLinear, fade"
+          "windows, 1, 6, wind, slide"
+          "windowsIn, 1, 6, winIn, slide"
+          "windowsOut, 1, 5, winOut, slide"
+          "windowsMove, 1, 5, wind, slide"
+          "border, 1, 1, liner"
+          "borderangle, 1, 30, liner, loop"
+          "fade, 1, 10, default"
+          "workspaces, 1, 5, wind"
         ];
       };
 
@@ -144,13 +174,12 @@
         "hyprpaper"
         "waybar & swaync"
         "hyprctl setcursor nordzy-latte-green 24"
+        "ratbagctl hooting-chinchilla dpi set 8000"
       ];
 
       bind = [
-        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
-
         "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
+        "$mainMod, C, exec, kill -9 $(hyprctl activewindow |awk '/pid:/ {print $2}')"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
@@ -218,6 +247,11 @@
         "SHIFT , PRINT, exec, hyprshot -m window"
         " $SUPER_SHIFT, l, exec, hyprlock"
         "$mainMod, F, fullscreen,"
+        "ALT, A, workspace, -1"
+        "ALT, D, workspace, +1"
+        "ALT SHIFT, A, movetoworkspace, -1"
+        "ALT SHIFT, D, movetoworkspace, +1"
+
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging

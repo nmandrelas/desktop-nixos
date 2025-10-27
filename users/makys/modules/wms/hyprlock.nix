@@ -1,0 +1,62 @@
+{
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      path = "screenshot";
+      general = {
+        grace = 0;
+        ignore_empty_input = true;
+      };
+      background = {
+        monitor = "";
+        path = "$HOME/.config/backgrounds/my_bgs/shaded.png";
+        color = "rgba(25, 20, 20, 1.0)";
+        blur_passes = 2;
+      };
+      input-field = {
+        monitor = "";
+				size = "250, 50";
+        outline_thickness = 3;
+        inner_color = "rgba(0, 0, 0, 0.0)"; # no fill
+        placeholder_text = "<i>Password...</i>";
+
+        outer_color = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        check_color = "rgba(00ff99ee) rgba(ff6633ee) 120deg";
+        fail_color = "rgba(ff6633ee) rgba(ff0066ee) 40deg";
+
+        font_color = "rgb(143, 143, 143)";
+        fade_on_empty = false;
+        rounding = 15;
+
+        position = "0, -20";
+        halign = "center";
+        valign = "center";
+      };
+      # TIME
+      label = {
+        monitor = "";
+        text = "$TIME";
+        color = "$text";
+        font_size = 90;
+        font_family = "MesloLGS Nerd Font Mono";
+        position = "-30, 0";
+        halign = "right";
+        valign = "top";
+      };
+    };
+		extraConfig = ''
+		# DATE
+		label {
+			monitor =
+			text = cmd[update:43200000] date +"%A, %d %B %Y"
+			color = $text
+			font_size = 25
+			font_family = $font
+			position = -30, -150
+			halign = right
+			valign = top
+		}
+
+		'';
+  };
+}

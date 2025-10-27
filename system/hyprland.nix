@@ -19,8 +19,7 @@
     pkgs.waybar
     pkgs.mako
     pkgs.libnotify
-    pkgs.hyprpaper
-    #pkgs.rofi-wayland this or wofi
+    pkgs.swww
     pkgs.wofi
     pkgs.hyprshot
     pkgs.swaynotificationcenter
