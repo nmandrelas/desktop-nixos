@@ -1,8 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, pkgs-unstable, ... }: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
+  environment.systemPackages 
     [
-      citrix_workspace # the devil#
+      pkgs-unstable.citrix_workspace # the devil#
     ];
 }
