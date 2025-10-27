@@ -54,7 +54,7 @@
 
       input = {
         kb_layout = "us, gr";
-        kb_variant = "lang";
+        kb_variant = ",qwerty";
         kb_options = "grp:alt_space_toggle";
 
         follow_mouse = 1;
