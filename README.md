@@ -15,3 +15,5 @@ nmcli device wifi list
 nmcli device wifi connect "Elon save us please" password "vegeta997"
 
 nmcli device wifi connect "mixalis lan" password "50225022"
+
+nmcli device wifi connect "COSMOTE-706115" password "vegeta998"
