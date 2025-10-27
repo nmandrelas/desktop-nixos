@@ -32,6 +32,7 @@
     networkmanagerapplet
     pstree
     zip
+    unityhub
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
