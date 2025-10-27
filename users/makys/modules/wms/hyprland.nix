@@ -41,7 +41,6 @@
 
       opengl = {
         nvidia_anti_flicker = 0;
-        force_introspection = 2;
       };
 
       misc = { vfr = 0; };
@@ -53,15 +52,17 @@
       };
 
       input = {
-        kb_layout = "us, gr";
-        kb_variant = "lang";
+        kb_layout = "us,gr";
+        kb_variant = "";
         kb_options = "grp:alt_space_toggle";
 
         follow_mouse = 1;
 
-        touchpad = { natural_scroll = false; };
+        touchpad = {
+          natural_scroll = false;
+        };
 
-        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0;
       };
 
       general = {
@@ -164,7 +165,7 @@
         disable_hyprland_logo = false;
       };
 
-      windowrule = [ "tile, ^(kitty)$" ];
+      windowrule = [ "tile, class:^(kitty)$" ];
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
