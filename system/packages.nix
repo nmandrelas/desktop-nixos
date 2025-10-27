@@ -63,7 +63,6 @@
     nerd-fonts.monofur
     nerd-fonts.monoid
     nerd-fonts.mononoki
-    nerd-fonts.mplus
     nerd-fonts.noto
     nerd-fonts.open-dyslexic
     nerd-fonts.overpass
@@ -142,7 +141,6 @@
     pkgs.nerd-fonts.monofur
     pkgs.nerd-fonts.monoid
     pkgs.nerd-fonts.mononoki
-    pkgs.nerd-fonts.mplus
     pkgs.nerd-fonts.noto
     pkgs.nerd-fonts.open-dyslexic
     pkgs.nerd-fonts.overpass
