@@ -36,7 +36,11 @@
       exec ${pkgs.vscode}/bin/code "$@"
     '')
     pkgs-unstable.dotnet-sdk_9
-
+    zlib
+    icu
+    openssl
+    nss
+    nspr
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
