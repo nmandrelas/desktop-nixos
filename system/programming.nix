@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
     vscode # code editor #
     elixir # functional langeuage #
@@ -36,6 +36,7 @@
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
+    pkgs-unstable.dotnet-sdk_9_0
 
   ];
   environment.sessionVariables = {
