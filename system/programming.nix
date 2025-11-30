@@ -37,5 +37,7 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
+  environment.etc."usr/local/bin/code".source = "${pkgs.vscode}/bin/code";
+
   systemd.coredump.enable = true;
 }
