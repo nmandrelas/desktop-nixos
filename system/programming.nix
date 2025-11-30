@@ -37,12 +37,9 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
-  environment.extraInit = ''
-    if [ ! -e /usr/local/bin/code ]; then
-      mkdir -p /usr/local/bin
-      ln -sf ${pkgs.vscode}/bin/code /usr/local/bin/code
-    fi
-  '';
+  environment.etc = {
+    "/usr/local/bin/code".source = "${pkgs.vscode}/bin/code";
+  };
 
   systemd.coredump.enable = true;
 }
