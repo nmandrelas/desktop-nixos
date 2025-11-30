@@ -36,7 +36,7 @@
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
-    pkgs-unstable.dotnet-sdk_9_0
+    pkgs-unstable.dotnet-sdk_9
 
   ];
   environment.sessionVariables = {
