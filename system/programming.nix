@@ -10,7 +10,6 @@
     yazi # terminal file manager #
     git
     gcc
-    dotnet-sdk
     neofetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
