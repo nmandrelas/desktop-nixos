@@ -33,15 +33,14 @@
     pstree
     zip
     unityhub
+    (pkgs.writeShellScriptBin "code" ''
+      exec ${pkgs.vscode}/bin/code "$@"
+    '')
+
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
-  environment.systemPackages = [
-    (pkgs.writeShellScriptBin "code" ''
-      exec ${pkgs.vscode}/bin/code "$@"
-    '')
-  ];
 
   systemd.coredump.enable = true;
 }
