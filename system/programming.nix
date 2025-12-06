@@ -45,10 +45,6 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
-  programs.vscode = {
-    enable = true;
-    enableWayland = false;
-};
 
   systemd.coredump.enable = true;
 }
