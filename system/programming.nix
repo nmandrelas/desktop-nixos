@@ -41,6 +41,7 @@
     openssl
     nss
     nspr
+    rider
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
