@@ -135,7 +135,6 @@
     ./modules/wms/gtk.nix
     ./modules/kitty.nix
     ./modules/packages.nix
-    nvf.nixosModules.default
   ];
 
   # Let Home Manager install and manage itself.
