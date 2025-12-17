@@ -16,7 +16,23 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-24-11, home-manager, nvf
     , ... }@inputs:
-    let system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
+      configModule = {
+        # Add any custom options (and do feel free to upstream them!)
+        # options = { ... };
+
+        config.vim = {
+          theme.enable = true;
+          theme.name = "gruvbox";
+          # and more options as you see fit...
+        };
+      };
+      customNeovim = nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [ configModule ];
+      };
+
     in {
 
       # nixos - system hostname
@@ -38,21 +54,6 @@
         };
 
         modules = [ ./configuration.nix ];
-      };
-      configModule = {
-        # Add any custom options (and do feel free to upstream them!)
-        # options = { ... };
-
-        config.vim = {
-          theme.enable = true;
-          theme.name = "gruvbox";
-          # and more options as you see fit...
-        };
-      };
-
-      customNeovim = nvf.lib.neovimConfiguration {
-        inherit pkgs;
-        modules = [ configModule ];
       };
 
       homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
