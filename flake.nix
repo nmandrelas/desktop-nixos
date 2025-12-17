@@ -27,6 +27,7 @@
         config.vim = {
           theme.enable = true;
           theme.name = "gruvbox";
+          theme.style = "light";
           # and more options as you see fit...
         };
       };
