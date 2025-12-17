@@ -14,45 +14,35 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-24-11, home-manager, nvf, ... }@inputs: 
-    let
-      system = "x86_64-linux";
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-24-11, home-manager, nvf
+    , ... }@inputs:
+    let system = "x86_64-linux";
     in {
 
-    # nixos - system hostname
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-          config.permittedInsecurePackages = [
-            "dotnet-runtime-7.0.20"
-            "electron-33.4.11"
-            "libxml2-2.13.8"
-          ];
+      # nixos - system hostname
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+            config.permittedInsecurePackages =
+              [ "dotnet-runtime-7.0.20" "electron-33.4.11" "libxml2-2.13.8" ];
+          };
+          nixpkgs-24-11 = import nixpkgs-24-11 {
+            inherit system;
+            config.allowUnfree = true;
+            config.permittedInsecurePackages =
+              [ "dotnet-runtime-7.0.20" "electron-33.4.11" "libxml2-2.13.8" ];
+          };
+          inherit inputs system;
         };
-        nixpkgs-24-11 = import nixpkgs-24-11 {
-          inherit system;
-          config.allowUnfree = true;
-          config.permittedInsecurePackages = [
-            "dotnet-runtime-7.0.20"
-            "electron-33.4.11"
-            "libxml2-2.13.8"
-          ];
-        };
-        inherit inputs system;
+
+        modules = [ ./configuration.nix ];
       };
 
-      modules = [
-        ./configuration.nix
-      ];
+      homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./users/makys/home.nix ];
+      };
     };
-
-    homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ 
-        ./users/makys/home.nix
-      ];
-    };
-  };
 }
