@@ -24,11 +24,13 @@
         # Add any custom options (and do feel free to upstream them!)
         # options = { ... };
 
-        config.vim = {
-          theme.enable = true;
-          theme.name = "gruvbox";
-          theme.style = "light";
-          # and more options as you see fit...
+        config = {
+          vim = {
+            theme.enable = true;
+            theme.name = "gruvbox";
+            theme.style = "light";
+            # and more options as you see fit...
+          };
         };
       };
       customNeovim = nvf.lib.neovimConfiguration {
