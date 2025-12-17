@@ -15,6 +15,16 @@
     treesitter.enable = true;
     binds.whichKey.enable = true;
     utility.undotree.enable = true;
+    keymaps = [
+    {
+      key = "<leader>u";
+      mode = "n";
+      silent = true;
+      action = ":UndotreeToggle<CR>";
+      description = "show undotree";
+    }
+  ];
+
   };
 
 }
