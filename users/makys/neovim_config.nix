@@ -13,7 +13,7 @@
 
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
-    vim.treesitter.enable = true;
+    treesitter.enable = true;
   };
 
 }
