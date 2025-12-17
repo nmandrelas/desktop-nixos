@@ -52,8 +52,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ 
         ./users/makys/home.nix
-        ./users/makys/neovim_config.nix  
-        nvf.nixosModules.default
       ];
     };
   };
