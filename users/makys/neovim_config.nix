@@ -14,6 +14,7 @@
     # vim.languages.nix.enable = true;
     treesitter.enable = true;
     binds.whichKey.enable = true;
+    vim.utility.undotree.enable = true;
   };
 
 }
