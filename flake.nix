@@ -39,10 +39,28 @@
 
         modules = [ ./configuration.nix ];
       };
+      configModule = {
+        # Add any custom options (and do feel free to upstream them!)
+        # options = { ... };
+
+        config.vim = {
+          theme.enable = true;
+          theme.name = "gruvbox";
+          # and more options as you see fit...
+        };
+      };
+
+      customNeovim = nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [ configModule ];
+      };
 
       homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./users/makys/home.nix ];
+        modules = [
+          { home.packages = [ customNeovim.neovim ]; }
+          ./users/makys/home.nix
+        ];
       };
     };
 }
