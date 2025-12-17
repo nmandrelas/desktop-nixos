@@ -18,6 +18,8 @@
     , ... }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+
       configModule = {
         # Add any custom options (and do feel free to upstream them!)
         # options = { ... };
@@ -29,7 +31,7 @@
         };
       };
       customNeovim = nvf.lib.neovimConfiguration {
-        inherit nixpkgs.legacyPackages.${system};
+        inherit pkgs;
         modules = [ configModule ];
       };
 
