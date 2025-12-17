@@ -136,9 +136,26 @@
 
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    # IMPORTANT: do NOT use neovim-with-plugins
+    package = pkgs.neovim-unwrapped;
   };
+
+  home.packages = with pkgs; [
+    git
+    ripgrep
+    fd
+    gcc           # treesitter
+    nodejs        # mason + some LSPs
+    lua-language-server
+    pyright
+    nil           # nix LSP (recommended)
+    stylua
+    wl-clipboard #wayland
+  ];
 
   # home.sessionVariables = {
   #   PATH="$HOME/.dotnet/tools:$PATH";
