@@ -6,6 +6,7 @@
     nixpkgs-24-11.url = "github:nixos/nixpkgs/nixos-24.11";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nvf.url = "github:notashelf/nvf";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -13,7 +14,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-24-11, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-24-11, home-manager, nvf, ... }@inputs: 
     let
       system = "x86_64-linux";
     in {
@@ -47,9 +48,18 @@
       ];
     };
 
+    packages."x86_64-linux".default = 
+      (nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        modules = [ ./users/makys/neovim_config.nix ];
+      }).neovim;
+      
     homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./users/makys/home.nix ];
+      modules = [ 
+        ./users/makys/home.nix
+        nvf.nixosModules.default
+      ];
     };
   };
 }

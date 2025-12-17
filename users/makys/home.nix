@@ -124,17 +124,6 @@
   #
   #  /etc/profiles/per-user/makys/etc/profile.d/hm-session-vars.sh
   #
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-
-    # IMPORTANT: do NOT use neovim-with-plugins
-    package = pkgs.neovim-unwrapped;
-  };
-
   # home.sessionVariables = {
   #   PATH="$HOME/.dotnet/tools:$PATH";
   # };
