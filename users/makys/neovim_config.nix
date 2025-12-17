@@ -6,7 +6,9 @@
     theme.enable = true;
     theme.name = "catppuccin";
     theme.style = "mocha";
-    telescope = { enable = true; };
+    telescope = { 
+      enable = true; 
+      };
     globals.mapleader = " ";
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
@@ -19,7 +21,15 @@
       silent = true;
       action = ":UndotreeToggle<CR>";
       desc = "show undotree";
-    }];
+    },
+    {
+      key = "<C-d>";
+      mode = "n";
+      silent = true;
+      action = "<C-d>zz";
+      desc = "show undotree";
+    }
+    ];
 
   };
 
