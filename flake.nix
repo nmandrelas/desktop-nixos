@@ -48,16 +48,11 @@
       ];
     };
 
-    packages."x86_64-linux".default = 
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-        modules = [ ./users/makys/neovim_config.nix ];
-      }).neovim;
-      
     homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ 
         ./users/makys/home.nix
+        ./users/makys/neovim_config.nix  
         nvf.nixosModules.default
       ];
     };
