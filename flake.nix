@@ -29,7 +29,7 @@
         };
       };
       customNeovim = nvf.lib.neovimConfiguration {
-        inherit pkgs;
+        inherit nixpkgs.legacyPackages.${system};
         modules = [ configModule ];
       };
 
