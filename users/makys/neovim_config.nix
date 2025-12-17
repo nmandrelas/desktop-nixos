@@ -14,7 +14,7 @@
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
     treesitter.enable = true;
-    binds.whichKey.enable
+    binds.whichKey.enable = true;
   };
 
 }
