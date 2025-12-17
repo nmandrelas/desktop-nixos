@@ -35,7 +35,7 @@
       };
       customNeovim = nvf.lib.neovimConfiguration {
         inherit pkgs;
-        modules = [ ./users/makys/nvim_options.nix ];
+        modules = [ ./users/makys/neovim_config.nix ];
       };
 
     in {
