@@ -21,7 +21,7 @@
       silent = true;
       action = ":UndotreeToggle<CR>";
       desc = "show undotree";
-    },
+    }
     {
       key = "<C-d>";
       mode = "n";
