@@ -10,7 +10,6 @@
       enable = true;
     };
     globals.mapleader = " ";
-    whichKey.enable = true;
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
     treesitter.enable = true;
