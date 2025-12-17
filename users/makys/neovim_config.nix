@@ -27,7 +27,28 @@
       mode = "n";
       silent = true;
       action = "<C-d>zz";
-      desc = "show undotree";
+      desc = "Scroll down and center";
+    }
+  {
+      key = "<C-u>";
+      mode = "n";
+      silent = true;
+      action = "<C-u>zz";
+      desc = "Scroll up and center";
+    }
+    {
+      key = "n";
+      mode = "n";
+      silent = true;
+      action = "nzzzv";
+      desc = "Find and center";
+    }
+    {
+      key = "N";
+      mode = "n";
+      silent = true;
+      action = "Nzzzv";
+      desc = "Find and center";
     }
     ];
 
