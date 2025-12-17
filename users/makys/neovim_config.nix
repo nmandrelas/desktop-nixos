@@ -3,8 +3,8 @@
 {
   vim = {
     theme.enable = true;
-    theme.name = "gruvbox";
-    theme.style = "dark";
+    theme.name = "catppuccin";
+    theme.style = "mocha";
     # add more NVF options here as needed
   };
 
