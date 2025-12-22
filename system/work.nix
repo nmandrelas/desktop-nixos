@@ -4,6 +4,6 @@
   environment.systemPackages =
   [
     nixpkgs-24-11.citrix_workspace # the devil#
+    (nixpkgs-24-11.citrix_workspace.override {})
   ];
-  environment.systemPackages = [ (citrix_workspace.override {}) ];
 }
