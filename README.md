@@ -1,6 +1,7 @@
 rebuild 
 
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake .#desktop
+sudo nixos-rebuild switch --flake .#laptop
 
 home-manager switch --flake .
 
@@ -12,8 +13,4 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 
 nmcli device wifi list
 
-nmcli device wifi connect "Elon save us please" password "vegeta997"
-
-nmcli device wifi connect "mixalis lan" password "50225022"
-
-nmcli device wifi connect "COSMOTE-706115" password "vegeta998"
+nmcli device wifi connect "name" password "passwd"

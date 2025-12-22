@@ -2,13 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs,pkgs-unstable, inputs, ... }:
+{ config, pkgs,pkgs-unstable, inputs, lib, hostType, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ./system/essentials.nix
-    ./system/graphics.nix
     ./system/games.nix
     ./system/programming.nix
     ./system/work.nix
@@ -16,6 +14,13 @@
     ./system/hyprland.nix
     ./system/packages.nix
     ./system/appimage.nix
+  ]
+  ++ lib.optionals (hostType == "desktop") [
+    ./system/graphics.nix
+    ./hardware-configuration.nix
+  ]
+  ++ lib.optionals (hostType == "laptop") [
+    ./laptop-hardware-configuration.nix
   ];
 
   # Bootloader.
