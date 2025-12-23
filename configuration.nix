@@ -14,6 +14,7 @@
     ./system/hyprland.nix
     ./system/packages.nix
     ./system/appimage.nix
+    ./system/fonts.nix
   ]
   ++ lib.optionals (hostType == "desktop") [
     ./system/graphics.nix
