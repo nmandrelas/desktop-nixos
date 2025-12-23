@@ -1,9 +1,11 @@
 rebuild 
 
 sudo nixos-rebuild switch --flake .#desktop
-sudo nixos-rebuild switch --flake .#laptop
+home-manager switch --flake .#desktop
 
-home-manager switch --flake .
+sudo nixos-rebuild switch --flake .#laptop
+home-manager switch --flake .#laptop
+
 
 nix flake update --flake  /etc/nixos
 
