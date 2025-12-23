@@ -35,7 +35,7 @@
             tooltip = false;
         };
         "clock" = {
-          "format"= "<span foreground='#21B16B'>   </span>{:%a %d %H:%M}";
+          "format"= "<span foreground='#21B16B'>{:%a %d %H:%M}";
           "tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           "min-length"= 18;
         };
@@ -110,7 +110,7 @@
             @define-color olive #808000;
 
       * {
-          font-family: "MesloLGS Nerd Font";
+          font-family: "MesloLGS Nerd Font","Font Awesome 6 Free";
           font-size: 16px;
           min-height: 0;
           font-weight: bold;
@@ -248,8 +248,6 @@
       #temperature.critical {
           background-color: #eb4d4b;
       }
-
-           
     '';
   };
 }
