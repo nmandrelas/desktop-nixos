@@ -3,6 +3,6 @@
   # $ nix search wget
   environment.systemPackages =
     [
-      pkgs.citrix_workspace_24_11_0 # the devil#
+      pkgs.citrix_workspace_24_08_0 # the devil#
     ];
 }
