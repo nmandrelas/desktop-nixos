@@ -41,11 +41,11 @@
           "min-length"= 14;
         };
         "network" = {
-          "format-wifi"= " {bandwidthUpBits:>5} {bandwidthDownBits:>5} <span size='13000' foreground='#18393D'>  </span>{essid}";
+          "format-wifi"= "<span size='13000' foreground='#18393D'>  </span>{essid}";
           "format-ethernet"= "<span size='13000' foreground='#18393D'>󰤭  </span> Disconnected";
           "format-linked"= "{ifname} (No IP) ";
           "format-disconnected"= "<span size='13000' foreground='#18393D'>  </span>Disconnected";
-          "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%";
+          "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%\n {bandwidthUpBits:>5} {bandwidthDownBits:>5}";
           "interval"= 1;
           "min-length"= 14;
         };
@@ -208,7 +208,7 @@
           color: @lime-green;
           border-bottom: 2px solid @lime-green;
       }
-      
+
       #clock.date {
           color: @lime-green;
           border-bottom: 2px solid @lime-green;
