@@ -112,8 +112,10 @@
   programs.git = {
     enable = true;
     settings = {
-      name = "Naoum Mandrelas";
-      email = "nmandrelas@gmail.com";
+      user = {
+        name = "Naoum Mandrelas";
+        email = "nmandrelas@gmail.com";
+      };
       extraConfig = { init.defaultBranch = "main"; };
     };
   };
