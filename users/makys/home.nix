@@ -79,10 +79,10 @@
     #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/kora-green-1-7-0;
     #   recursive = true;
     # };
-    # ".icons/nordzy" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
-    #   recursive = true;
-    # };
+    ".icons/nordzy" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
+      recursive = true;
+    };
     # ".icons/OpenZone_Black_Slim" = {
     #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/OpenZone_Black_Slim;
     #   recursive = true;
