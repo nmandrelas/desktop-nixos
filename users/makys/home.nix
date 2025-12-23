@@ -111,10 +111,11 @@
   };
   programs.git = {
     enable = true;
-    userName = "Naoum Mandrelas";
-    userEmail = "nmandrelas@gmail.com";
-    extraConfig = { init.defaultBranch = "main"; };
-
+    settings = {
+      name = "Naoum Mandrelas";
+      email = "nmandrelas@gmail.com";
+      extraConfig = { init.defaultBranch = "main"; };
+    };
   };
 
   # Home Manager can also manage your environment variables through
