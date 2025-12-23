@@ -90,14 +90,14 @@
 
       homeConfigurations = {
         dekstop = home-manager.lib.homeManagerConfiguration {
-          specialArgs = {
+          extraSpecialArgs = {
             hostType = "dekstop";
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [ ./users/makys/home.nix ];
         };
         laptop = home-manager.lib.homeManagerConfiguration {
-          specialArgs = {
+          extraSpecialArgs = {
             hostType = "laptop";
           };
           pkgs = nixpkgs.legacyPackages.${system};
