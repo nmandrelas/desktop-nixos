@@ -20,8 +20,9 @@
             "memory"
             "cpu"
             "network"
+            "battery"
             "pulseaudio"
-            "hyprland/language"
+            "hyprland/language"            
             "clock" 
           ];
 
