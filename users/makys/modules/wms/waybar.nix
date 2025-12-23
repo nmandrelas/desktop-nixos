@@ -20,8 +20,9 @@
             "memory"
             "cpu"
             "network"
+            "battery"
             "pulseaudio"
-            "hyprland/language"
+            "hyprland/language"            
             "clock" 
           ];
 
@@ -35,19 +36,31 @@
             tooltip = false;
         };
         "clock" = {
-          "format"= "<span foreground='#21B16B'>   </span>{:%a %d %H:%M}";
+          "format"= "<span foreground='#21B16B'>{:%a %d %H:%M}</span>";
           "tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "min-length"= 18;
+          "min-length"= 14;
         };
         "network" = {
-          "format-wifi"= " {bandwidthUpBits:>5} {bandwidthDownBits:>5} <span size='13000' foreground='#18393D'>  </span>{essid}";
+          "format-wifi"= "<span size='13000' foreground='#18393D'>  </span>{essid}";
           "format-ethernet"= "<span size='13000' foreground='#18393D'>󰤭  </span> Disconnected";
           "format-linked"= "{ifname} (No IP) ";
           "format-disconnected"= "<span size='13000' foreground='#18393D'>  </span>Disconnected";
-          "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%";
+          "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%\n {bandwidthUpBits:>5} {bandwidthDownBits:>5}";
           "interval"= 1;
           "min-length"= 14;
         };
+        "battery"= {
+        	"states"= {
+            		"warning"= 30;
+            		"critical"= 15;
+        	};
+        	"format"= "{icon} {capacity}%";
+        	"format-charging"= "  {capacity}%";
+        	"format-plugged"= " {capacity}%";
+        	"format-alt"= "{time} {icon}";
+        	"format-full"= " ✓ {capacity}%";
+          "format-icons"= ["" "" "" "" ""];
+        };    
         "cpu"= {
           "format"= "󰍛　{usage}%";
           "on-click"= "gnome-system-monitor";
@@ -110,7 +123,7 @@
             @define-color olive #808000;
 
       * {
-          font-family: "MesloLGS Nerd Font";
+          font-family: "MesloLGS Nerd Font","Font Awesome 6 Free";
           font-size: 16px;
           min-height: 0;
           font-weight: bold;
@@ -176,6 +189,7 @@
       #network,
       #mode,
       #language,
+      #battery
       #scratchpad {
         margin-top: 2px;
         margin-bottom: 2px;
@@ -186,6 +200,11 @@
       }
 
       #clock {
+          color: @lime-green;
+          border-bottom: 2px solid @lime-green;
+      }
+
+      #battery {
           color: @lime-green;
           border-bottom: 2px solid @lime-green;
       }
@@ -248,8 +267,6 @@
       #temperature.critical {
           background-color: #eb4d4b;
       }
-
-           
     '';
   };
 }

@@ -14,4 +14,8 @@
     home-manager
   ];
   services.ratbagd.enable = true; # deamon required for piper #
+  environment.sessionVariables = {
+    BROWSER_PASSWORD_STORE = "basic"; # hyprland + brave
+  };
 }
+

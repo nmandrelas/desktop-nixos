@@ -71,50 +71,53 @@
       source = config.lib.file.mkOutOfStoreSymlink dotfiles/backgrounds/my_bgs;
       recursive = true;
     };
-    # ".themes/Material-Black-Blueberry" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
-    #   recursive = true;
-    # };
-    # ".icons/kora-green-1-7-0" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/kora-green-1-7-0;
-    #   recursive = true;
-    # };
-    # ".icons/nordzy" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
-    #   recursive = true;
-    # };
-    # ".icons/OpenZone_Black_Slim" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/OpenZone_Black_Slim;
-    #   recursive = true;
-    # };
+    ".themes/Material-Black-Blueberry" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.themes/Material-Black-Blueberry;
+      recursive = true;
+    };
+    ".icons/kora-green-1-7-0" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/kora-green-1-7-0;
+      recursive = true;
+    };
+    ".icons/nordzy" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/nordzy;
+      recursive = true;
+    };
+    ".icons/OpenZone_Black_Slim" = {
+      source = config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.icons/OpenZone_Black_Slim;
+      recursive = true;
+    };
 
-    # ".local/share/icons/nordzy-frappe-green" = {
-    #   source =
-    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-frappe-green;
-    #   recursive = true;
-    # };
-    # ".local/share/icons/nordzy-latte-green" = {
-    #   source =
-    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-latte-green;
-    #   recursive = true;
-    # };
-    # ".local/share/icons/nordzy-macchiato-green" = {
-    #   source =
-    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-macchiato-green;
-    #   recursive = true;
-    # };
-    # ".local/share/icons/nordzy-mocha-green" = {
-    #   source =
-    #     config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-mocha-green;
-    #   recursive = true;
-    # };
+    ".local/share/icons/nordzy-frappe-green" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-frappe-green;
+      recursive = true;
+    };
+    ".local/share/icons/nordzy-latte-green" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-latte-green;
+      recursive = true;
+    };
+    ".local/share/icons/nordzy-macchiato-green" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-macchiato-green;
+      recursive = true;
+    };
+    ".local/share/icons/nordzy-mocha-green" = {
+      source =
+        config.lib.file.mkOutOfStoreSymlink dotfiles/themes/.local/share/icons/nordzy-mocha-green;
+      recursive = true;
+    };
   };
   programs.git = {
     enable = true;
-    userName = "Naoum Mandrelas";
-    userEmail = "nmandrelas@gmail.com";
-    extraConfig = { init.defaultBranch = "main"; };
-
+    settings = {
+      user = {
+        name = "Naoum Mandrelas";
+        email = "nmandrelas@gmail.com";
+      };
+      extraConfig = { init.defaultBranch = "main"; };
+    };
   };
 
   # Home Manager can also manage your environment variables through
