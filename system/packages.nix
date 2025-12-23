@@ -6,7 +6,6 @@
   ];
   
   environment.systemPackages = [ 
-    pkgs-unstable.vintagestory 
     pkgs.icewm
     pkgs.SDL2
     pkgs.SDL2_ttf
