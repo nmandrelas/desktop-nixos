@@ -88,9 +88,21 @@
 
       };
 
-      homeConfigurations.makys = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./users/makys/home.nix ];
+      homeConfigurations = {
+        dekstop = home-manager.lib.homeManagerConfiguration {
+          specialArgs = {
+            hostType = "dekstop";
+          };
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./users/makys/home.nix ];
+        };
+        laptop = home-manager.lib.homeManagerConfiguration {
+          specialArgs = {
+            hostType = "laptop";
+          };
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./users/makys/home.nix ];
+        };
       };
     };
 }

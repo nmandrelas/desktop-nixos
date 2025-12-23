@@ -1,3 +1,5 @@
+{ config, pkgs,lib, hostType, ... }:
+
 {
   services.hyprpaper={
     enable = true;
@@ -6,10 +8,14 @@
         [ "~/.config/backgrounds/my_bgs/shaded.png" ];
 
       wallpaper = [
+      ]
+      ++ lib.optionals (hostType == "desktop") [
         "DP-3,~/.config/backgrounds/my_bgs/shaded.png"
         "DP-1,~/.config/backgrounds/my_bgs/shaded.png"
+      ]
+      ++ lib.optionals (hostType == "laptop") [
+        "eDP-1,~/.config/backgrounds/my_bgs/shaded.png"
       ];
-
     };
   };
   wayland.windowManager.hyprland = {
@@ -23,8 +29,13 @@
       "$menu" = "wofi --show drun --allow-images --insensitive";
 
       monitor = [
+      ]
+      ++ lib.optionals (hostType == "desktop") [
         "DP-3, 1920x1080x60.00Hz,0x0, 1"
         "DP-1, 2560x1440@164.96Hz, 1920x0, 1"
+      ]
+      ++ lib.optionals (hostType == "laptop") [
+        "eDP-1, 1920x1080x60.00Hz,0x0, 1"
       ];
 
       env = [
