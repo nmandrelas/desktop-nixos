@@ -35,7 +35,7 @@
             tooltip = false;
         };
         "clock" = {
-          "format"= "<span foreground='#21B16B'>{:%a %d %H:%M}";
+          "format"= "<span foreground='#21B16B'>{:%a %d %H:%M}</span>";
           "tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           "min-length"= 18;
         };
