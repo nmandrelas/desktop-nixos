@@ -169,7 +169,14 @@
 
       master = { new_status = true; };
 
-      gestures = { workspace_swipe = false; };
+      gestures = {
+        # 3-finger swipe left → previous workspace
+        gesture = [
+          "3, left, workspace, r-1"
+          # 3-finger swipe right → next workspace
+          "3, right, workspace, r+1"
+        ];
+      };
 
       misc = {
         force_default_wallpaper = -1;
