@@ -189,6 +189,7 @@
       #network,
       #mode,
       #language,
+      #battery
       #scratchpad {
         margin-top: 2px;
         margin-bottom: 2px;
@@ -203,6 +204,11 @@
           border-bottom: 2px solid @lime-green;
       }
 
+      #battery {
+          color: @lime-green;
+          border-bottom: 2px solid @lime-green;
+      }
+      
       #clock.date {
           color: @lime-green;
           border-bottom: 2px solid @lime-green;
