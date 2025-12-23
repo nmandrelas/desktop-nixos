@@ -22,6 +22,7 @@
   ]
   ++ lib.optionals (hostType == "laptop") [
     ./laptop-hardware-configuration.nix
+    ./laptop-graphics.nix
   ];
 
   # Bootloader.
