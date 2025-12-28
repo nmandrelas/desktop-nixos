@@ -107,9 +107,9 @@
       };
 
       homeConfigurations = {
-        dekstop = home-manager.lib.homeManagerConfiguration {
+        desktop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
-            hostType = "dekstop";
+            hostType = "desktop";
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
