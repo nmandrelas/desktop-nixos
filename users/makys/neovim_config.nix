@@ -82,25 +82,32 @@
         desc = "Paste without overwriting clipboard";
       }
       {
-        key = "<leader>xx";
+        key = "<leader>e";
         mode = "n";
         silent = true;
-        action = ":TroubleToggle<CR>";
-        desc = "Toggle Trouble";
+        action = ":lua vim.diagnostic.open_float()<CR>";
+        desc = "Show diagnostics under cursor";
       }
       {
-        key = "<leader>xw";
+        key = "[d";
         mode = "n";
         silent = true;
-        action = ":TroubleToggle workspace_diagnostics<CR>";
-        desc = "Workspace diagnostics";
+        action = ":lua vim.diagnostic.goto_prev()<CR>";
+        desc = "Previous diagnostic";
       }
       {
-        key = "<leader>xd";
+        key = "]d";
         mode = "n";
         silent = true;
-        action = ":TroubleToggle document_diagnostics<CR>";
-        desc = "Document diagnostics";
+        action = ":lua vim.diagnostic.goto_next()<CR>";
+        desc = "Next diagnostic";
+      }
+      {
+        key = "<C-S-f>";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.format()<CR>";
+        desc = "Format document";
       }
       {
         key = "<leader>e";
