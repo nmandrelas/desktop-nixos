@@ -21,10 +21,18 @@
       nixpkgs-unstable,
       nixpkgs-24-11,
       home-manager,
+      nvf,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+
+      customNeovim = nvf.lib.neovimConfiguration {
+        inherit pkgs;
+        modules = [ ./users/makys/neovim_config.nix ];
+      };
+
     in
     {
 
@@ -90,19 +98,25 @@
       };
 
       homeConfigurations = {
-        dekstop = home-manager.lib.homeManagerConfiguration {
+        desktop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
-            hostType = "dekstop";
+            hostType = "desktop";
           };
           pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./users/makys/home.nix ];
+          modules = [
+            { home.packages = [ customNeovim.neovim ]; }
+            ./users/makys/home.nix
+          ];
         };
         laptop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
             hostType = "laptop";
           };
           pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./users/makys/home.nix ];
+          modules = [
+            { home.packages = [ customNeovim.neovim ]; }
+            ./users/makys/home.nix
+          ];
         };
       };
     };

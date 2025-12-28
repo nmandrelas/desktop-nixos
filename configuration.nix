@@ -64,16 +64,15 @@
   services.xserver = {
     enable = true;
 
-    # Enable the GNOME Desktop Environment.aa
-    displayManager = { gdm.enable = true; };
-    desktopManager = { gnome.enable = true; };
-    windowManager = { icewm.enable = true; };
     # Configure keymap in X11
     xkb = {
       layout = "us,gr";
       variant = "";
     };
   };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  
   services.displayManager.autoLogin = {
     # Enable automatic login for the user.
     enable = true;
