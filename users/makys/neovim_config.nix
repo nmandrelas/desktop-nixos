@@ -82,7 +82,7 @@
         desc = "Paste without overwriting clipboard";
       }
       {
-        key = "<leader>e";
+        key = "<leader>ad";
         mode = "n";
         silent = true;
         action = ":lua vim.diagnostic.open_float()<CR>";
