@@ -22,6 +22,7 @@
         lsp.enable = true;
       };
     };
+    filetree.nvimTree.enable = true;
     diagnostics = {
       enable = true;
     };
@@ -98,6 +99,13 @@
         silent = true;
         action = ":TroubleToggle document_diagnostics<CR>";
         desc = "Document diagnostics";
+      }
+      {
+        key = "<leader>e";
+        mode = "n";
+        silent = true;
+        action = ":NvimTreeToggle<CR>";
+        desc = "Toggle file tree";
       }
     ];
   };
