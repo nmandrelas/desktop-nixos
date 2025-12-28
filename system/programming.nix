@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
     vscode # code editor #
     elixir # functional langeuage #
@@ -10,7 +10,6 @@
     yazi # terminal file manager #
     git
     gcc
-    dotnet-sdk
     neofetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
@@ -32,9 +31,21 @@
     networkmanagerapplet
     pstree
     zip
+    unityhub
+    (pkgs.writeShellScriptBin "code" ''
+      exec ${pkgs.vscode}/bin/code "$@"
+    '')
+    pkgs-unstable.dotnet-sdk_9
+    zlib
+    icu
+    openssl
+    nss
+    nspr
+    jetbrains.rider
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
+
   systemd.coredump.enable = true;
 }
