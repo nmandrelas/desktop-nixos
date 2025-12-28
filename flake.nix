@@ -21,6 +21,7 @@
       nixpkgs-unstable,
       nixpkgs-24-11,
       home-manager,
+      nvf,
       ...
     }@inputs:
     let
