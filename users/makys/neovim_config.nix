@@ -21,9 +21,6 @@
     };
     diagnostics = {
       enable = true;
-      trouble = {
-        enable = true;
-      };
     };
     git = {
       enable = true;
@@ -34,6 +31,7 @@
     treesitter.enable = true;
     binds.whichKey.enable = true;
     utility.undotree.enable = true;
+    utility.trouble.enable = true;
     keymaps = [
       {
         key = "<leader>u";
