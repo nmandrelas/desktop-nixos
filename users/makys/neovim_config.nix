@@ -7,17 +7,16 @@
     theme.style = "mocha";
     telescope = { enable = true; };
     globals.mapleader = " ";
+    completion = {
+      enable = true;
+    };
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
     languages = {
       elixir = {
         enable = true;
-        elixir-tools = {
-          enable = true;
-        };
-        treesitter = {
-          enable = true;
-        };
+        elixir-tools.enable = true;
+        treesitter.enable = true;
         format.enable = true;
         lsp.enable = true;
       };
