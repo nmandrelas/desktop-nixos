@@ -168,15 +168,6 @@
 
       master = { new_status = true; };
 
-      gestures = {
-        # 3-finger swipe left → previous workspace
-        gesture = [
-          "3, left, workspace, r-1"
-          # 3-finger swipe right → next workspace
-          "3, right, workspace, r+1"
-        ];
-      };
-
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
@@ -271,6 +262,9 @@
         "ALT SHIFT, A, movetoworkspace, -1"
         "ALT SHIFT, D, movetoworkspace, +1"
 
+        # Laptop
+        ", swipe:3:left, workspace, r-1"
+        ", swipe:3:right, workspace, r+1"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
