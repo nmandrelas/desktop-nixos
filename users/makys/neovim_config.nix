@@ -103,7 +103,7 @@
         desc = "Next diagnostic";
       }
       {
-        key = "<C-S-f>";
+        key = "<leader>af";
         mode = "n";
         silent = true;
         action = ":lua vim.lsp.buf.format()<CR>";
