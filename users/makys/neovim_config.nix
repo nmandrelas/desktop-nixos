@@ -22,6 +22,11 @@
     filetree.nvimTree.enable = true;
     diagnostics = {
       enable = true;
+      config = {
+        virtualText = true;   # inline error text
+        underline = true;     # underline errors
+        updateInInsert = false;
+      };
     };
     git = {
       enable = true;
