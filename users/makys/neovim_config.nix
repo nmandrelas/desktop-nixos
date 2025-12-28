@@ -15,6 +15,9 @@
         elixir-tools = {
           enable = true;
         };
+        treesitter = {
+          enable = true;
+        };
         format.enable = true;
         lsp.enable = true;
       };
