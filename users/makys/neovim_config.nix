@@ -10,6 +10,16 @@
     globals.mapleader = " ";
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
+    languages = {
+      elixir = {
+        enable = true;
+        elixir-tools = {
+          enable = true;
+        };
+        format.enable = true;
+        lsp.enable = true;
+      };
+    };
     treesitter.enable = true;
     binds.whichKey.enable = true;
     utility.undotree.enable = true;
