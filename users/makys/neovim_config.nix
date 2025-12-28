@@ -31,7 +31,7 @@
     treesitter.enable = true;
     binds.whichKey.enable = true;
     utility.undotree.enable = true;
-    utility.trouble.enable = true;
+    lsp.trouble.enable = true;
     keymaps = [
       {
         key = "<leader>u";
