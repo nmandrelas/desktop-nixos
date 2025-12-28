@@ -2,7 +2,6 @@
 
 {
   vim = {
-
     theme.enable = true;
     theme.name = "catppuccin";
     theme.style = "mocha";
@@ -18,6 +17,18 @@
         };
         format.enable = true;
         lsp.enable = true;
+      };
+    };
+    diagnostics = {
+      enable = true;
+      trouble = {
+        enable = true;
+      };
+    };
+    git = {
+      enable = true;
+      gitsigns = {
+        enable = true;
       };
     };
     treesitter.enable = true;
@@ -66,9 +77,27 @@
         action = ''"_dP'';
         desc = "Paste without overwriting clipboard";
       }
-
+      {
+        key = "<leader>xx";
+        mode = "n";
+        silent = true;
+        action = ":TroubleToggle<CR>";
+        desc = "Toggle Trouble";
+      }
+      {
+        key = "<leader>xw";
+        mode = "n";
+        silent = true;
+        action = ":TroubleToggle workspace_diagnostics<CR>";
+        desc = "Workspace diagnostics";
+      }
+      {
+        key = "<leader>xd";
+        mode = "n";
+        silent = true;
+        action = ":TroubleToggle document_diagnostics<CR>";
+        desc = "Document diagnostics";
+      }
     ];
-
   };
-
 }
