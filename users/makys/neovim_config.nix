@@ -7,9 +7,7 @@
     theme.style = "mocha";
     telescope = { enable = true; };
     globals.mapleader = " ";
-    completion = {
-      enable = true;
-    };
+    autocomplete.nvim-cmp.enable = true;
     # You can also enable languages, Treesitter, LSP, etc.
     # vim.languages.nix.enable = true;
     languages = {
