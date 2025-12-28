@@ -28,15 +28,6 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      configModule = {
-        config = {
-          vim = {
-            theme.enable = true;
-            theme.name = "gruvbox";
-            theme.style = "light";
-          };
-        };
-      };
       customNeovim = nvf.lib.neovimConfiguration {
         inherit pkgs;
         modules = [ ./users/makys/neovim_config.nix ];
