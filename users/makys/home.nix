@@ -26,6 +26,14 @@
       };
     };
   };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+
+    withNodeJs = true;
+    withPython3 = true;
+  };
+
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -40,6 +48,7 @@
     nil           # nix LSP (recommended)
     stylua
     wl-clipboard #wayland
+    elixir-ls
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
