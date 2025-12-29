@@ -27,12 +27,6 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-      customNeovim = nvf.lib.neovimConfiguration {
-        inherit pkgs;
-        modules = [ ./users/makys/neovim_config.nix ];
-      };
-
     in
     {
 
@@ -104,7 +98,6 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            { home.packages = [ customNeovim.neovim ]; }
             ./users/makys/home.nix
           ];
         };
@@ -114,7 +107,6 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            { home.packages = [ customNeovim.neovim ]; }
             ./users/makys/home.nix
           ];
         };
