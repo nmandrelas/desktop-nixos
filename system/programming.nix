@@ -1,7 +1,6 @@
 { config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
     vscode # code editor #
-    elixir # functional langeuage #
     erlang # beam vm <3 #
     podman # docker alt -> more features #
     postgresql # psql client#
@@ -36,6 +35,8 @@
       exec ${pkgs.vscode}/bin/code "$@"
     '')
     pkgs-unstable.dotnet-sdk_9
+    pkgs-unstable.elixir-ls
+    pkgs-unstable.elixir
     zlib
     icu
     openssl

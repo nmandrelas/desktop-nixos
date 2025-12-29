@@ -48,7 +48,6 @@
     nil           # nix LSP (recommended)
     stylua
     wl-clipboard #wayland
-    elixir-ls
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
