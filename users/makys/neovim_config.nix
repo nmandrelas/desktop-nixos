@@ -116,6 +116,49 @@
         action = ":NvimTreeToggle<CR>";
         desc = "Toggle file tree";
       }
+      {
+        key = "<leader>gd";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.definition()<CR>";
+        desc = "Go to definition";
+      }
+      {
+        key = "<leader>gD";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.definition({ reuse_win = false })<CR>";
+        desc = "Go to definition (new window)";
+      }
+      {
+        key = "<leader>gr";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.references()<CR>";
+        desc = "Find references";
+      }
+      {
+        key = "<leader>gK";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.hover()<CR>";
+        desc = "Hover documentation";
+      }
+      {
+        key = "<leader>rn";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.rename()<CR>";
+        desc = "Rename symbol";
+      }
+      {
+        key = "<leader>ca";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.buf.code_action()<CR>";
+        desc = "Code action";
+      }
+
     ];
   };
 }
