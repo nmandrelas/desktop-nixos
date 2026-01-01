@@ -48,7 +48,6 @@
     nil           # nix LSP (recommended)
     stylua
     wl-clipboard #wayland
-    stremio
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
