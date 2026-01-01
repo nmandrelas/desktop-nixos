@@ -13,6 +13,5 @@
     pkgs.gdb
     pkgs.gimp
     pkgs-unstable.lutris # Lutris is a video game preservation platform#
-    pkgs-unstable.stremio
   ];
 }
