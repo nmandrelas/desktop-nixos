@@ -10,7 +10,6 @@
     git
     gcc
     python3
-    python2
     neofetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
