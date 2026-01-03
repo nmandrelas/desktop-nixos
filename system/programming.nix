@@ -38,7 +38,7 @@
     '')
     pkgs-unstable.dotnet-sdk_9
     pkgs-unstable.elixir-ls
-    pkgs-unstable.elixir
+    pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
     icu
     openssl
