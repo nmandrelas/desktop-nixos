@@ -15,6 +15,7 @@
     ./system/packages.nix
     ./system/appimage.nix
     ./system/fonts.nix
+    ./system/home_drivers.nix
   ]
   ++ lib.optionals (hostType == "desktop") [
     ./system/graphics.nix
