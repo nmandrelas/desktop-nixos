@@ -30,6 +30,7 @@
     nethogs #network monitoring#
     networkmanager
     networkmanagerapplet
+    blueman
     pstree
     zip
     unityhub
