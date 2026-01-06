@@ -8,13 +8,14 @@
         [ 
           "~/.config/backgrounds/my_bgs/shaded.png"
           "~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
+          "~/.config/backgrounds/my_bgs/alien.jpg"
         ];
 
       wallpaper = [
       ]
       ++ lib.optionals (hostType == "desktop") [
-        "DP-3,~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
-        "DP-1,~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
+        "DP-3,~/.config/backgrounds/my_bgs/alien.jpg"
+        "DP-1,~/.config/backgrounds/my_bgs/alien.jpg"
       ]
       ++ lib.optionals (hostType == "laptop") [
         "eDP-1,~/.config/backgrounds/my_bgs/shaded.png"

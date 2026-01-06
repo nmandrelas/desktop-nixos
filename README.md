@@ -18,3 +18,7 @@ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
 nmcli device wifi list
 
 nmcli device wifi connect "name" password "passwd"
+
+hyprctl hyprpaper preload "~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
+hyprctl hyprpaper wallpaper "DP-3,~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
+hyprctl hyprpaper wallpaper "DP-1,~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
