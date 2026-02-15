@@ -16,6 +16,9 @@
     #audio
     pkgs.usbutils
     pkgs.alsa-utils
+    pkgs.guitarix
+    pkgs.qpwgraph
+
     #end audio
   ];
 }
