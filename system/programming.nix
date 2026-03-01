@@ -46,6 +46,11 @@
     nss
     nspr
     jetbrains.idea-oss
+    #stable diffusion start
+    python310
+    python310Packages.pip
+    cudatoolkit
+    #end
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
