@@ -50,6 +50,7 @@
     python310
     python310Packages.pip
     cudatoolkit
+    python310Packages.virtualenv
     #end
   ];
   environment.sessionVariables = {
