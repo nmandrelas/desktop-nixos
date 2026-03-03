@@ -21,5 +21,8 @@
 
   # Cuda toolkit, TODO disable staff on laptop
   hardware.nvidia-container-toolkit.enable = true;
+  environment.systemPackages = with pkgs; [
+    nvidia-container-toolkit
+  ];
 
 }
