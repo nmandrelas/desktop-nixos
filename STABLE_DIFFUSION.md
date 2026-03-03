@@ -61,3 +61,14 @@ docker exec -it a1111 bash
 
 ### Pull latest image version
 docker pull ghcr.io/ai-dock/stable-diffusion-webui:latest-cuda
+
+# Swarm UI
+docker run -d --name swarmui \
+  --device nvidia.com/gpu=all \
+  -p 7801:7801 \
+  -v ~/stable-diffusion-models:/models \
+  -v ~/stable-diffusion-output:/output \
+  -v ~/stable-diffusion-config/swarmui:/data \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  ghcr.io/mcmonkeyprojects/swarmui:latest-cuda
+  # If no prebuilt image: build from Dockerfile in cloned repo

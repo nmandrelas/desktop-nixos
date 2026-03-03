@@ -2,6 +2,7 @@
   # Docker
   virtualisation.docker = {
     enable = true;
+    daemon.settings.features.cdi = true;
     rootless = {
       enable = false;
       setSocketVariable = true;
