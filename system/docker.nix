@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib,hostType, ... }: {
   # Docker
   virtualisation.docker = {
     enable = true;
@@ -18,4 +18,8 @@
   };
 
   virtualisation.docker.daemon.settings = { data-root = "~/docker"; };
+
+  # Cuda toolkit, TODO disable staff on laptop
+  hardware.nvidia-container-toolkit.enable = true;
+
 }
