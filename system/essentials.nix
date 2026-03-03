@@ -12,6 +12,7 @@
     pavucontrol # Volume control#
     nixfmt-classic # formatter for nix files#
     home-manager
+    wget
   ];
   services.ratbagd.enable = true; # deamon required for piper #
   environment.sessionVariables = {
