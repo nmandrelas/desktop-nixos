@@ -106,6 +106,9 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;    
   
+  # Cuda toolkit
+  hardware.nvidia-container-toolkit.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
