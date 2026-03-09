@@ -63,12 +63,21 @@ docker exec -it a1111 bash
 docker pull ghcr.io/ai-dock/stable-diffusion-webui:latest-cuda
 
 # Swarm UI
+
+## setup
+mkdir -p ~/stable-diffusion/swarmui
+cd ~/stable-diffusion/swarmui
+git clone https://github.com/mcmonkeyprojects/SwarmUI.git .
+./launchtools/launch-standard-docker.sh
 docker run -d --name swarmui \
+  --runtime runc \
   --device nvidia.com/gpu=all \
   -p 7801:7801 \
-  -v ~/stable-diffusion-models:/models \
-  -v ~/stable-diffusion-output:/output \
-  -v ~/stable-diffusion-config/swarmui:/data \
-  -e NVIDIA_VISIBLE_DEVICES=all \
-  ghcr.io/mcmonkeyprojects/swarmui:latest-cuda
-  # If no prebuilt image: build from Dockerfile in cloned repo
+  -v ~/stable-diffusion/swarmui:/app \
+  -v ~/stable-diffusion-models:/app/Models \
+  -v ~/stable-diffusion-output:/app/Models/Output \
+  -v ~/stable-diffusion/swarmui-data:/app/Data \
+  -v ~/stable-diffusion/swarmui-dlbackend:/app/dlbackend \
+  -v ~/stable-diffusion/swarmui-custom_nodes:/app/dlbackend/comfy/ComfyUI/custom_nodes \
+  -v ~/stable-diffusion/swarmui-models-comfy:/app/dlbackend/comfy/ComfyUI/models \
+  swarmui
