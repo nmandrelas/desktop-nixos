@@ -13,7 +13,7 @@
     nixfmt-classic # formatter for nix files#
     home-manager
     wget
-    thunar # file manager #
+    xfce.thunar # file manager #
   ];
   services.ratbagd.enable = true; # deamon required for piper #
   environment.sessionVariables = {
