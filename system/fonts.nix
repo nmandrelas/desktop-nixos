@@ -76,5 +76,8 @@
     nerd-fonts.ubuntu-sans
     nerd-fonts.victor-mono
     nerd-fonts.zed-mono
+    corefonts
+    noto-fonts-cjk-serif
+    liberation_ttf
   ];
 }
