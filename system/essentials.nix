@@ -17,6 +17,7 @@
     xfce.thunar-archive-plugin   # right-click → extract here
     xfce.thunar-volman           # auto-mount removable devices
     gvfs                         # essential for trash, network shares, mounts in Thunar
+    xfce.tumbler # thumbnailer for Thunar #
   ];
   services.ratbagd.enable = true; # deamon required for piper #
   environment.sessionVariables = {
