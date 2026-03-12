@@ -14,6 +14,9 @@
     home-manager
     wget
     xfce.thunar # file manager #
+    xfce.thunar-archive-plugin   # right-click → extract here
+    xfce.thunar-volman           # auto-mount removable devices
+    gvfs                         # essential for trash, network shares, mounts in Thunar
   ];
   services.ratbagd.enable = true; # deamon required for piper #
   environment.sessionVariables = {
