@@ -17,7 +17,6 @@
       };
     };
   };
-  virtualisation.docker.enableNvidia = true;
   virtualisation.docker.daemon.settings = { data-root = "~/docker"; };
 
   # Cuda toolkit, TODO disable staff on laptop
