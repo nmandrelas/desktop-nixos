@@ -33,7 +33,6 @@
     blueman
     pstree
     zip
-    unityhub
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
