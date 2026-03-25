@@ -9,7 +9,6 @@
     };
     daemon.settings = {
       default-runtime = "nvidia";
-      cdi = true;
       runtimes = {
         nvidia = {
           path = "nvidia-container-runtime";
