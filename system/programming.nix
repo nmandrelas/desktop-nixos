@@ -54,12 +54,5 @@
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
-  services.ollama = {
-      enable = true;
-      acceleration = "cuda";          # or "rocm" if AMD, remove if no GPU
-      package = pkgs.ollama-cuda;     # ensures CUDA build
-      # Optional: preload the model we use
-      loadModels = [ "llama3.2" ];
-  };
   systemd.coredump.enable = true;
 }
