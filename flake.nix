@@ -27,12 +27,6 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-      customNeovim = nvf.lib.neovimConfiguration {
-        inherit pkgs;
-        modules = [ ./users/makys/neovim_config.nix ];
-      };
-
     in
     {
 
@@ -48,6 +42,7 @@
                 "dotnet-runtime-7.0.20"
                 "electron-33.4.11"
                 "libxml2-2.13.8"
+                "qtwebengine-5.15.19"
               ];
             };
             nixpkgs-24-11 = import nixpkgs-24-11 {
@@ -57,6 +52,7 @@
                 "dotnet-runtime-7.0.20"
                 "electron-33.4.11"
                 "libxml2-2.13.8"
+                "qtwebengine-5.15.19"
               ];
             };
             inherit inputs system;
@@ -76,6 +72,7 @@
                 "dotnet-runtime-7.0.20"
                 "electron-33.4.11"
                 "libxml2-2.13.8"
+                "qtwebengine-5.15.19"
               ];
             };
             nixpkgs-24-11 = import nixpkgs-24-11 {
@@ -104,7 +101,6 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            { home.packages = [ customNeovim.neovim ]; }
             ./users/makys/home.nix
           ];
         };
@@ -114,7 +110,6 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            { home.packages = [ customNeovim.neovim ]; }
             ./users/makys/home.nix
           ];
         };

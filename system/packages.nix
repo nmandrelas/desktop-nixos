@@ -13,5 +13,12 @@
     pkgs.gdb
     pkgs.gimp
     pkgs-unstable.lutris # Lutris is a video game preservation platform#
+    #audio
+    pkgs.usbutils
+    pkgs.alsa-utils
+    pkgs.guitarix
+    pkgs.qpwgraph
+
+    #end audio
   ];
 }

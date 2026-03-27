@@ -1,7 +1,6 @@
 { config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
     vscode # code editor #
-    elixir # functional langeuage #
     erlang # beam vm <3 #
     podman # docker alt -> more features #
     postgresql # psql client#
@@ -10,6 +9,8 @@
     yazi # terminal file manager #
     git
     gcc
+    python3
+    gnumake
     neofetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
@@ -29,23 +30,29 @@
     nethogs #network monitoring#
     networkmanager
     networkmanagerapplet
+    blueman
     pstree
     zip
-    unityhub
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
     pkgs-unstable.dotnet-sdk_9
+    pkgs-unstable.elixir-ls
+    pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
     icu
     openssl
     nss
     nspr
-    jetbrains.rider
+    jetbrains.idea-oss
+    #stable diffusion start
+    python310
+    python310Packages.pip
+    cudatoolkit
+    #end
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
-
   systemd.coredump.enable = true;
 }

@@ -15,6 +15,7 @@
     ./system/packages.nix
     ./system/appimage.nix
     ./system/fonts.nix
+    ./system/home_drivers.nix
   ]
   ++ lib.optionals (hostType == "desktop") [
     ./system/graphics.nix
@@ -103,7 +104,8 @@
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-
+  services.blueman.enable = true;    
+  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

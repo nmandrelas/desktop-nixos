@@ -4,5 +4,6 @@
   environment.systemPackages =
     [
       nixpkgs-24-11.citrix_workspace # the devil#
+      nixpkgs-24-11.stremio # the devil#
     ];
 }
