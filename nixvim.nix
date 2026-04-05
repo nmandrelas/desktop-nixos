@@ -31,7 +31,7 @@
     enable = true;
 
     settings = {
-      flavour = "mocha"; # latte, frappe, macchiato, mocha
+      flavour = "latte"; # latte, frappe, macchiato, mocha
 
       transparent_background = false;
 
