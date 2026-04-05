@@ -33,7 +33,6 @@
     packages.${system}.default = nixvim.legacyPackages.${system}.makeNixvim {
         pkgs = import nixpkgs { inherit system; };
         module = ./nixvim.nix;
-      };
     };
 
       # nixos - system hostname
