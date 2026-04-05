@@ -26,13 +26,13 @@
       };
     };
   };
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
 
-    withNodeJs = true;
-    withPython3 = true;
-  };
+  #   withNodeJs = true;
+  #   withPython3 = true;
+  # };
 
 
   # The home.packages option allows you to install Nix packages into your
