@@ -29,7 +29,25 @@
   # -------------------------
   colorschemes.catppuccin = {
     enable = true;
-    settings.flavour = "mocha";
+
+    settings = {
+      flavour = "mocha"; # latte, frappe, macchiato, mocha
+
+      transparent_background = false;
+
+      integrations = {
+        telescope = true;
+        which_key = true;
+        gitsigns = true;
+        treesitter = true;
+        cmp = true;
+        notify = true;
+        mini = true;
+        noice = true;
+        neo_tree = true;
+        bufferline = true;
+      };
+    };
   };
 
   plugins = {
