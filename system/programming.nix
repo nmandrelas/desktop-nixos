@@ -50,7 +50,6 @@
     cudatoolkit
     #end
     #dotnet
-    dotnet-sdk_9
     dotnet-sdk_10
     # Debugger
     netcoredbg
