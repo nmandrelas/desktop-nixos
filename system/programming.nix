@@ -36,7 +36,6 @@
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
-    pkgs-unstable.dotnet-sdk_9
     pkgs-unstable.elixir-ls
     pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
@@ -51,6 +50,8 @@
     cudatoolkit
     #end
     #dotnet
+    dotnet-sdk_9
+    dotnet-sdk_10
     # Debugger
     netcoredbg
     # Nice to have
