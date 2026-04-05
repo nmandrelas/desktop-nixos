@@ -50,6 +50,13 @@
     python310Packages.pip
     cudatoolkit
     #end
+    #dotnet
+    # Debugger
+    netcoredbg
+    # Nice to have
+    csharpier          # formatter
+    fantomas           # F# formatter (if needed)
+    #dotnet end
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
