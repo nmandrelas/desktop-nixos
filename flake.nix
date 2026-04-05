@@ -23,6 +23,7 @@
       nixpkgs-24-11,
       home-manager,
       nvf,
+      nixvim,
       ...
     }@inputs:
     let
