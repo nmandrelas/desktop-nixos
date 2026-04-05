@@ -7,6 +7,7 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
+    nixvim.url = "github:nix-community/nixvim";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -29,6 +30,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+    packages.${system}.default = nixvim.legacyPackages.${system}.makeNixvim {
+        pkgs = import nixpkgs { inherit system; };
+        module = ./nixvim.nix;
+      };
+    };
 
       # nixos - system hostname
       nixosConfigurations = {
