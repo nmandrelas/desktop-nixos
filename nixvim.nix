@@ -27,6 +27,7 @@
   # -------------------------
   # UI / Theme
   # -------------------------
+  plugins.web-devicons.enable = true;
   colorschemes.catppuccin = {
     enable = true;
 
@@ -238,7 +239,7 @@
     fsautocomplete
 
     elixir
-    elixir_ls
+    elixir-ls
 
     # Formatters
     stylua
