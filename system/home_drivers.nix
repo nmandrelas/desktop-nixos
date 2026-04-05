@@ -8,6 +8,7 @@
   # Enable CUPS printing
   services.printing = {
     enable = true;
+    browsed.enable = false;
     drivers = with pkgs; [
       epson-escpr          # Main driver for many Epson inkjets (including L32xx series)
       epson-escpr2         # Newer AirPrint/ESC/P-R2 support (recommended to include both)
