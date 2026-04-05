@@ -113,9 +113,6 @@
         elixirls.enable = true;
       };
     };
-    pkgs.csharp-ls.overrideAttrs (old: {
-      version = "0.21.0";  # example version compatible with .NET 9
-    });
     # ---------------------
     # Autocomplete
     # ---------------------
