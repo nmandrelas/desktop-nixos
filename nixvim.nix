@@ -3,6 +3,10 @@
 {
   viAlias = true;
   vimAlias = true;
+  globals = {
+    mapleader = " ";
+    maplocalleader = " ";
+  };
 
   # -------------------------
   # Core options
@@ -19,8 +23,6 @@
     updatetime = 200;
     signcolumn = "yes";
   };
-
-  globals.mapleader = " ";
 
   # -------------------------
   # UI / Theme
