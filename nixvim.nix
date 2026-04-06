@@ -279,7 +279,8 @@
     toggleterm = {
       enable = true;
       settings = {
-        direction = "float";
+        direction = "horizontal";
+        size = 10;
         open_mapping = "[[<c-\\>]]";
       };
     };
@@ -323,6 +324,12 @@
     # Buffers
     { key = "<S-l>"; action = "<cmd>bnext<cr>"; }
     { key = "<S-h>"; action = "<cmd>bprev<cr>"; }
+
+    # Window navigation
+    { key = "<C-h>"; action = "<C-w>h"; }
+    { key = "<C-j>"; action = "<C-w>j"; }
+    { key = "<C-k>"; action = "<C-w>k"; }
+    { key = "<C-l>"; action = "<C-w>l"; }
 
     # LSP
     { key = "gd"; action = "<cmd>lua vim.lsp.buf.definition()<cr>"; }
