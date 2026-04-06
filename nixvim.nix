@@ -99,6 +99,15 @@
             desc = "prev buffer";
           }
           {
+            __unkeyed-1 = "<leader>c";
+            group = "code";
+            icon = "󰘦 ";
+          }
+          {
+            __unkeyed-1 = "<leader>cf";
+            desc = "format";
+          }
+          {
             __unkeyed-1 = "<leader>d";
             group = "debug";
             icon = " ";
@@ -342,13 +351,14 @@
       enable = true;
 
       settings.formatters_by_ft = {
-        lua = [ "stylua" ];
-        python = [ "black" ];
-        javascript = [ "prettier" ];
-        typescript = [ "prettier" ];
-        html = [ "prettier" ];
+        cs = [ "dotnet-format" ];
         css = [ "prettier" ];
         elixir = [ "mix" ];
+        html = [ "prettier" ];
+        javascript = [ "prettier" ];
+        lua = [ "stylua" ];
+        python = [ "black" ];
+        typescript = [ "prettier" ];
       };
     };
 
