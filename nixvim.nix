@@ -107,8 +107,7 @@
         ts_ls.enable = true;
         html.enable = true;
         cssls.enable = true;
-
-        csharp_ls.enable = true;
+        roslyn_ls.enable = true;
         fsautocomplete.enable = true;
         elixirls.enable = true;
       };
@@ -234,7 +233,7 @@
     emmet-ls
 
     dotnet-sdk
-    csharp-ls
+    roslyn-ls
     fsautocomplete
 
     elixir
