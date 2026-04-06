@@ -464,14 +464,14 @@
     { key = "<leader>tt"; action = "<cmd>ToggleTerm<cr>"; }
 
     # Harpoon
-    { key = "<leader>ma"; action = "<cmd>lua require('harpoon.mark').add_file()<cr>"; }
-    { key = "<leader>mm"; action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"; }
-    { key = "<leader>mn"; action = "<cmd>lua require('harpoon.ui').nav_next()<cr>"; }
-    { key = "<leader>mp"; action = "<cmd>lua require('harpoon.ui').nav_prev()<cr>"; }
-    { key = "<leader>m1"; action = "<cmd>lua require('harpoon.ui').nav_file(1)<cr>"; }
-    { key = "<leader>m2"; action = "<cmd>lua require('harpoon.ui').nav_file(2)<cr>"; }
-    { key = "<leader>m3"; action = "<cmd>lua require('harpoon.ui').nav_file(3)<cr>"; }
-    { key = "<leader>m4"; action = "<cmd>lua require('harpoon.ui').nav_file(4)<cr>"; }
+    { key = "<leader>ma"; action = "<cmd>lua require('harpoon'):list():add()<cr>"; }
+    { key = "<leader>mm"; action = "<cmd>lua require('harpoon'):list():select()<cr>"; }
+    { key = "<leader>mn"; action = "<cmd>lua require('harpoon'):list():next()<cr>"; }
+    { key = "<leader>mp"; action = "<cmd>lua require('harpoon'):list():prev()<cr>"; }
+    { key = "<leader>m1"; action = "<cmd>lua require('harpoon'):list():select(1)<cr>"; }
+    { key = "<leader>m2"; action = "<cmd>lua require('harpoon'):list():select(2)<cr>"; }
+    { key = "<leader>m3"; action = "<cmd>lua require('harpoon'):list():select(3)<cr>"; }
+    { key = "<leader>m4"; action = "<cmd>lua require('harpoon'):list():select(4)<cr>"; }
 
     # Todo comments
     { key = "<leader>xt"; action = "<cmd>TodoTelescope<cr>"; }
