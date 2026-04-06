@@ -351,6 +351,8 @@
       enable = true;
 
       settings = {
+        lsp_format = "fallback";
+
         formatters_by_ft = {
           css = [ "prettier" ];
           elixir = [ "mix" ];
