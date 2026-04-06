@@ -366,6 +366,7 @@
           dotnet = {
             command = "dotnet";
             args = [ "format" "--stdin-filepath" "$FILENAME" ];
+            stdin = true;
           };
         };
       };
