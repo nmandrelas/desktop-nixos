@@ -94,6 +94,31 @@
             __unkeyed-1 = "<leader>hn";
             desc = "notification history";
           }
+          {
+            __unkeyed-1 = "<leader>g";
+            group = "git";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>l";
+            group = "lsp";
+            icon = "󰒓 ";
+          }
+          {
+            __unkeyed-1 = "<leader>d";
+            group = "debug";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>t";
+            group = "terminal";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>s";
+            group = "search";
+            icon = " ";
+          }
         ];
       };
     };
@@ -122,6 +147,7 @@
     # Git
     # ---------------------
     gitsigns.enable = true;
+    fugitive.enable = true;
 
     # ---------------------
     # Treesitter
@@ -248,6 +274,22 @@
     noice.enable = true;
 
     # ---------------------
+    # Terminal
+    # ---------------------
+    toggleterm = {
+      enable = true;
+      settings = {
+        direction = "float";
+        open_mapping = "[[<c-\\>]]";
+      };
+    };
+
+    # ---------------------
+    # Diagnostics
+    # ---------------------
+    trouble.enable = true;
+
+    # ---------------------
     # Notifications
     # ---------------------
     notify.enable = true;
@@ -292,6 +334,34 @@
 
     # Git
     { key = "<leader>gs"; action = "<cmd>Gitsigns preview_hunk<cr>"; }
+    { key = "<leader>gg"; action = "<cmd>Git<cr>"; }
+    { key = "<leader>gc"; action = "<cmd>Git commit<cr>"; }
+    { key = "<leader>gp"; action = "<cmd>Git push<cr>"; }
+
+    # LSP
+    { key = "<leader>ld"; action = "<cmd>lua vim.lsp.buf.definition()<cr>"; }
+    { key = "<leader>lr"; action = "<cmd>lua vim.lsp.buf.references()<cr>"; }
+    { key = "<leader>la"; action = "<cmd>lua vim.lsp.buf.code_action()<cr>"; }
+    { key = "<leader>lf"; action = "<cmd>lua vim.lsp.buf.format()<cr>"; }
+    { key = "<leader>ln"; action = "<cmd>lua vim.lsp.buf.rename()<cr>"; }
+
+    # Debug
+    { key = "<leader>db"; action = "<cmd>lua require('dap').toggle_breakpoint()<cr>"; }
+    { key = "<leader>dc"; action = "<cmd>lua require('dap').continue()<cr>"; }
+    { key = "<leader>ds"; action = "<cmd>lua require('dap').step_over()<cr>"; }
+    { key = "<leader>di"; action = "<cmd>lua require('dap').step_into()<cr>"; }
+
+    # Terminal
+    { key = "<leader>tt"; action = "<cmd>ToggleTerm<cr>"; }
+
+    # Search
+    { key = "<leader>sf"; action = "<cmd>Telescope find_files<cr>"; }
+    { key = "<leader>sg"; action = "<cmd>Telescope live_grep<cr>"; }
+    { key = "<leader>sb"; action = "<cmd>Telescope buffers<cr>"; }
+    { key = "<leader>sh"; action = "<cmd>Telescope help_tags<cr>"; }
+
+    # Diagnostics
+    { key = "<leader>xx"; action = "<cmd>Trouble diagnostics toggle<cr>"; }
 
     # History
     { key = "<leader>hn"; action = "<cmd>Noice telescope<cr>"; }
