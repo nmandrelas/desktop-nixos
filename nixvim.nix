@@ -115,9 +115,17 @@
             icon = " ";
           }
           {
-            __unkeyed-1 = "<leader>s";
-            group = "search";
-            icon = " ";
+            __unkeyed-1 = "<leader>b";
+            group = "buffer";
+            icon = "󰈏 ";
+          }
+          {
+            __unkeyed-1 = "<leader>bn";
+            desc = "next buffer";
+          }
+          {
+            __unkeyed-1 = "<leader>bp";
+            desc = "prev buffer";
           }
         ];
       };
@@ -322,14 +330,17 @@
     { key = "<leader>fb"; action = "<cmd>Telescope buffers<cr>"; }
 
     # Buffers
-    { key = "<S-l>"; action = "<cmd>bnext<cr>"; }
-    { key = "<S-h>"; action = "<cmd>bprev<cr>"; }
+    { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
+    { key = "<leader>bp"; action = "<cmd>bprev<cr>"; }
 
     # Window navigation
-    { key = "<C-h>"; action = "<C-w>h"; }
-    { key = "<C-j>"; action = "<C-w>j"; }
-    { key = "<C-k>"; action = "<C-w>k"; }
-    { key = "<C-l>"; action = "<C-w>l"; }
+    { key = "<S-h>"; action = "<C-w>h"; }
+    { key = "<S-j>"; action = "<C-w>j"; }
+    { key = "<S-k>"; action = "<C-w>k"; }
+    { key = "<S-l>"; action = "<C-w>l"; }
+
+    # Terminal escape
+    { key = "<Esc>"; action = "<C-\\><C-n>"; mode = "t"; }
 
     # LSP
     { key = "gd"; action = "<cmd>lua vim.lsp.buf.definition()<cr>"; }
