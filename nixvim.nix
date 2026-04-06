@@ -119,9 +119,71 @@
             icon = " ";
           }
           {
+            __unkeyed-1 = "<leader>m";
+            group = "marks";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>x";
+            group = "todo";
+            icon = " ";
+          }
+          {
             __unkeyed-1 = "<leader>t";
             group = "terminal";
             icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>du";
+            desc = "toggle dap ui";
+          }
+          {
+            __unkeyed-1 = "<leader>dr";
+            desc = "dap repl";
+          }
+          {
+            __unkeyed-1 = "<leader>do";
+            desc = "step out";
+          }
+          {
+            __unkeyed-1 = "<leader>ma";
+            desc = "harpoon add";
+          }
+          {
+            __unkeyed-1 = "<leader>mm";
+            desc = "harpoon menu";
+          }
+          {
+            __unkeyed-1 = "<leader>mn";
+            desc = "harpoon next";
+          }
+          {
+            __unkeyed-1 = "<leader>mp";
+            desc = "harpoon prev";
+          }
+          {
+            __unkeyed-1 = "<leader>m1";
+            desc = "harpoon file 1";
+          }
+          {
+            __unkeyed-1 = "<leader>m2";
+            desc = "harpoon file 2";
+          }
+          {
+            __unkeyed-1 = "<leader>m3";
+            desc = "harpoon file 3";
+          }
+          {
+            __unkeyed-1 = "<leader>m4";
+            desc = "harpoon file 4";
+          }
+          {
+            __unkeyed-1 = "<leader>xt";
+            desc = "todo telescope";
+          }
+          {
+            __unkeyed-1 = "<leader>xo";
+            desc = "todo quickfix";
           }
           {
             __unkeyed-1 = "<leader>b";
@@ -286,6 +348,16 @@
     dap-ui.enable = true;
 
     # ---------------------
+    # Harpoon
+    # ---------------------
+    harpoon.enable = true;
+
+    # ---------------------
+    # Todo Comments
+    # ---------------------
+    todo-comments.enable = true;
+
+    # ---------------------
     # Better UI (Noice)
     # ---------------------
     noice.enable = true;
@@ -380,9 +452,26 @@
     { key = "<leader>dc"; action = "<cmd>lua require('dap').continue()<cr>"; }
     { key = "<leader>ds"; action = "<cmd>lua require('dap').step_over()<cr>"; }
     { key = "<leader>di"; action = "<cmd>lua require('dap').step_into()<cr>"; }
+    { key = "<leader>do"; action = "<cmd>lua require('dap').step_out()<cr>"; }
+    { key = "<leader>dr"; action = "<cmd>lua require('dap').repl.open()<cr>"; }
+    { key = "<leader>du"; action = "<cmd>lua require('dapui').toggle()<cr>"; }
 
     # Terminal
     { key = "<leader>tt"; action = "<cmd>ToggleTerm<cr>"; }
+
+    # Harpoon
+    { key = "<leader>ma"; action = "<cmd>lua require('harpoon.mark').add_file()<cr>"; }
+    { key = "<leader>mm"; action = "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>"; }
+    { key = "<leader>mn"; action = "<cmd>lua require('harpoon.ui').nav_next()<cr>"; }
+    { key = "<leader>mp"; action = "<cmd>lua require('harpoon.ui').nav_prev()<cr>"; }
+    { key = "<leader>m1"; action = "<cmd>lua require('harpoon.ui').nav_file(1)<cr>"; }
+    { key = "<leader>m2"; action = "<cmd>lua require('harpoon.ui').nav_file(2)<cr>"; }
+    { key = "<leader>m3"; action = "<cmd>lua require('harpoon.ui').nav_file(3)<cr>"; }
+    { key = "<leader>m4"; action = "<cmd>lua require('harpoon.ui').nav_file(4)<cr>"; }
+
+    # Todo comments
+    { key = "<leader>xt"; action = "<cmd>TodoTelescope<cr>"; }
+    { key = "<leader>xo"; action = "<cmd>TodoQuickFix<cr>"; }
 
     # Search
     { key = "<leader>sf"; action = "<cmd>Telescope find_files<cr>"; }
