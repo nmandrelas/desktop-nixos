@@ -58,21 +58,6 @@
     # ---------------------
     which-key = {
       enable = true;
-      settings = {
-        preset = "modern";
-        spec = [
-          {
-            __unkeyed-1 = "<leader>h";
-            group = "history";
-            icon = "󰄉 ";
-          }
-          {
-            __unkeyed-1 = "<leader>hn";
-            __unkeyed-2 = "<cmd>Noice telescope<cr>";
-            desc = "notification history";
-          }
-        ];
-      };
     };
 
     # ---------------------
