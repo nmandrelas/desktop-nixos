@@ -202,8 +202,33 @@
           }
           {
             __unkeyed-1 = "<leader>t";
+            group = "test";
+            icon = "󰙨 ";
+          }
+          {
+            __unkeyed-1 = "<leader>tt";
+            desc = "run nearest";
+          }
+          {
+            __unkeyed-1 = "<leader>tf";
+            desc = "run file";
+          }
+          {
+            __unkeyed-1 = "<leader>ts";
+            desc = "summary";
+          }
+          {
+            __unkeyed-1 = "<leader>td";
+            desc = "debug nearest";
+          }
+          {
+            __unkeyed-1 = "<leader>T";
             group = "terminal";
             icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>Tt";
+            desc = "Toggle Terminal";
           }
           {
             __unkeyed-1 = "<leader>w";
@@ -384,6 +409,26 @@
     dap.enable = true;
     dap-ui.enable = true;
 
+    dap.adapters = {
+      netcoredbg = {
+        type = "executable";
+        command = "netcoredbg";
+        args = [ "--interpreter=vscode" ];
+      };
+    };
+
+    dap.configurations = {
+      cs = [
+        {
+          name = "launch - netcoredbg";
+          type = "netcoredbg";
+          request = "launch";
+          program = "\${workspaceFolder}/bin/Debug/net8.0/Test.dll";
+          cwd = "\${workspaceFolder}";
+        }
+      ];
+    };
+
     # ---------------------
     # Harpoon
     # ---------------------
@@ -397,6 +442,14 @@
     # Todo Comments
     # ---------------------
     todo-comments.enable = true;
+
+    # ---------------------
+    # Testing (Neotest)
+    # ---------------------
+    neotest = {
+      enable = true;
+      adapters.dotnet.enable = true;
+    };
 
     # ---------------------
     # Better UI (Noice)
@@ -496,8 +549,13 @@
     { key = "<leader>dr"; action = "<cmd>lua require('dap').repl.open()<cr>"; }
     { key = "<leader>du"; action = "<cmd>lua require('dapui').toggle()<cr>"; }
 
+    # Test
+    { key = "<leader>tf"; action = "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>"; }
+    { key = "<leader>ts"; action = "<cmd>lua require('neotest').summary.toggle()<cr>"; }
+    { key = "<leader>td"; action = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>"; }
+
     # Terminal
-    { key = "<leader>tt"; action = "<cmd>ToggleTerm<cr>"; }
+    { key = "<leader>Tt"; action = "<cmd>ToggleTerm<cr>"; }
 
     # Harpoon
     { key = "<leader>ma"; action = "<cmd>lua require('harpoon'):list():add()<cr>"; }
@@ -551,6 +609,7 @@
     nodePackages.prettier
 
     # Debuggers
+    netcoredbg
     delve # (Go example, can extend)
   ];
 }
