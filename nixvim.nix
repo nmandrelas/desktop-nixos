@@ -409,26 +409,6 @@
     dap.enable = true;
     dap-ui.enable = true;
 
-    dap.adapters = {
-      netcoredbg = {
-        type = "executable";
-        command = "netcoredbg";
-        args = [ "--interpreter=vscode" ];
-      };
-    };
-
-    dap.configurations = {
-      cs = [
-        {
-          name = "launch - netcoredbg";
-          type = "netcoredbg";
-          request = "launch";
-          program = "\${workspaceFolder}/bin/Debug/net8.0/Test.dll";
-          cwd = "\${workspaceFolder}";
-        }
-      ];
-    };
-
     # ---------------------
     # Harpoon
     # ---------------------
