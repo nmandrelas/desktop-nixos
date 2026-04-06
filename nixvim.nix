@@ -350,7 +350,7 @@
     # ---------------------
     # Harpoon
     # ---------------------
-    harpoon{
+    harpoon = {
       enable = true;
       enableTelescope = true;
       autoLoad = true;
