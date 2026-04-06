@@ -58,6 +58,44 @@
     # ---------------------
     which-key = {
       enable = true;
+      replace = {
+        desc = [
+          [
+            "<space>"
+            "SPACE"
+          ]
+          [
+            "<leader>"
+            "SPACE"
+          ]
+          [
+            "<[cC][rR]>"
+            "RETURN"
+          ]
+          [
+            "<[tT][aA][bB]>"
+            "TAB"
+          ]
+          [
+            "<[bB][sS]>"
+            "BACKSPACE"
+          ]
+        ];
+      };
+      settings = {
+        preset = "modern";
+        spec = [
+          {
+            __unkeyed-1 = "<leader>h";
+            group = "history";
+            icon = "󰄉 ";
+          }
+          {
+            __unkeyed-1 = "<leader>hn";
+            desc = "notification history";
+          }
+        ];
+      };
     };
 
     # ---------------------
