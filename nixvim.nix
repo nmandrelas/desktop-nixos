@@ -86,6 +86,57 @@
         preset = "modern";
         spec = [
           {
+            __unkeyed-1 = "<leader>b";
+            group = "buffer";
+            icon = "󰈏 ";
+          }
+          {
+            __unkeyed-1 = "<leader>bn";
+            desc = "next buffer";
+          }
+          {
+            __unkeyed-1 = "<leader>bp";
+            desc = "prev buffer";
+          }
+          {
+            __unkeyed-1 = "<leader>d";
+            group = "debug";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>db";
+            desc = "toggle breakpoint";
+          }
+          {
+            __unkeyed-1 = "<leader>dc";
+            desc = "continue";
+          }
+          {
+            __unkeyed-1 = "<leader>di";
+            desc = "step into";
+          }
+          {
+            __unkeyed-1 = "<leader>do";
+            desc = "step out";
+          }
+          {
+            __unkeyed-1 = "<leader>dr";
+            desc = "dap repl";
+          }
+          {
+            __unkeyed-1 = "<leader>ds";
+            desc = "step over";
+          }
+          {
+            __unkeyed-1 = "<leader>du";
+            desc = "toggle dap ui";
+          }
+          {
+            __unkeyed-1 = "<leader>g";
+            group = "git";
+            icon = " ";
+          }
+          {
             __unkeyed-1 = "<leader>h";
             group = "history";
             icon = "󰄉 ";
@@ -99,67 +150,14 @@
             desc = "undo tree";
           }
           {
-            __unkeyed-1 = "<leader>g";
-            group = "git";
-            icon = " ";
-          }
-          {
-            __unkeyed-1 = "<leader>w";
-            group = "window";
-            icon = "󰙯 ";
-          }
-          {
             __unkeyed-1 = "<leader>l";
             group = "lsp";
             icon = "󰒓 ";
           }
           {
-            __unkeyed-1 = "<leader>d";
-            group = "debug";
-            icon = " ";
-          }
-          {
             __unkeyed-1 = "<leader>m";
             group = "marks";
             icon = " ";
-          }
-          {
-            __unkeyed-1 = "<leader>x";
-            group = "todo";
-            icon = " ";
-          }
-          {
-            __unkeyed-1 = "<leader>t";
-            group = "terminal";
-            icon = " ";
-          }
-          {
-            __unkeyed-1 = "<leader>du";
-            desc = "toggle dap ui";
-          }
-          {
-            __unkeyed-1 = "<leader>dr";
-            desc = "dap repl";
-          }
-          {
-            __unkeyed-1 = "<leader>do";
-            desc = "step out";
-          }
-          {
-            __unkeyed-1 = "<leader>ma";
-            desc = "harpoon add";
-          }
-          {
-            __unkeyed-1 = "<leader>mm";
-            desc = "harpoon menu";
-          }
-          {
-            __unkeyed-1 = "<leader>mn";
-            desc = "harpoon next";
-          }
-          {
-            __unkeyed-1 = "<leader>mp";
-            desc = "harpoon prev";
           }
           {
             __unkeyed-1 = "<leader>m1";
@@ -178,25 +176,43 @@
             desc = "harpoon file 4";
           }
           {
+            __unkeyed-1 = "<leader>ma";
+            desc = "harpoon add";
+          }
+          {
+            __unkeyed-1 = "<leader>mm";
+            desc = "harpoon menu";
+          }
+          {
+            __unkeyed-1 = "<leader>mn";
+            desc = "harpoon next";
+          }
+          {
+            __unkeyed-1 = "<leader>mp";
+            desc = "harpoon prev";
+          }
+          {
+            __unkeyed-1 = "<leader>t";
+            group = "terminal";
+            icon = " ";
+          }
+          {
+            __unkeyed-1 = "<leader>w";
+            group = "window";
+            icon = "󰙯 ";
+          }
+          {
+            __unkeyed-1 = "<leader>x";
+            group = "todo";
+            icon = " ";
+          }
+          {
             __unkeyed-1 = "<leader>xt";
             desc = "todo telescope";
           }
           {
             __unkeyed-1 = "<leader>xo";
             desc = "todo quickfix";
-          }
-          {
-            __unkeyed-1 = "<leader>b";
-            group = "buffer";
-            icon = "󰈏 ";
-          }
-          {
-            __unkeyed-1 = "<leader>bn";
-            desc = "next buffer";
-          }
-          {
-            __unkeyed-1 = "<leader>bp";
-            desc = "prev buffer";
           }
         ];
       };
@@ -407,13 +423,12 @@
   # -------------------------
   keymaps = [
 
-    # File
+    # File & Search
     { key = "<leader>e"; action = "<cmd>Neotree toggle<cr>"; }
-
-    # Telescope
     { key = "<leader>ff"; action = "<cmd>Telescope find_files<cr>"; }
     { key = "<leader>fg"; action = "<cmd>Telescope live_grep<cr>"; }
     { key = "<leader>fb"; action = "<cmd>Telescope buffers<cr>"; }
+    { key = "<leader>fh"; action = "<cmd>Telescope help_tags<cr>"; }
 
     # Buffers
     { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
@@ -477,11 +492,6 @@
     { key = "<leader>xt"; action = "<cmd>TodoTelescope<cr>"; }
     { key = "<leader>xo"; action = "<cmd>TodoQuickFix<cr>"; }
 
-    # Search
-    { key = "<leader>sf"; action = "<cmd>Telescope find_files<cr>"; }
-    { key = "<leader>sg"; action = "<cmd>Telescope live_grep<cr>"; }
-    { key = "<leader>sb"; action = "<cmd>Telescope buffers<cr>"; }
-    { key = "<leader>sh"; action = "<cmd>Telescope help_tags<cr>"; }
 
     # Window commands
     { key = "<leader>-"; action = "<cmd>split<cr>"; }
