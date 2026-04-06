@@ -351,7 +351,7 @@
       enable = true;
 
       settings.formatters_by_ft = {
-        cs = [ "dotnet-format" ];
+        cs = [ "dotnet" ];
         css = [ "prettier" ];
         elixir = [ "mix" ];
         html = [ "prettier" ];
