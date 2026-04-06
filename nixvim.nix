@@ -517,5 +517,11 @@
 
     # Debuggers
     delve # (Go example, can extend)
+
+    # Neovim plugins required by the runtime config
+    vimPlugins.harpoon
+    vimPlugins.todo-comments-nvim
+    vimPlugins.nvim-dap
+    vimPlugins.nvim-dap-ui
   ];
 }
