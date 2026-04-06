@@ -95,6 +95,10 @@
             desc = "notification history";
           }
           {
+            __unkeyed-1 = "<leader>hu";
+            desc = "undo tree";
+          }
+          {
             __unkeyed-1 = "<leader>g";
             group = "git";
             icon = " ";
@@ -297,6 +301,7 @@
     # Diagnostics
     # ---------------------
     trouble.enable = true;
+    undotree.enable = true;
 
     # ---------------------
     # Notifications
@@ -332,6 +337,8 @@
     # Buffers
     { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
     { key = "<leader>bp"; action = "<cmd>bprev<cr>"; }
+    { key = "<C-h>"; action = "<cmd>bprev<cr>"; }
+    { key = "<C-l>"; action = "<cmd>bnext<cr>"; }
 
     # Window navigation
     { key = "<S-h>"; action = "<C-w>h"; }
@@ -383,6 +390,7 @@
 
     # History
     { key = "<leader>hn"; action = "<cmd>Noice telescope<cr>"; }
+    { key = "<leader>hu"; action = "<cmd>UndotreeToggle<cr>"; }
   ];
 
   # -------------------------
