@@ -352,7 +352,6 @@
 
       settings = {
         formatters_by_ft = {
-          cs = [ "dotnet" ];
           css = [ "prettier" ];
           elixir = [ "mix" ];
           html = [ "prettier" ];
