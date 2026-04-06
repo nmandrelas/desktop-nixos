@@ -56,7 +56,24 @@
     # ---------------------
     # Which-key (LazyVim core UX)
     # ---------------------
-    which-key.enable = true;
+    which-key = {
+      enable = true;
+      settings = {
+        preset = "modern";
+        spec = [
+          {
+            __unkeyed-1 = "<leader>h";
+            group = "history";
+            icon = "󰄉 ";
+          }
+          {
+            __unkeyed-1 = "<leader>hn";
+            action = "<cmd>Noice telescope<cr>";
+            desc = "notification history";
+          }
+        ];
+      };
+    };
 
     # ---------------------
     # Telescope
@@ -252,6 +269,9 @@
 
     # Git
     { key = "<leader>gs"; action = "<cmd>Gitsigns preview_hunk<cr>"; }
+
+    # History
+    { key = "<leader>hn"; action = "<cmd>Noice telescope<cr>"; }
   ];
 
   # -------------------------
