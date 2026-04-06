@@ -68,7 +68,7 @@
           }
           {
             __unkeyed-1 = "<leader>hn";
-            action = "<cmd>Noice telescope<cr>";
+            __unkeyed-2 = "<cmd>Noice telescope<cr>";
             desc = "notification history";
           }
         ];
