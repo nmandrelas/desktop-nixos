@@ -104,6 +104,11 @@
             icon = " ";
           }
           {
+            __unkeyed-1 = "<leader>w";
+            group = "window";
+            icon = "󰙯 ";
+          }
+          {
             __unkeyed-1 = "<leader>l";
             group = "lsp";
             icon = "󰒓 ";
@@ -337,14 +342,14 @@
     # Buffers
     { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
     { key = "<leader>bp"; action = "<cmd>bprev<cr>"; }
-    { key = "<C-h>"; action = "<cmd>bprev<cr>"; }
-    { key = "<C-l>"; action = "<cmd>bnext<cr>"; }
+    { key = "<S-h>"; action = "<cmd>bprev<cr>"; }
+    { key = "<S-l>"; action = "<cmd>bnext<cr>"; }
 
     # Window navigation
-    { key = "<S-h>"; action = "<C-w>h"; }
-    { key = "<S-j>"; action = "<C-w>j"; }
-    { key = "<S-k>"; action = "<C-w>k"; }
-    { key = "<S-l>"; action = "<C-w>l"; }
+    { key = "<C-h>"; action = "<C-w>h"; }
+    { key = "<C-j>"; action = "<C-w>j"; }
+    { key = "<C-k>"; action = "<C-w>k"; }
+    { key = "<C-l>"; action = "<C-w>l"; }
 
     # Terminal escape
     { key = "<Esc>"; action = "<C-\\><C-n>"; mode = "t"; }
@@ -384,6 +389,11 @@
     { key = "<leader>sg"; action = "<cmd>Telescope live_grep<cr>"; }
     { key = "<leader>sb"; action = "<cmd>Telescope buffers<cr>"; }
     { key = "<leader>sh"; action = "<cmd>Telescope help_tags<cr>"; }
+
+    # Window commands
+    { key = "<leader>-"; action = "<cmd>split<cr>"; }
+    { key = "<leader>|"; action = "<cmd>vsplit<cr>"; }
+    { key = "<leader>wd"; action = "<cmd>close<cr>"; }
 
     # Diagnostics
     { key = "<leader>xx"; action = "<cmd>Trouble diagnostics toggle<cr>"; }
