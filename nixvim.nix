@@ -350,15 +350,24 @@
     conform-nvim = {
       enable = true;
 
-      settings.formatters_by_ft = {
-        cs = [ "dotnet" ];
-        css = [ "prettier" ];
-        elixir = [ "mix" ];
-        html = [ "prettier" ];
-        javascript = [ "prettier" ];
-        lua = [ "stylua" ];
-        python = [ "black" ];
-        typescript = [ "prettier" ];
+      settings = {
+        formatters_by_ft = {
+          cs = [ "dotnet" ];
+          css = [ "prettier" ];
+          elixir = [ "mix" ];
+          html = [ "prettier" ];
+          javascript = [ "prettier" ];
+          lua = [ "stylua" ];
+          python = [ "black" ];
+          typescript = [ "prettier" ];
+        };
+
+        formatters = {
+          dotnet = {
+            command = "dotnet";
+            args = [ "format" "--stdin-filepath" "$FILENAME" ];
+          };
+        };
       };
     };
 
