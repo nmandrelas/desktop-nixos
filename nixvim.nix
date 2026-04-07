@@ -505,7 +505,7 @@
     { key = "K"; action = "<cmd>lua vim.lsp.buf.hover()<cr>"; }
 
     # Format
-    { key = "<leader>cf"; action = "<cmd>lua require('conform').format()<cr>"; }
+    { key = "<leader>cf"; action = "<cmd>lua vim.lsp.buf.format()<cr>"; }
 
     # Git
     { key = "<leader>gs"; action = "<cmd>Gitsigns preview_hunk<cr>"; }
