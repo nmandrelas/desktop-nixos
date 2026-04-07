@@ -118,7 +118,7 @@
           }
           {
             __unkeyed-1 = "<leader>dc";
-            desc = "continue";
+            desc = "Launch/continue";
           }
           {
             __unkeyed-1 = "<leader>di";
@@ -406,7 +406,33 @@
     # ---------------------
     # Debugging (DAP)
     # ---------------------
-    dap.enable = true;
+    dap = {
+      enable = true;
+
+      adapters = {
+        executables = {
+          coreclr = {
+            command = "netcoredbg";
+            args = [ "--interpreter=vscode" ];
+          };
+        };
+      };
+
+      configurations = {
+        cs = [
+          {
+            type = "coreclr";
+            name = "Launch .NET project";
+            request = "launch";
+            program = ''
+              function()
+                return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+              end
+            '';
+          }
+        ];
+      };
+    };    
     dap-virtual-text.enable = true;
     dap-ui.enable = true;
     dap-go.enable = true;
