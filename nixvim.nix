@@ -406,7 +406,43 @@
     # ---------------------
     # Debugging (DAP)
     # ---------------------
-    dap.enable = true;
+    dap = {
+      enable = true;
+
+      adapters = {
+        executables = {
+          delve = {
+            command = "dlv";
+            args = [ "dap" "-l" "127.0.0.1:${port}" ];
+          };
+        };
+      };
+
+      configurations = {
+        go = [
+          {
+            type = "delve";
+            name = "Debug";
+            request = "launch";
+            program = "${workspaceFolder}";
+          }
+          {
+            type = "delve";
+            name = "Debug file";
+            request = "launch";
+            program = "${file}";
+          }
+          {
+            type = "delve";
+            name = "Debug test";
+            request = "launch";
+            mode = "test";
+            program = "${file}";
+          }
+        ];
+      };
+    };
+    dap-virtual-text.enable = true;
     dap-ui.enable = true;
 
     # ---------------------
