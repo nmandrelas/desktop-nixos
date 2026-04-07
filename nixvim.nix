@@ -406,33 +406,7 @@
     # ---------------------
     # Debugging (DAP)
     # ---------------------
-    dap = {
-      enable = true;
-
-      adapters = {
-        executables = {
-          coreclr = {
-            command = "netcoredbg";
-            args = [ "--interpreter=vscode" ];
-          };
-        };
-      };
-
-      configurations = {
-        cs = [
-          {
-            type = "coreclr";
-            name = "Launch .NET project";
-            request = "launch";
-            program = ''
-              function()
-                return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-              end
-            '';
-          }
-        ];
-      };
-    };    
+    dap.enable = true;
     dap-virtual-text.enable = true;
     dap-ui.enable = true;
     dap-go.enable = true;
