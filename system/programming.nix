@@ -57,6 +57,7 @@
     csharpier          # formatter
     fantomas           # F# formatter (if needed)
     #dotnet end
+    go
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";

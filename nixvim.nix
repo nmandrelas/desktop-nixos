@@ -298,7 +298,7 @@
       servers = {
         lua_ls.enable = true;
         pyright.enable = true;
-
+        gopls.enable = true;
         ts_ls.enable = true;
         html.enable = true;
         cssls.enable = true;
