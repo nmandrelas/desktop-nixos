@@ -36,7 +36,6 @@
     (pkgs.writeShellScriptBin "code" ''
       exec ${pkgs.vscode}/bin/code "$@"
     '')
-    pkgs-unstable.dotnet-sdk_9
     pkgs-unstable.elixir-ls
     pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
@@ -50,6 +49,15 @@
     python310Packages.pip
     cudatoolkit
     #end
+    #dotnet
+    dotnet-sdk_10
+    # Debugger
+    netcoredbg
+    # Nice to have
+    csharpier          # formatter
+    fantomas           # F# formatter (if needed)
+    #dotnet end
+    go
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
