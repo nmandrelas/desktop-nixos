@@ -486,6 +486,34 @@
     { key = "<leader>fb"; action = "<cmd>Telescope buffers<cr>"; }
     { key = "<leader>fh"; action = "<cmd>Telescope help_tags<cr>"; }
 
+    # File saving
+    {
+      key = "<C-s>";
+      action = "<cmd>w<CR>";
+      mode = "n";
+      options.desc = "Save file";
+    }
+    {
+      key = "<C-S-s>";
+      action = "<cmd>wa<CR>";
+      mode = "n";
+      options.desc = "Save all files";
+    }
+
+    # System clipboard (works like in browsers)
+    {
+      key = "<C-c>";
+      action = ''"+y'';
+      mode = [ "n" "v" ];
+      options.desc = "Copy to system clipboard";
+    }
+    {
+      key = "<C-p>";
+      action = ''"+p'';
+      mode = "n";
+      options.desc = "Paste from system clipboard";
+    }
+
     # Buffers
     { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
     { key = "<leader>bp"; action = "<cmd>bprev<cr>"; }
