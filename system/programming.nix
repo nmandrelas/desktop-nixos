@@ -58,6 +58,7 @@
     fantomas           # F# formatter (if needed)
     #dotnet end
     go
+    claude-code
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
