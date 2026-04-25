@@ -59,7 +59,7 @@
     #dotnet end
     go
     claude-code
-    antigravity
+    pkgs-unstable.antigravity
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
