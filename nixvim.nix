@@ -424,7 +424,7 @@
     # Todo Comments
     # ---------------------
     todo-comments.enable = true;
-
+    markview.enable = true;
     # ---------------------
     # Testing (Neotest)
     # ---------------------
@@ -564,8 +564,9 @@
     { key = "<leader>ts"; action = "<cmd>lua require('neotest').summary.toggle()<cr>"; }
     { key = "<leader>td"; action = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>"; }
 
-    # Terminal
-    { key = "<leader>Tt"; action = "<cmd>ToggleTerm<cr>"; }
+    # Toggle
+    { key = "<leader>Tt"; action = "<cmd>ToggleTerm<cr>"; } #Terminal
+    { key = "<leader>Tm"; action = "<cmd>Markview Toggle<cr>"; } 
 
     # Harpoon
     { key = "<leader>ma"; action = "<cmd>lua require('harpoon'):list():add()<cr>"; }
