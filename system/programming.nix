@@ -1,6 +1,5 @@
 { config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
-    vscode # code editor #
     erlang # beam vm <3 #
     podman # docker alt -> more features #
     postgresql # psql client#
@@ -33,9 +32,6 @@
     blueman
     pstree
     zip
-    (pkgs.writeShellScriptBin "code" ''
-      exec ${pkgs.vscode}/bin/code "$@"
-    '')
     pkgs-unstable.elixir-ls
     pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
