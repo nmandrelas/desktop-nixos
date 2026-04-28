@@ -131,6 +131,13 @@
   #execute non nix executables#
   #https://github.com/nix-community/nix-ld#
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add common libraries extensions often need
+    stdenv.cc.cc
+    openssl
+    zlib
+    curl
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
