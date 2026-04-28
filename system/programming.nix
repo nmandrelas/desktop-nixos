@@ -60,6 +60,7 @@
     go
     claude-code
     pkgs-unstable.antigravity
+    pgadmin4-desktopmode
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
