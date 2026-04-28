@@ -15,6 +15,9 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
   # enable fonts
   fonts = {
     fontconfig = {

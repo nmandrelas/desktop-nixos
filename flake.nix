@@ -107,7 +107,7 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            nixvim.homeManagerModules.nixvim   # 👈 ADD THIS LINE
+            nixvim.homeManagerModules.nixvim
             ./users/makys/home.nix
           ];
         };
