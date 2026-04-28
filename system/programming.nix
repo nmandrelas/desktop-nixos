@@ -58,9 +58,9 @@
     fantomas           # F# formatter (if needed)
     #dotnet end
     go
-    claude-code
     pkgs-unstable.antigravity
     pgadmin4-desktopmode
+    pkgs-unstable.opencode
   ];
   environment.sessionVariables = {
     DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
