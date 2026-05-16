@@ -44,7 +44,7 @@
     # Use the FHS version so Continue's internal binaries can run
     package = pkgs.vscode-fhs; 
     
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       # Continue extension from nixpkgs
       continue.continue
       
