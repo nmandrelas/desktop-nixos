@@ -619,7 +619,7 @@
     # LSPs
     lua-language-server
     pyright
-    nodePackages.typescript-language-server
+    typescript-language-server
     vscode-langservers-extracted
     emmet-ls
 
@@ -633,7 +633,7 @@
     # Formatters
     stylua
     black
-    nodePackages.prettier
+    prettier
 
     # Debuggers
     netcoredbg
