@@ -53,7 +53,7 @@
       github.copilot # If you use it alongside Continue
     ];
 
-    userSettings = {
+    profiles.default.userSettings = {
       "editor.fontSize" = 14;
       "terminal.integrated.fontFamily" = "MesloLGS Nerd Font Mono";
       "continue.telemetryEnabled" = false;
