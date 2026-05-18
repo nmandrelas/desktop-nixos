@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
   # Enable OpenGL
-  hardware.graphics = { enable = true; };
+  hardware.graphics = { 
+    enable = true;
+    enable32Bit = true; 
+  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
