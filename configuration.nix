@@ -125,6 +125,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Skip openldap's flaky syncreplication test (test017) which fails
+  # non-deterministically in Nix's sandboxed build environment due to timing.
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: {
+        doCheck = false;
+      });
+    })
+  ];
+
   programs.dconf.enable = true;
 
   #execute non nix executables#
