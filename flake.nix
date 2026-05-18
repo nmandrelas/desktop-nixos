@@ -54,13 +54,11 @@
               # Nix's sandbox; skip it so lutris (which depends on openldap) builds.
               overlays = [
                 (final: prev: {
-                  openldap = prev.openldap.overrideAttrs (old: {
+                  openldap = prev.openldap.overrideAttrs (_: {
                     doCheck = false;
                     checkPhase = "";
                     preCheck = "";
                     postCheck = "";
-                    # Tests are driven via makeFlags in some nixpkgs versions
-                    makeFlags = (old.makeFlags or []) ++ [ "SUBDIRS=include libraries servers clients" ];
                   });
                 })
               ];
