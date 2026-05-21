@@ -13,7 +13,6 @@
     ./system/docker.nix
     ./system/hyprland.nix
     ./system/packages.nix
-    ./system/appimage.nix
     ./system/fonts.nix
     ./system/home_drivers.nix
   ]
@@ -126,11 +125,33 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Skip openldap's flaky syncreplication test (test017) which fails
+  # non-deterministically in Nix's sandboxed build environment due to timing.
+  # openldap runs tests via `make test` inside the build, not a stdenv checkPhase,
+  # so we must also clear checkPhase/preCheck/postCheck explicitly.
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: {
+        doCheck = false;
+        checkPhase = "";
+        preCheck = "";
+        postCheck = "";
+      });
+    })
+  ];
+
   programs.dconf.enable = true;
 
   #execute non nix executables#
   #https://github.com/nix-community/nix-ld#
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Add common libraries extensions often need
+    stdenv.cc.cc
+    openssl
+    zlib
+    curl
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

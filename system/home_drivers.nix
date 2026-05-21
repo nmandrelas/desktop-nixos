@@ -19,7 +19,7 @@
   # For Wi-Fi discovery and mDNS (very important for wireless Epson printers)
   services.avahi = {
     enable = true;
-    nssmdns = true;        # .local resolution
+    nssmdns4 = true;        # .local resolution
     openFirewall = true;
     publish = {
       enable = true;

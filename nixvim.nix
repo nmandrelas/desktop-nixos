@@ -260,8 +260,24 @@
     # ---------------------
     # File explorer
     # ---------------------
-    neo-tree.enable = true;
-
+    neo-tree = {
+      enable = true;
+      settings = {
+        close_if_last_window = true;
+        filesystem = {
+          follow_current_file = {
+              enabled = true;
+              leave_dirs_open = true;
+          };
+          filtered_items = {
+            visible = true;
+            hide_dotfiles = false;
+            hide_gitignored = true;
+          };
+        };
+      };
+    };
+    
     # ---------------------
     # Bufferline (tabs)
     # ---------------------
@@ -424,7 +440,7 @@
     # Todo Comments
     # ---------------------
     todo-comments.enable = true;
-
+    markview.enable = true;
     # ---------------------
     # Testing (Neotest)
     # ---------------------
@@ -486,6 +502,34 @@
     { key = "<leader>fb"; action = "<cmd>Telescope buffers<cr>"; }
     { key = "<leader>fh"; action = "<cmd>Telescope help_tags<cr>"; }
 
+    # File saving
+    {
+      key = "<C-s>";
+      action = "<cmd>w<CR>";
+      mode = "n";
+      options.desc = "Save file";
+    }
+    {
+      key = "<C-S-s>";
+      action = "<cmd>wa<CR>";
+      mode = "n";
+      options.desc = "Save all files";
+    }
+
+    # System clipboard (works like in browsers)
+    {
+      key = "<C-c>";
+      action = ''"+y'';
+      mode = [ "n" "v" ];
+      options.desc = "Copy to system clipboard";
+    }
+    {
+      key = "<C-p>";
+      action = ''"+p'';
+      mode = "n";
+      options.desc = "Paste from system clipboard";
+    }
+
     # Buffers
     { key = "<leader>bn"; action = "<cmd>bnext<cr>"; }
     { key = "<leader>bp"; action = "<cmd>bprev<cr>"; }
@@ -536,8 +580,9 @@
     { key = "<leader>ts"; action = "<cmd>lua require('neotest').summary.toggle()<cr>"; }
     { key = "<leader>td"; action = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>"; }
 
-    # Terminal
-    { key = "<leader>Tt"; action = "<cmd>ToggleTerm<cr>"; }
+    # Toggle
+    { key = "<leader>Tt"; action = "<cmd>ToggleTerm<cr>"; } #Terminal
+    { key = "<leader>Tm"; action = "<cmd>Markview Toggle<cr>"; } 
 
     # Harpoon
     { key = "<leader>ma"; action = "<cmd>lua require('harpoon'):list():add()<cr>"; }
@@ -574,7 +619,7 @@
     # LSPs
     lua-language-server
     pyright
-    nodePackages.typescript-language-server
+    typescript-language-server
     vscode-langservers-extracted
     emmet-ls
 
@@ -588,7 +633,7 @@
     # Formatters
     stylua
     black
-    nodePackages.prettier
+    prettier
 
     # Debuggers
     netcoredbg

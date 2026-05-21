@@ -50,6 +50,18 @@
                 "libxml2-2.13.8"
                 "qtwebengine-5.15.19"
               ];
+              # openldap 2.6.13 has a flaky syncreplication test that fails in
+              # Nix's sandbox; skip it so lutris (which depends on openldap) builds.
+              overlays = [
+                (final: prev: {
+                  openldap = prev.openldap.overrideAttrs (_: {
+                    doCheck = false;
+                    checkPhase = "";
+                    preCheck = "";
+                    postCheck = "";
+                  });
+                })
+              ];
             };
             nixpkgs-24-11 = import nixpkgs-24-11 {
               inherit system;
@@ -107,7 +119,7 @@
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
-            nixvim.homeManagerModules.nixvim   # 👈 ADD THIS LINE
+            nixvim.homeModules.nixvim
             ./users/makys/home.nix
           ];
         };

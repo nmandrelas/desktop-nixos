@@ -81,3 +81,18 @@ docker run -d --name swarmui \
   -v ~/stable-diffusion/swarmui-custom_nodes:/app/dlbackend/comfy/ComfyUI/custom_nodes \
   -v ~/stable-diffusion/swarmui-models-comfy:/app/dlbackend/comfy/ComfyUI/models \
   swarmui
+
+# Gemma 4
+## Insall 
+docker run -d \
+  --name ollama-gemma4 \
+  --runtime runc\
+  --device nvidia.com/gpu=all\
+  -p 11434:11434 \
+  -v ollama:/root/.ollama \
+  ollama/ollama
+
+docker exec -it ollama-gemma4 ollama pull gemma4:e4b
+
+## Interact
+docker exec -it ollama-gemma4 ollama run gemma4:e4b

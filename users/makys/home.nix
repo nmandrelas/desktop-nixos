@@ -15,6 +15,9 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
   # enable fonts
   fonts = {
     fontconfig = {
@@ -35,15 +38,27 @@
     ];
   };
 
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
+  # --- VS Code Configuration ---
+  programs.vscode = {
+    enable = true;
+    # Use the FHS version so Continue's internal binaries can run
+    package = pkgs.vscode-fhs; 
+    
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      # Continue extension from nixpkgs
+      continue.continue
+      
+      # Recommended extras for your stack
+      jnoortheen.nix-ide
+      github.copilot # If you use it alongside Continue
+    ];
 
-  #   withNodeJs = true;
-  #   withPython3 = true;
-  # };
-
-
+    profiles.default.userSettings = {
+      "editor.fontSize" = 14;
+      "terminal.integrated.fontFamily" = "MesloLGS Nerd Font Mono";
+      "continue.telemetryEnabled" = false;
+    };
+  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages  = with pkgs; [
