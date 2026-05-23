@@ -11,6 +11,7 @@
         margin-right = 16;
 
         modules-left = [
+          "custom/launcher"
           "hyprland/workspaces"
           "hyprland/submap"
           "hyprland/window"
@@ -29,6 +30,14 @@
           "hyprland/language"
           "clock"
         ];
+
+        "custom/launcher" = {
+          format = "~";
+          on-click = "wofi --show drun";
+          on-click-right = "hyprctl dispatch workspace empty";
+          tooltip = true;
+          tooltip-format = "Left-click: Open Menu\nRight-click: New Workspace";
+        };
 
         "hyprland/workspaces" = {
           format = "{name}";
@@ -185,6 +194,23 @@
 
       .modules-center {
         padding: 0;
+      }
+
+      /* ================================================================
+         Launcher
+      ================================================================ */
+      #custom-launcher {
+        color: #11111b;
+        background: linear-gradient(135deg, @lime-green 0%, @medium-aqua 100%);
+        border-radius: 12px;
+        margin: 4px 0px 4px 8px;
+        padding: 0 16px;
+        font-weight: 900;
+        font-size: 18px;
+        transition: all 0.2s ease;
+      }
+      #custom-launcher:hover {
+        box-shadow: 0 0 14px rgba(33, 177, 107, 0.45);
       }
 
       /* ================================================================
