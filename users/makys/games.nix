@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   home.packages = [
     pkgs-unstable.vintagestory
   ];
