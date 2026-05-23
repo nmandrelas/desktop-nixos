@@ -6,7 +6,7 @@
         layer = "top";
         position = "top";
         margin-top = 4;
-        margin-bottom = 0;
+        margin-bottom = -8;
         margin-left = 16;
         margin-right = 16;
 
@@ -151,7 +151,7 @@
       ================================================================ */
       * {
         font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 600;
         min-height: 0;
         border: none;
@@ -192,7 +192,7 @@
       #workspaces {
         background: rgba(24, 57, 61, 0.28);
         border-radius: 12px;
-        margin: 3px 4px 3px 8px;
+        margin: 4px 4px 4px 8px;
         padding: 0 4px;
       }
 
@@ -200,9 +200,9 @@
         color: @text-muted;
         background: transparent;
         border-radius: 8px;
-        padding: 3px 9px;
-        margin: 2px 2px;
-        min-width: 28px;
+        padding: 4px 11px;
+        margin: 3px 2px;
+        min-width: 32px;
         transition: all 0.2s ease;
       }
 
@@ -235,9 +235,9 @@
       ================================================================ */
       #window {
         color: rgba(180, 215, 195, 0.65);
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 400;
-        margin: 3px 4px;
+        margin: 4px 4px;
         padding: 0 10px;
         border-radius: 8px;
       }
@@ -261,8 +261,8 @@
         color: @lime-green;
         background: rgba(33, 177, 107, 0.13);
         border-radius: 14px;
-        padding: 4px 16px;
-        margin: 3px 8px 3px 3px;
+        padding: 5px 18px;
+        margin: 4px 8px 4px 3px;
         font-weight: bold;
         letter-spacing: 0.4px;
         text-shadow: 0 0 10px rgba(33, 177, 107, 0.35);
@@ -289,8 +289,8 @@
         background: @module-bg;
         border-radius: 10px;
         color: @lime-green;
-        padding: 4px 10px;
-        margin: 3px 3px;
+        padding: 5px 12px;
+        margin: 4px 3px;
         transition: all 0.22s ease;
       }
 
@@ -373,7 +373,7 @@
          Tray
       ================================================================ */
       #tray {
-        padding: 4px 10px;
+        padding: 5px 12px;
       }
 
       #tray > .passive {
