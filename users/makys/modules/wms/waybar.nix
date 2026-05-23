@@ -7,7 +7,7 @@
         position = "top";
         margin-top = 4;
         margin-bottom = 4;
-        margin-left = 16;
+        margin-left = 0;
         margin-right = 16;
 
         modules-left = [
