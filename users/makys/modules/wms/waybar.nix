@@ -76,13 +76,13 @@
         "cpu" = {
           format   = "󰍛  {usage}%";
           interval = 2;
-          on-click = "kitty -e htop";
+          on-click = "kitty -e btop";
         };
 
         "memory" = {
           format         = "󰍛 {percentage}%";
           tooltip-format = "{used:0.1f} GiB / {total:0.1f} GiB";
-          on-click       = "kitty -e htop";
+          on-click       = "kitty -e btop";
         };
 
         "hyprland/language" = {
@@ -111,9 +111,9 @@
             default    = [ "󰕿" "󰖀" "󰕾" ];
           };
           on-click       = "pavucontrol";
-          on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-          on-scroll-up   = "pactl set-sink-volume @DEFAULT_SINK@ +5%";
-          on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -5%";
+          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-scroll-up   = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         };
 
         # ── Microphone ────────────────────────────────────────────────────
@@ -121,9 +121,9 @@
           format               = "{format_source}";
           format-source        = "󰍬  {volume}%";
           format-source-muted  = "󰍭  muted";
-          on-click       = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
-          on-scroll-up   = "pactl set-source-volume @DEFAULT_SOURCE@ +5%";
-          on-scroll-down = "pactl set-source-volume @DEFAULT_SOURCE@ -5%";
+          on-click       = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          on-scroll-up   = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-";
         };
 
       };

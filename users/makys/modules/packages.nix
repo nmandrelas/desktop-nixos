@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   home.packages = [
     pkgs.hyprpaper
+    pkgs.btop
+    pkgs.htop
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
