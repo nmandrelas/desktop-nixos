@@ -5,267 +5,405 @@
       mainBar = {
         layer = "top";
         position = "top";
+        margin-top = 8;
+        margin-left = 16;
+        margin-right = 16;
 
         modules-left = [
           "hyprland/workspaces"
-          "hyprland/window"
           "hyprland/submap"
+          "hyprland/window"
         ];
-        modules-center = [ 
+        modules-center = [
+          "clock"
+        ];
+        modules-right = [
+          "temperature"
+          "memory"
+          "cpu"
+          "network"
+          "battery"
+          "pulseaudio"
+          "pulseaudio#microphone"
+          "hyprland/language"
           "tray"
         ];
-        modules-right =
-          [ 
-            "temperature"
-            "memory"
-            "cpu"
-            "network"
-            "battery"
-            "pulseaudio"
-            "hyprland/language"            
-            "clock" 
-          ];
+
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          format-icons = {
+            active  = "";
+            default = "󰧟";
+            urgent  = "";
+          };
+          on-scroll-up   = "hyprctl dispatch workspace e+1";
+          on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
+
+        "hyprland/window" = {
+          max-length = 60;
+          separate-outputs = true;
+        };
 
         "temperature" = {
-            # thermal-zone = 2;
-            # hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
-            critical-threshold = 80;
-            # format-critical = "{temperatureC}°C {icon}";
-            format = "{icon} {temperatureC}°C";
-            format-icons = ["" "" "" "" ""];
-            tooltip = false;
+          critical-threshold = 80;
+          format = "{icon} {temperatureC}°C";
+          format-icons = [ "" "" "" "" "" ];
+          tooltip = false;
         };
+
         "clock" = {
-          "format"= "<span foreground='#21B16B'>{:%a %d %H:%M}</span>";
-          "tooltip-format"= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "min-length"= 14;
+          format         = "  {:%a %d %b   %H:%M}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
+
         "network" = {
-          "format-wifi"= "<span size='13000' foreground='#18393D'>  </span>{essid}";
-          "format-ethernet"= "<span size='13000' foreground='#18393D'>󰤭  </span> Disconnected";
-          "format-linked"= "{ifname} (No IP) ";
-          "format-disconnected"= "<span size='13000' foreground='#18393D'>  </span>Disconnected";
-          "tooltip-format-wifi"= "Signal Strenght: {signalStrength}%\n {bandwidthUpBits:>5} {bandwidthDownBits:>5}";
-          "interval"= 1;
-          "min-length"= 14;
+          format-wifi        = "  {essid}";
+          format-ethernet    = "󰈀  {ifname}";
+          format-linked      = "  {ifname} (No IP)";
+          format-disconnected = "󰤭  Disconnected";
+          tooltip-format-wifi = "Signal: {signalStrength}%\n↑ {bandwidthUpBits}  ↓ {bandwidthDownBits}";
+          interval   = 1;
+          on-click   = "kitty -e nmtui";
         };
-        "battery"= {
-        	"states"= {
-            		"warning"= 30;
-            		"critical"= 15;
-        	};
-        	"format"= "{icon} {capacity}%";
-        	"format-charging"= "  {capacity}%";
-        	"format-plugged"= " {capacity}%";
-        	"format-alt"= "{time} {icon}";
-        	"format-full"= " ✓ {capacity}%";
-          "format-icons"= ["" "" "" "" ""];
-        };    
-        "cpu"= {
-          "format"= "󰍛　{usage}%";
-          "on-click"= "gnome-system-monitor";
-        };
-        "memory"= {
-          "format"= "　{}%";
-          "on-click"= "gnome-system-monitor";
-        };
-        "hyprland/language"= {
-          "format"= "󰌌　{short}";
-          "min-length"= 6;
-        };
-        "tray"= {
-          "icon-size"= 21;
-          "spacing"= 10;
-          "min-length"= 32;
-        };
-        "pulseaudio"= {
-          # scroll-step = 1; # %, can be a float
-          reverse-scrolling = 1;
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
-          format-icons = {
-              headphone = "";
-              hands-free = "";
-              headset = "";
-              phone = "";
-              portable = "";
-              car = "";
-              default = ["" "" ""];
+
+        "battery" = {
+          states = {
+            warning  = 30;
+            critical = 15;
           };
-          on-click = "pavucontrol";
-          min-length = 13;
+          format          = "{icon}  {capacity}%";
+          format-charging = "  {capacity}%";
+          format-plugged  = "  {capacity}%";
+          format-full     = "  Full";
+          format-icons    = [ "" "" "" "" "" ];
+        };
+
+        "cpu" = {
+          format   = "󰍛  {usage}%";
+          interval = 2;
+          on-click = "kitty -e htop";
+        };
+
+        "memory" = {
+          format         = "  {percentage}%";
+          tooltip-format = "{used:0.1f} GiB / {total:0.1f} GiB";
+          on-click       = "kitty -e htop";
+        };
+
+        "hyprland/language" = {
+          format     = "󰌌  {short}";
+          min-length = 6;
+        };
+
+        "tray" = {
+          icon-size = 18;
+          spacing   = 8;
+        };
+
+        # ── Speakers ──────────────────────────────────────────────────────
+        "pulseaudio" = {
+          scroll-step      = 5;
+          reverse-scrolling = 1;
+          format           = "{icon}  {volume}%";
+          format-bluetooth = "󰂰  {volume}%";
+          format-bluetooth-muted = "󰂲";
+          format-muted     = "󰝟  muted";
+          format-icons = {
+            headphone  = "󰋋";
+            hands-free = "󱠰";
+            headset    = "󰋎";
+            phone      = "󰏲";
+            portable   = "󰏲";
+            car        = "󰄋";
+            default    = [ "󰕿" "󰖀" "󰕾" ];
+          };
+          on-click       = "pavucontrol";
+          on-click-right = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          on-scroll-up   = "pactl set-sink-volume @DEFAULT_SINK@ +5%";
+          on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        };
+
+        # ── Microphone ────────────────────────────────────────────────────
+        "pulseaudio#microphone" = {
+          format               = "{format_source}";
+          format-source        = "  {volume}%";
+          format-source-muted  = "  muted";
+          on-click       = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+          on-scroll-up   = "pactl set-source-volume @DEFAULT_SOURCE@ +5%";
+          on-scroll-down = "pactl set-source-volume @DEFAULT_SOURCE@ -5%";
         };
 
       };
     };
 
     style = ''
-            @define-color lime-green #21B16B;
-            @define-color green #137B55;
-            @define-color background #121F1B;
-            @define-color dark-green #184D3E;
-            @define-color yellow-green #B2C689;
-            @define-color dark-teal #18393D;
-            @define-color light-sea-green #1E575E;
-            @define-color sea-green #228B22;
-            @define-color teal #379098;
-            @define-color brown #5D4B3C;
-            @define-color overlay2 #9399b2;
-            @define-color overlay1 #7f849c;
-            @define-color overlay0 #6c7086;
-            @define-color crust #11111b;
-            @define-color danger #742C54;
-            @define-color medium-aquamarine #66CDAA;
-            @define-color olive #808000;
+      /* ================================================================
+         Color Palette
+      ================================================================ */
+      @define-color lime-green   #21B16B;
+      @define-color medium-aqua  #66CDAA;
+      @define-color green        #137B55;
+      @define-color dark-green   #184D3E;
+      @define-color teal         #18393D;
+      @define-color crust        #11111b;
+      @define-color text-muted   rgba(127, 132, 156, 0.85);
+      @define-color module-bg    rgba(24, 57, 61, 0.40);
+      @define-color danger       #f38ba8;
+      @define-color warning-col  #f9e2af;
 
+      /* ================================================================
+         Base Reset
+      ================================================================ */
       * {
-          font-family: "MesloLGS Nerd Font","Font Awesome 6 Free";
-          font-size: 16px;
-          min-height: 0;
-          font-weight: bold;
+        font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        min-height: 0;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
       }
 
+      /* ================================================================
+         Bar — Floating Pill
+      ================================================================ */
       window#waybar {
-          background: transparent;
-          background-color: @crust;
-          color: @lime-green;
-          transition-property: background-color;
-          transition-duration: 0.1s;
-          border-bottom: 3px solid @dark-teal;
+        background: rgba(17, 17, 27, 0.88);
+        border-radius: 16px;
+        border: 1px solid rgba(33, 177, 107, 0.22);
+        box-shadow:
+          0 4px 32px rgba(0, 0, 0, 0.55),
+          0 0 0 1px rgba(33, 177, 107, 0.06) inset;
+        color: @lime-green;
+        transition: background 0.3s ease;
       }
 
-      #window {
-          margin: 8px 8px 8px 40px;
-          padding-left: 8px;
-          padding-right: 8px;
+      /* ================================================================
+         Section padding
+      ================================================================ */
+      .modules-left,
+      .modules-right {
+        padding: 0 4px;
       }
 
-      button {
-          box-shadow: inset 0 -3px transparent;
-          border: none;
-          border-radius: 0;
+      .modules-center {
+        padding: 0;
       }
 
-      button:hover {
-          background: inherit;
-          color: @sea-green;
-          border-top: 2px solid @sea-green;
+      /* ================================================================
+         Workspaces
+      ================================================================ */
+      #workspaces {
+        background: rgba(24, 57, 61, 0.28);
+        border-radius: 12px;
+        margin: 5px 4px 5px 8px;
+        padding: 0 4px;
       }
 
       #workspaces button {
-          padding: 0 4px;
+        color: @text-muted;
+        background: transparent;
+        border-radius: 8px;
+        padding: 3px 9px;
+        margin: 2px 2px;
+        min-width: 28px;
+        transition: all 0.2s ease;
       }
 
-      #workspaces button.focused {
-          background-color: rgba(0, 0, 0, 0.3);
-          color: @sea-green;
-          border-top: 2px solid @sea-green;
+      #workspaces button:hover {
+        color: @medium-aqua;
+        background: rgba(102, 205, 170, 0.10);
       }
 
       #workspaces button.active {
-          background-color: rgba(0, 0, 0, 0.3);
-          color: @lime-green;
-          border-top: 2px solid @lime-green;
+        color: #11111b;
+        background: linear-gradient(135deg, @lime-green 0%, @medium-aqua 100%);
+        border-radius: 8px;
+        box-shadow: 0 0 14px rgba(33, 177, 107, 0.45);
+        font-weight: bold;
       }
 
       #workspaces button.urgent {
-          background-color: @olive;
+        color: @danger;
+        background: rgba(243, 139, 168, 0.18);
+        animation: pulse-urgent 1.2s ease infinite alternate;
       }
 
-      #pulseaudio,
-      #clock,
+      @keyframes pulse-urgent {
+        from { box-shadow: 0 0 4px rgba(243, 139, 168, 0.3); }
+        to   { box-shadow: 0 0 12px rgba(243, 139, 168, 0.7); }
+      }
+
+      /* ================================================================
+         Window Title
+      ================================================================ */
+      #window {
+        color: rgba(180, 215, 195, 0.65);
+        font-size: 12px;
+        font-weight: 400;
+        margin: 5px 4px;
+        padding: 0 10px;
+        border-radius: 8px;
+      }
+
+      /* ================================================================
+         Submap badge
+      ================================================================ */
+      #submap {
+        color: @warning-col;
+        background: rgba(249, 226, 175, 0.12);
+        border-radius: 8px;
+        padding: 3px 10px;
+        margin: 5px 4px;
+        font-size: 11px;
+      }
+
+      /* ================================================================
+         Clock (center)
+      ================================================================ */
+      #clock {
+        color: @lime-green;
+        background: rgba(33, 177, 107, 0.13);
+        border-radius: 14px;
+        padding: 5px 18px;
+        margin: 5px 0;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+        text-shadow: 0 0 10px rgba(33, 177, 107, 0.35);
+        transition: all 0.25s ease;
+      }
+
+      #clock:hover {
+        background: rgba(33, 177, 107, 0.20);
+        box-shadow: 0 0 12px rgba(33, 177, 107, 0.25);
+      }
+
+      /* ================================================================
+         Right-side modules — shared capsule style
+      ================================================================ */
+      #temperature,
+      #memory,
+      #cpu,
+      #network,
       #battery,
+      #pulseaudio,
+      #pulseaudio.microphone,
+      #language,
+      #tray {
+        background: @module-bg;
+        border-radius: 10px;
+        color: @lime-green;
+        padding: 5px 11px;
+        margin: 5px 3px;
+        transition: all 0.22s ease;
+      }
+
+      #temperature:hover,
+      #memory:hover,
+      #cpu:hover,
+      #network:hover,
+      #battery:hover,
+      #pulseaudio:hover,
+      #language:hover {
+        background: rgba(24, 57, 61, 0.62);
+        color: @medium-aqua;
+        box-shadow: 0 0 10px rgba(33, 177, 107, 0.18);
+      }
+
+      /* ================================================================
+         Per-module accent colors
+      ================================================================ */
       #cpu,
       #memory,
-      #disk,
-      #temperature,
-      #backlight,
-      #wireplumber,
-      #tray,
-      #network,
-      #mode,
-      #language,
-      #battery
-      #scratchpad {
-        margin-top: 2px;
-        margin-bottom: 2px;
-        margin-left: 4px;
-        margin-right: 4px;
-        padding-left: 4px;
-        padding-right: 4px;
-      }
-
-      #clock {
-          color: @lime-green;
-          border-bottom: 2px solid @lime-green;
-      }
-
-      #battery {
-          color: @lime-green;
-          border-bottom: 2px solid @lime-green;
-      }
-
-      #clock.date {
-          color: @lime-green;
-          border-bottom: 2px solid @lime-green;
-      }
-
-      #language{
-          color: @lime-green;
-          border-bottom: 2px solid @lime-green;
-      }
-
-      #pulseaudio {
-          color: @lime-green;
-          border-bottom: 2px solid @lime-green;
-      }
-      #cpu,
-      #memory{
-          color: @sea-green;
-          border-bottom: 2px solid @sea-green;
-      }
-      #network {
-          color: @sea-green;
-          border-bottom: 2px solid @sea-green;
-      }
-
-      #idle_inhibitor {
-          margin-right: 12px;
-          color: #7cb342;
-      }
-
-      #idle_inhibitor.activated {
-          color: @red;
-      }
-
-      /* If workspaces is the leftmost module, omit left margin */
-      .modules-left>widget:first-child>#workspaces {
-          margin-left: 0;
-      }
-
-      /* If workspaces is the rightmost module, omit right margin */
-      .modules-right>widget:last-child>#workspaces {
-          margin-right: 0;
-      }
-
-      #custom-vpn {
-          color: @olive;
-          border-radius: 15px;
-          padding-left: 6px;
-          padding-right: 6px;
-      }
-
       #temperature {
-        border-bottom: 2px solid @sea-green;
-        color: @sea-green;
+        color: @medium-aqua;
       }
 
+      /* Network */
+      #network {
+        color: @lime-green;
+      }
+
+      #network.disconnected {
+        color: @danger;
+        background: rgba(243, 139, 168, 0.10);
+      }
+
+      /* Battery */
+      #battery.warning:not(.charging) {
+        color: @warning-col;
+        background: rgba(249, 226, 175, 0.10);
+      }
+
+      #battery.critical:not(.charging) {
+        color: @danger;
+        background: rgba(243, 139, 168, 0.12);
+        animation: battery-blink 1s steps(1) infinite;
+      }
+
+      @keyframes battery-blink {
+        50% { opacity: 0.45; }
+      }
+
+      /* Temperature critical */
       #temperature.critical {
-          background-color: #eb4d4b;
+        color: @danger;
+        background: rgba(243, 139, 168, 0.14);
+        box-shadow: 0 0 10px rgba(243, 139, 168, 0.28);
+      }
+
+      /* Pulseaudio — speakers */
+      #pulseaudio.muted {
+        color: @text-muted;
+        background: rgba(127, 132, 156, 0.10);
+      }
+
+      /* Pulseaudio — microphone */
+      #pulseaudio.microphone {
+        color: @medium-aqua;
+      }
+
+      #pulseaudio.microphone.muted {
+        color: @text-muted;
+        background: rgba(127, 132, 156, 0.10);
+      }
+
+      /* Language */
+      #language {
+        font-size: 12px;
+      }
+
+      /* ================================================================
+         Tray
+      ================================================================ */
+      #tray {
+        padding: 5px 10px;
+      }
+
+      #tray > .passive {
+        -gtk-icon-effect: dim;
+      }
+
+      #tray > .needs-attention {
+        -gtk-icon-effect: highlight;
+        background: rgba(249, 226, 175, 0.14);
+        border-radius: 8px;
+      }
+
+      /* ================================================================
+         Tooltip
+      ================================================================ */
+      tooltip {
+        background: rgba(17, 17, 27, 0.96);
+        border: 1px solid rgba(33, 177, 107, 0.28);
+        border-radius: 10px;
+      }
+
+      tooltip label {
+        color: @lime-green;
+        padding: 4px 10px;
       }
     '';
   };
