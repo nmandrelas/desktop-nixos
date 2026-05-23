@@ -33,7 +33,7 @@
 
         "custom/launcher" = {
           format = "~";
-          on-click = "wofi --show drun";
+          on-click = "wofi --show drun --allow-images --insensitive";
           on-click-right = "hyprctl dispatch workspace empty";
           tooltip = true;
           tooltip-format = "Left-click: Open Menu\nRight-click: New Workspace";
