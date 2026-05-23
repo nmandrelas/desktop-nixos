@@ -7,7 +7,7 @@
         position = "top";
         margin-top = 4;
         margin-bottom = 4;
-        margin-left = 0;
+        margin-left = 16;
         margin-right = 16;
 
         modules-left = [
@@ -177,7 +177,7 @@
       ================================================================ */
       .modules-left,
       .modules-right {
-        padding: 0 4px;
+        padding: 0 0px;
       }
 
       .modules-center {
