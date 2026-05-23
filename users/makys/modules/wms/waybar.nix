@@ -6,6 +6,7 @@
         layer = "top";
         position = "top";
         margin-top = 4;
+        margin-bottom = 4;
         margin-left = 16;
         margin-right = 16;
 
@@ -200,8 +201,8 @@
         color: @text-muted;
         background: transparent;
         border-radius: 8px;
-        padding: 1px 9px;
-        margin: 1px 2px;
+        padding: 3px 9px;
+        margin: 2px 2px;
         min-width: 28px;
         transition: all 0.2s ease;
       }
@@ -261,7 +262,7 @@
         color: @lime-green;
         background: rgba(33, 177, 107, 0.13);
         border-radius: 14px;
-        padding: 2px 16px;
+        padding: 4px 16px;
         margin: 3px 8px 3px 3px;
         font-weight: bold;
         letter-spacing: 0.4px;
@@ -289,7 +290,7 @@
         background: @module-bg;
         border-radius: 10px;
         color: @lime-green;
-        padding: 2px 10px;
+        padding: 4px 10px;
         margin: 3px 3px;
         transition: all 0.22s ease;
       }
@@ -373,7 +374,7 @@
          Tray
       ================================================================ */
       #tray {
-        padding: 2px 10px;
+        padding: 4px 10px;
       }
 
       #tray > .passive {
