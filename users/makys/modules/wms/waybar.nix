@@ -6,7 +6,7 @@
         layer = "top";
         position = "top";
         margin-top = 4;
-        margin-bottom = 4;
+        margin-bottom = 0;
         margin-left = 16;
         margin-right = 16;
 
@@ -76,7 +76,7 @@
         "cpu" = {
           format   = "󰍛  {usage}%";
           interval = 2;
-          on-click = "kitty -e btop";
+          on-click = "gnome-system-monitor";
         };
 
         "memory" = {
