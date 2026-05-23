@@ -11,7 +11,6 @@
         margin-right = 16;
 
         modules-left = [
-          "custom/launcher"
           "hyprland/workspaces"
           "hyprland/submap"
           "hyprland/window"
@@ -28,6 +27,7 @@
           "pulseaudio"
           "pulseaudio#microphone"
           "hyprland/language"
+          "custom/launcher"
           "clock"
         ];
 
