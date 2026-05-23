@@ -170,6 +170,7 @@
     ./modules/wms/gtk.nix
     ./modules/kitty.nix
     ./modules/packages.nix
+    ./games.nix
   ];
 
   # Let Home Manager install and manage itself.
