@@ -5,7 +5,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        margin-top = 8;
+        margin-top = 4;
         margin-left = 16;
         margin-right = 16;
 
