@@ -42,8 +42,7 @@
 
         "temperature" = {
           critical-threshold = 80;
-          format = "{icon} {temperatureC}°C";
-          format-icons = [ "" "" "" "" "" ];
+          format = "󰔏 {temperatureC}°C";
           tooltip = false;
         };
 
@@ -81,7 +80,7 @@
         };
 
         "memory" = {
-          format         = "  {percentage}%";
+          format         = "󰍛 {percentage}%";
           tooltip-format = "{used:0.1f} GiB / {total:0.1f} GiB";
           on-click       = "kitty -e htop";
         };
