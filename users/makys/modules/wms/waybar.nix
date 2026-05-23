@@ -14,9 +14,7 @@
           "hyprland/submap"
           "hyprland/window"
         ];
-        modules-center = [
-          "clock"
-        ];
+        modules-center = [];
         modules-right = [
           "temperature"
           "memory"
@@ -27,15 +25,11 @@
           "pulseaudio#microphone"
           "hyprland/language"
           "tray"
+          "clock"
         ];
 
         "hyprland/workspaces" = {
-          format = "{icon}";
-          format-icons = {
-            active  = "";
-            default = "󰧟";
-            urgent  = "";
-          };
+          format = "{name}";
           on-scroll-up   = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
@@ -198,7 +192,7 @@
       #workspaces {
         background: rgba(24, 57, 61, 0.28);
         border-radius: 12px;
-        margin: 5px 4px 5px 8px;
+        margin: 3px 4px 3px 8px;
         padding: 0 4px;
       }
 
@@ -206,8 +200,8 @@
         color: @text-muted;
         background: transparent;
         border-radius: 8px;
-        padding: 3px 9px;
-        margin: 2px 2px;
+        padding: 1px 9px;
+        margin: 1px 2px;
         min-width: 28px;
         transition: all 0.2s ease;
       }
@@ -243,7 +237,7 @@
         color: rgba(180, 215, 195, 0.65);
         font-size: 12px;
         font-weight: 400;
-        margin: 5px 4px;
+        margin: 3px 4px;
         padding: 0 10px;
         border-radius: 8px;
       }
@@ -267,8 +261,8 @@
         color: @lime-green;
         background: rgba(33, 177, 107, 0.13);
         border-radius: 14px;
-        padding: 5px 18px;
-        margin: 5px 0;
+        padding: 2px 16px;
+        margin: 3px 8px 3px 3px;
         font-weight: bold;
         letter-spacing: 0.4px;
         text-shadow: 0 0 10px rgba(33, 177, 107, 0.35);
@@ -295,8 +289,8 @@
         background: @module-bg;
         border-radius: 10px;
         color: @lime-green;
-        padding: 5px 11px;
-        margin: 5px 3px;
+        padding: 2px 10px;
+        margin: 3px 3px;
         transition: all 0.22s ease;
       }
 
@@ -379,7 +373,7 @@
          Tray
       ================================================================ */
       #tray {
-        padding: 5px 10px;
+        padding: 2px 10px;
       }
 
       #tray > .passive {
