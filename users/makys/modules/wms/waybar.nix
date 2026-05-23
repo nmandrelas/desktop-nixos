@@ -15,7 +15,9 @@
           "hyprland/submap"
           "hyprland/window"
         ];
-        modules-center = [];
+        modules-center = [
+          "tray"
+        ];
         modules-right = [
           "temperature"
           "memory"
@@ -25,7 +27,6 @@
           "pulseaudio"
           "pulseaudio#microphone"
           "hyprland/language"
-          "tray"
           "clock"
         ];
 
