@@ -97,8 +97,6 @@
 
         # ── Speakers ──────────────────────────────────────────────────────
         "pulseaudio" = {
-          scroll-step      = 5;
-          reverse-scrolling = 1;
           format           = "{icon}  {volume}%";
           format-bluetooth = "󰂰  {volume}%";
           format-bluetooth-muted = "󰂲";
@@ -121,8 +119,8 @@
         # ── Microphone ────────────────────────────────────────────────────
         "pulseaudio#microphone" = {
           format               = "{format_source}";
-          format-source        = "  {volume}%";
-          format-source-muted  = "  muted";
+          format-source        = "󰍬  {volume}%";
+          format-source-muted  = "󰍭  muted";
           on-click       = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
           on-scroll-up   = "pactl set-source-volume @DEFAULT_SOURCE@ +5%";
           on-scroll-down = "pactl set-source-volume @DEFAULT_SOURCE@ -5%";
