@@ -3,21 +3,29 @@
     pkgs.hyprpaper
     pkgs.btop
     pkgs.htop
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+    pkgs.jq
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    #(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.writeShellScriptBin "audio-switcher" ''
+      action=$1
+      if [ "$action" = "sink" ]; then
+        devices=$(wpctl status | awk '/Sinks:/{f=1;next} /Sources:/{f=0} f' | grep -E "[0-9]+\." | sed -E 's/.*│[ \*]+([0-9]+)\. (.*) \[vol:.*/\1: \2/')
+        prompt="Select Output Device"
+      elif [ "$action" = "source" ]; then
+        devices=$(wpctl status | awk '/Video/{exit} /Sources:/{f=1;next} /Filters:/{f=0} f' | grep -E "[0-9]+\." | sed -E 's/.*│[ \*]+([0-9]+)\. (.*) \[vol:.*/\1: \2/')
+        prompt="Select Input Device"
+      else
+        exit 1
+      fi
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.xdg.configHome}!"
-    # '')
+      chosen=$(echo "$devices" | wofi --dmenu --prompt "$prompt" --lines 5)
+      if [ -n "$chosen" ]; then
+        id=$(echo "$chosen" | awk '{print $1}' | tr -d ':')
+        wpctl set-default "$id"
+      fi
+    '')
+
+    (pkgs.writeShellScriptBin "lang-switcher" ''
+      hyprctl devices -j | jq -r '.keyboards[] | .name' | head -n1 | xargs -I {} hyprctl switchxkblayout {} next
+    '')
   ];
 }

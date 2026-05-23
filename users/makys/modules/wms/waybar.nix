@@ -88,6 +88,7 @@
         "hyprland/language" = {
           format     = "󰌌  {short}";
           min-length = 6;
+          on-click   = "lang-switcher";
         };
 
         "tray" = {
@@ -110,8 +111,8 @@
             car        = "󰄋";
             default    = [ "󰕿" "󰖀" "󰕾" ];
           };
-          on-click       = "pavucontrol";
-          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click       = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "audio-switcher sink";
           on-scroll-up   = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
           on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         };
@@ -122,6 +123,7 @@
           format-source        = "󰍬  {volume}%";
           format-source-muted  = "󰍭  muted";
           on-click       = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          on-click-right = "audio-switcher source";
           on-scroll-up   = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+";
           on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-";
         };
