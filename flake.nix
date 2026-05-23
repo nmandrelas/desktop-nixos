@@ -116,10 +116,10 @@
         desktop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
             hostType = "desktop";
-          };
-          pkgs-unstable = import nixpkgs-unstable {
+            pkgs-unstable = import nixpkgs-unstable {
               inherit system;
               config.allowUnfree = true;
+          };
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
