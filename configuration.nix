@@ -8,7 +8,6 @@
   imports = [ # Include the results of the hardware scan.
     ./system/essentials.nix
     ./system/games.nix
-    ./system/programming.nix
     ./system/work.nix
     ./system/docker.nix
     ./system/hyprland.nix
