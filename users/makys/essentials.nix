@@ -11,7 +11,6 @@
     piper # UI for  mouse config #
     pavucontrol # Volume control#
     nixfmt-classic # formatter for nix files#
-    home-manager
     wget
     xfce.thunar # file manager #
     xfce.thunar-archive-plugin   # right-click → extract here
