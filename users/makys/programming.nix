@@ -8,7 +8,6 @@
     yazi # terminal file manager #
     git
     gcc
-    python3
     gnumake
     neofetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
