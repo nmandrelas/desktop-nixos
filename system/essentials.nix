@@ -3,6 +3,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
+    unzip
   ];
   services = {
     gvfs.enable = true;          # essential for trash, network shares, mounts in Thunar
