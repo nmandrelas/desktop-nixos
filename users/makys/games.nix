@@ -7,7 +7,7 @@
     #bottles # Bottles introduces a new way to handle Windows prefixes using environments#
     pkgs-unstable.heroic # heroic games launcher#
     pkgs-unstable.prismlauncher # used to manage minecraft#
-    (pkgs.cataclysmDDA.withMods (mods: 
+    (pkgs.cataclysmDDA.stable.tiles.withMods (mods: 
     let
       # 1. Define your custom soundpack
       atsSoundpack = pkgs.cataclysmDDA.buildSoundPack rec {
@@ -19,7 +19,7 @@
           url = "https://github.com/damalsk/damalsksoundpack/archive/refs/heads/master.zip";
           # You can get the sha256 hash by running this in terminal:
           # nix-prefetch-url https://github.com/damalsk/damalsksoundpack/archive/refs/heads/master.zip
-          sha256 = "sha256-PUT_THE_GENERATED_HASH_HERE="; 
+          sha256 = "sha256-lAPbOHjGRKbzK6BeF8eIOrP/0lcTaMlkwjqRXpqEO88=";
         };
         
         # Nix needs to know to use unzip to open the file!
