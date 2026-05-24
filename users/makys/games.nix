@@ -7,7 +7,7 @@
     #bottles # Bottles introduces a new way to handle Windows prefixes using environments#
     pkgs-unstable.heroic # heroic games launcher#
     pkgs-unstable.prismlauncher # used to manage minecraft#
-    (cataclysm-dda.withMods (mods: 
+    (pkgs.cataclysmDDA.withMods (mods: 
     let
       # 1. Define your custom soundpack
       atsSoundpack = pkgs.cataclysmDDA.buildSoundPack rec {
