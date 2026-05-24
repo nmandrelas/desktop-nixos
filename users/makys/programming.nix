@@ -31,7 +31,6 @@
     blueman
     pstree
     zip
-    pkgs-unstable.elixir-ls
     pkgs-unstable.beamMinimal28Packages.elixir_1_19
     zlib
     icu
