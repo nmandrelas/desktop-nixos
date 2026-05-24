@@ -16,7 +16,7 @@
   };
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
-  home.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     mangohud # A Vulkan and OpenGL overlay for monitoring FPS#
     protonup-qt # Install and manage Proton-GE for Steam and Wine-GE for Lutris with this graphical user interface#
     pkgs-unstable.lutris # Lutris is a video game preservation platform#
