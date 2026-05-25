@@ -3,82 +3,70 @@
     enable = true;
     style = ''
     
-    /* Hello from wofi again*/
-@define-color lime-green #21B16B;
-@define-color green #137B55;
-@define-color background #121F1B;
-@define-color dark-green #184D3E;
-@define-color yellow-green #B2C689;
-@define-color dark-teal #18393D;
-@define-color light-sea-green #1E575E;
-@define-color sea-green #228B22;
-@define-color teal #379098;
-@define-color brown #5D4B3C;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
+    /* Modern Catppuccin-inspired Wofi Theme */
 @define-color crust #11111b;
-@define-color danger #742C54;
-@define-color medium-aquamarine #66CDAA;
-@define-color olive #808000;
-@define-color	text  #green;
+@define-color mantle #181825;
+@define-color base #1e1e2e;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color text #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color teal #94e2d5;
+@define-color green #a6e3a1;
 
 * {
-  font-family: 'MesloLGS Nerd Font', monospace;
-  font-size: 18px;
+  font-family: 'MesloLGS Nerd Font', 'Inter', monospace;
+  font-size: 16px;
 }
 
 /* Window */
 window {
   margin: 0px;
-  padding: 10px;
-  border: 2px solid @lime-green;
-  border-radius: 8px;
-  background-color: @crust;
+  border: 2px solid @surface1;
+  border-radius: 16px;
+  background-color: @base;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Inner Box */
 #inner-box {
-  margin: 5px;
-  padding: 10px;
+  margin: 0px;
   border: none;
-  background-color: @crust;
+  background-color: transparent;
 }
 
 /* Outer Box */
 #outer-box {
-  margin: 5px;
-  padding: 10px;
+  margin: 0px;
   border: none;
-  background-color: @crust;
+  background-color: transparent;
 }
 
 /* Scroll */
 #scroll {
-  margin: 0px;
-  padding: 10px;
+  margin: 0px 10px 10px 10px;
   border: none;
-  background-color: @crust;
+  background-color: transparent;
 }
 
 /* Input */
 #input {
-  margin: 5px 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 0.1em;
-  color: @lime-green;
-  background-color: @crust;
+  margin: 15px;
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: @text;
+  background-color: @mantle;
   font-weight: bold;
+}
+
+#input:focus {
+  border: 2px solid @teal;
 }
 
 #input image {
     border: none;
-    color: @lime-green;
-}
-
-#input * {
-  outline: 4px solid @lime-green!important;
+    color: @text;
 }
 
 /* Text */
@@ -89,26 +77,31 @@ window {
 }
 
 #entry {
-  background-color: @crust;
-  font-weight: bold;
+  padding: 8px 10px;
+  margin: 2px 0px;
+  border-radius: 10px;
+  background-color: transparent;
+  font-weight: normal;
 }
 
 #entry arrow {
   border: none;
-  color: @lime-green;
+  color: @subtext0;
 }
 
 /* Selected Entry */
 #entry:selected {
-  border: 0.11em solid @teal;
+  background-color: @surface0;
+  border: 1px solid @surface1;
 }
 
 #entry:selected #text {
-  color: @lime-green;
+  color: @teal;
+  font-weight: bold;
 }
 
 #entry:drop(active) {
-  background-color: @lime-green!important;
+  background-color: @teal!important;
 }
 
     '';
