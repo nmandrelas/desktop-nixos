@@ -26,7 +26,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = ''[\[](bold green)$username[@](bold green)$hostname[:](bold white)$directory[\]](bold green) $git_branch$character'';
+      format = ''[\[](bold green)$username[@](bold green)$hostname[:](bold white)$directory[\]](bold green)$git_branch$character'';
       
       username = {
         show_always = true;
