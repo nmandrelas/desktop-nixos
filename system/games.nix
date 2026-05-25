@@ -1,12 +1,4 @@
 { config, pkgs-unstable,pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    mangohud # A Vulkan and OpenGL overlay for monitoring FPS#
-    protonup-qt # Install and manage Proton-GE for Steam and Wine-GE for Lutris with this graphical user interface#
-    pkgs-unstable.lutris # Lutris is a video game preservation platform#
-    #bottles # Bottles introduces a new way to handle Windows prefixes using environments#
-    pkgs-unstable.heroic # heroic games launcher#
-    pkgs-unstable.prismlauncher # used to manage minecraft#
-  ];
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
@@ -18,6 +10,12 @@
       noto-fonts-cjk-serif
       liberation_ttf
     ];
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        unzip
+        p7zip # Good to have for other mods
+      ];
+   };
   };
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;

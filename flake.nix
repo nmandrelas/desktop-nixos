@@ -29,6 +29,19 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      openldapNoCheckOverlay = final: prev: {
+        openldap = prev.openldap.overrideAttrs (_: {
+          doCheck = false;
+          checkPhase = "";
+          preCheck = "";
+          postCheck = "";
+        });
+      };
+      unstablePkgs = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [ openldapNoCheckOverlay ];
+      };
     in
     {
     packages.${system}.default = nixvim.legacyPackages.${system}.makeNixvim {
@@ -41,28 +54,7 @@
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             hostType = "desktop";
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-              config.permittedInsecurePackages = [
-                "dotnet-runtime-7.0.20"
-                "electron-33.4.11"
-                "libxml2-2.13.8"
-                "qtwebengine-5.15.19"
-              ];
-              # openldap 2.6.13 has a flaky syncreplication test that fails in
-              # Nix's sandbox; skip it so lutris (which depends on openldap) builds.
-              overlays = [
-                (final: prev: {
-                  openldap = prev.openldap.overrideAttrs (_: {
-                    doCheck = false;
-                    checkPhase = "";
-                    preCheck = "";
-                    postCheck = "";
-                  });
-                })
-              ];
-            };
+              pkgs-unstable = unstablePkgs;
             nixpkgs-24-11 = import nixpkgs-24-11 {
               inherit system;
               config.allowUnfree = true;
@@ -83,16 +75,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             hostType = "laptop";
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-              config.permittedInsecurePackages = [
-                "dotnet-runtime-7.0.20"
-                "electron-33.4.11"
-                "libxml2-2.13.8"
-                "qtwebengine-5.15.19"
-              ];
-            };
+              pkgs-unstable = unstablePkgs;
             nixpkgs-24-11 = import nixpkgs-24-11 {
               inherit system;
               config.allowUnfree = true;
@@ -116,6 +99,7 @@
         desktop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
             hostType = "desktop";
+              pkgs-unstable = unstablePkgs;
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
@@ -126,6 +110,7 @@
         laptop = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = {
             hostType = "laptop";
+                pkgs-unstable = unstablePkgs;
           };
           pkgs = nixpkgs.legacyPackages.${system};
           modules = [
