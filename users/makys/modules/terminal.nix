@@ -11,6 +11,7 @@
       window_padding_width = 10;
       scrollback_lines = 10000;
       update_check_interval = 0;
+      shell = "zsh";
     };
   };
 
