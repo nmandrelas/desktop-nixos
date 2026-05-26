@@ -37,7 +37,7 @@
       hostname = {
         ssh_only = false;
         format = ''[$hostname]($style)'';
-        style_info = "bold green";
+        style = "bold green";
       };
 
       directory = {
