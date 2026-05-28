@@ -20,6 +20,9 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initExtra = ''
+      bindkey "^[[3~" delete-char
+    '';
   };
 
   programs.starship = {
