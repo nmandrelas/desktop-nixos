@@ -20,8 +20,15 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initContent = ''
+    initExtra = ''
+      # Delete
       bindkey "^[[3~" delete-char
+      # Home
+      bindkey "^[[H" beginning-of-line
+      bindkey "^[[1~" beginning-of-line
+      # End
+      bindkey "^[[F" end-of-line
+      bindkey "^[[4~" end-of-line
     '';
   };
 
