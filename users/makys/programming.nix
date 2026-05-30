@@ -55,5 +55,6 @@
     pkgs-unstable.antigravity
     pgadmin4-desktopmode
     pkgs-unstable.opencode
+    pkgs-unstable.virtualbox
   ];
 }
