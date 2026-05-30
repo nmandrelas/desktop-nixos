@@ -23,6 +23,18 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
+  fileSystems."/mnt/NewM2" = {
+    device = "/dev/disk/by-uuid/DEA4AA55A4AA3047";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+  };
+
+  fileSystems."/mnt/OldM2" = {
+    device = "/dev/disk/by-uuid/6AAA9A5EAA9A269B";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
