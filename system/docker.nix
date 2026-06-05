@@ -23,7 +23,5 @@
   hardware.nvidia-container-toolkit.enable = lib.mkIf (hostType == "desktop") true;
   environment.systemPackages = lib.mkIf (hostType == "desktop") (with pkgs; [
     nvidia-container-toolkit
-    ollama
   ]);
-
 }
