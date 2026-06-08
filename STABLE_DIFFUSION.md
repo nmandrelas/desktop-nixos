@@ -96,3 +96,18 @@ docker exec -it ollama-gemma4 ollama pull gemma4:e4b
 
 ## Interact
 docker exec -it ollama-gemma4 ollama run gemma4:e4b
+
+# LFM2-24B-A2B (Liquid AI)
+## Install 
+docker run -d \
+  --name ollama-lfm2 \
+  --runtime runc \
+  --device nvidia.com/gpu=all \
+  -p 11333:11434 \
+  -v /mnt/NewM2/models_dir/ollama:/root/.ollama \
+  ollama/ollama
+
+docker exec -it ollama-lfm2 ollama pull lfm2:24b-a2b
+
+## Interact
+docker exec -it ollama-lfm2 ollama run lfm2:24b-a2b
