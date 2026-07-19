@@ -15,6 +15,7 @@
     xfce.thunar # file manager #
     xfce.thunar-archive-plugin   # right-click → extract here
     xfce.thunar-volman           # auto-mount removable devices
+    vesktop
   ];
 }
 
