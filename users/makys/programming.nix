@@ -52,7 +52,7 @@
     fantomas           # F# formatter (if needed)
     #dotnet end
     go
-    pkgs-unstable.antigravity
+    pkgs-unstable.antigravity-ide
     pgadmin4-desktopmode
     pkgs-unstable.opencode
     pkgs-unstable.virtualbox

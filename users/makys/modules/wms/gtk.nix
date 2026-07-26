@@ -3,6 +3,7 @@
 {
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     cursorTheme = {
       package = pkgs.nordzy-cursor-theme;
       name = "Nordzy-cursors";

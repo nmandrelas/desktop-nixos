@@ -627,7 +627,7 @@
     roslyn-ls
     fsautocomplete
 
-    elixir
+    beamPackages.elixir
     elixir-ls
 
     # Formatters

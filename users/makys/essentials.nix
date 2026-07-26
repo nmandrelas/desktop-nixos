@@ -10,11 +10,11 @@
     obsidian # used for note taking #
     piper # UI for  mouse config #
     pavucontrol # Volume control#
-    nixfmt-classic # formatter for nix files#
+    nixfmt-rfc-style # formatter for nix files#
     wget
-    xfce.thunar # file manager #
-    xfce.thunar-archive-plugin   # right-click → extract here
-    xfce.thunar-volman           # auto-mount removable devices
+    thunar # file manager #
+    thunar-archive-plugin   # right-click → extract here
+    thunar-volman           # auto-mount removable devices
     vesktop
   ];
 }

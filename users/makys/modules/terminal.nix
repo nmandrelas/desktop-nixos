@@ -20,7 +20,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    initExtra = ''
+    initContent = ''
       # Delete
       bindkey "^[[3~" delete-char
       # Home
