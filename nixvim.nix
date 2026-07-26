@@ -487,7 +487,7 @@
     # ---------------------
     comment.enable = true;
     nvim-surround.enable = true;
-    autopairs.enable = true;
+    #autopairs.enable = true;
   };
 
   # -------------------------
