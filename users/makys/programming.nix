@@ -39,8 +39,8 @@
     nspr
     jetbrains.idea-oss
     #stable diffusion start
-    python310
-    python310Packages.pip
+    python3
+    python3Packages.pip
     cudatoolkit
     #end
     #dotnet
