@@ -417,7 +417,7 @@
     # ---------------------
     # Linting
     # ---------------------
-    nvim-lint.enable = true;
+    #nvim-lint.enable = true;
 
     # ---------------------
     # Debugging (DAP)
