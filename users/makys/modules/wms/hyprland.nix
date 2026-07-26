@@ -58,12 +58,11 @@
         nvidia_anti_flicker = 0;
       };
 
-      misc = { vfr = 0; };
-
       debug = {
         disable_logs = false;
         enable_stdout_logs = true;
         damage_tracking = 0;
+        vfr = 0;
       };
 
       input = {
@@ -166,8 +165,6 @@
       };
 
       dwindle = {
-        pseudotile =
-          true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # you probably want this
       };
 
@@ -178,10 +175,10 @@
         disable_hyprland_logo = false;
       };
 
-      windowrule = [ "tile, class:^(kitty)$" ];
-      windowrulev2 = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+      windowrule = [
+        "tile 1, match:class ^(kitty)$"
+        "suppress_event maximize, match:class .*"
+        "no_focus 1, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pinned 0"
       ];
 
       exec-once = [
@@ -200,7 +197,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, J, togglesplit, # dwindle"
+        "$mainMod, J, layoutmsg, togglesplit, # dwindle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
