@@ -1,0 +1,8 @@
+# Nix build outputs
+result
+result-*
+
+# Editor & temporary files
+*.swp
+*~
+.DS_Store
