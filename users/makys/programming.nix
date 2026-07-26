@@ -9,7 +9,7 @@
     git
     gcc
     gnumake
-    neofetch
+    fastfetch
     gtk3 # Multi-platform toolkit for creating graphical user interfaces
     gtk3-x11
     gsettings-desktop-schemas
