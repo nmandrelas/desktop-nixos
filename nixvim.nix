@@ -58,31 +58,31 @@
     # ---------------------
     which-key = {
       enable = true;
-      replace = {
-        desc = [
-          [
-            "<space>"
-            "SPACE"
-          ]
-          [
-            "<leader>"
-            "SPACE"
-          ]
-          [
-            "<[cC][rR]>"
-            "RETURN"
-          ]
-          [
-            "<[tT][aA][bB]>"
-            "TAB"
-          ]
-          [
-            "<[bB][sS]>"
-            "BACKSPACE"
-          ]
-        ];
-      };
       settings = {
+        replace = {
+          desc = [
+            [
+              "<space>"
+              "SPACE"
+            ]
+            [
+              "<leader>"
+              "SPACE"
+            ]
+            [
+              "<[cC][rR]>"
+              "RETURN"
+            ]
+            [
+              "<[tT][aA][bB]>"
+              "TAB"
+            ]
+            [
+              "<[bB][sS]>"
+              "BACKSPACE"
+            ]
+          ];
+        };
         preset = "modern";
         spec = [
           {
@@ -487,7 +487,7 @@
     # ---------------------
     comment.enable = true;
     nvim-surround.enable = true;
-    #autopairs.enable = true;
+    nvim-autopairs.enable = true;
   };
 
   # -------------------------
