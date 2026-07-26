@@ -178,7 +178,7 @@
       windowrule = [
         "tile 1, match:class ^(kitty)$"
         "suppress_event maximize, match:class .*"
-        "no_focus 1, match:class ^$, match:title ^$, match:xwayland 1, match:floating 1, match:fullscreen 0, match:pinned 0"
+        "no_focus 1, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pinned 0"
       ];
 
       exec-once = [
