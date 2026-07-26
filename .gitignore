@@ -1,7 +1,7 @@
 # Nix build outputs
-result
+result/
 result-*
-
+result
 # Editor & temporary files
 *.swp
 *~
