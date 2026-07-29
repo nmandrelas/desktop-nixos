@@ -26,13 +26,13 @@
   fileSystems."/mnt/NewM2" = {
     device = "/dev/disk/by-uuid/DEA4AA55A4AA3047";
     fsType = "ntfs-3g";
-    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=0133" "nofail" "windows_names"];
   };
 
   fileSystems."/mnt/OldM2" = {
     device = "/dev/disk/by-uuid/6AAA9A5EAA9A269B";
     fsType = "ntfs-3g";
-    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=133" ];
+    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "fmask=0133" "nofail" "windows_names"];
   };
 
   swapDevices = [ ];
