@@ -5,6 +5,6 @@
     [
       nixpkgs-24-11.citrix_workspace # the devil#
       nixpkgs-24-11.stremio 
-      pkgs-unstable.citrix_workspace_26_01_0
+      pkgs-unstable.citrix_workspace
     ];
 }
