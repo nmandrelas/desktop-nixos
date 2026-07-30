@@ -4,12 +4,6 @@
   services.hyprpaper={
     enable = true;
     settings = {
-      preload =
-        [ 
-          "~/.config/backgrounds/my_bgs/shaded.png"
-          "~/.config/backgrounds/my_bgs/better_shaded_landscape.jpg"
-          "~/.config/backgrounds/my_bgs/alien.jpg"
-        ];
 
       wallpaper = [
       ]
