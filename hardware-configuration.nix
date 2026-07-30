@@ -30,9 +30,9 @@
   };
 
   fileSystems."/mnt/OldM2" = {
-    device = "/dev/disk/by-uuid/6AAA9A5EAA9A269B";
-    fsType = "ntfs-3g";
-    options = [ "rw" "uid=1000" "gid=100" "dmask=022" "exec" "fmask=022" "nofail" "windows_names"];
+    device = "/dev/disk/by-uuid/69fb846b-8c82-42ce-8975-bcb7de754292";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" ];
   };
 
   swapDevices = [ ];
