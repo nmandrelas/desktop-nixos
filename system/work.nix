@@ -8,7 +8,10 @@
         pkgs2405 = import (builtins.fetchTarball {
           url = "https://github.com/NixOS/nixpkgs/archive/nixos-24.05.tar.gz";
           sha256 = "0zydsqiaz8qi4zd63zsb2gij2p614cgkcaisnk11wjy3nmiq0x1s";
-        }) { config.allowUnfree = true; };
+        }) { 
+          system = pkgs.system;
+          config.allowUnfree = true; 
+        };
       in
         pkgs2405.citrix_workspace.overrideAttrs (oldAttrs: rec {
           version = "26.04.0.105";
