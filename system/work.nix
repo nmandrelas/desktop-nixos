@@ -20,6 +20,10 @@
             sha256 = "1aqqi0slms2qyq7qh4zgaj24896s9al1rvy1avsj6clv40v71v5g";
             message = "Using manually downloaded GCC8 tarball";
           };
+          installPhase = builtins.replaceStrings
+            [ "rm $ICAInstDir/util/{gst_aud_{play,read},gst_*0.10,libgstflatstm0.10.so}" ]
+            [ "rm -f $ICAInstDir/util/{gst_aud_{play,read},gst_*0.10,libgstflatstm0.10.so} || true" ]
+            oldAttrs.installPhase;
         })
       )
     ];
