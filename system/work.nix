@@ -4,7 +4,7 @@
   environment.systemPackages =
     [
       nixpkgs-24-11.stremio 
-      citrix_workspace_26_01_0
+      pcks-unstable.citrix_workspace_26_01_0
     ];
   services.flatpak.enable = true;
 }
