@@ -37,7 +37,6 @@
     openssl
     nss
     nspr
-    jetbrains.idea-oss
     #stable diffusion start
     python3
     python3Packages.pip
