@@ -16,7 +16,7 @@
     thunar-archive-plugin   # right-click → extract here
     thunar-volman           # auto-mount removable devices
     vesktop
-    stremio
+    stremio-linux-shell
   ];
 }
 
