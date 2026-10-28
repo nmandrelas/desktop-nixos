@@ -3,17 +3,22 @@
 {
   services.hyprpaper={
     enable = true;
-    settings = {
-
-      wallpaper = [
-      ]
-      ++ lib.optionals (hostType == "desktop") [
-        "DP-3,~/.config/backgrounds/my_bgs/alien.jpg"
-        "DP-1,~/.config/backgrounds/my_bgs/alien.jpg"
-      ]
-      ++ lib.optionals (hostType == "laptop") [
-        "eDP-1,~/.config/backgrounds/my_bgs/shaded.png"
-      ];
+    extraConfig =
+      if hostType == "desktop" then ''
+        wallpaper {
+          monitor = DP-3
+          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg
+        }
+        wallpaper {
+          monitor = DP-1
+          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg
+        }
+      '' else if hostType == "laptop" then ''
+        wallpaper {
+          monitor = eDP-1
+          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/shaded.png
+        }
+      '' else "";
     };
   };
   wayland.windowManager.hyprland = {
@@ -176,7 +181,6 @@
       ];
 
       exec-once = [
-        "hyprpaper"
         "waybar & swaync"
         "hyprctl setcursor nordzy-latte-green 24"
         "ratbagctl hooting-chinchilla dpi set 8000"
