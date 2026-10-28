@@ -1,24 +1,27 @@
 { config, pkgs,lib, hostType, ... }:
 
 {
-  services.hyprpaper={
+  services.hyprpaper = {
     enable = true;
-    extraConfig =
-      if hostType == "desktop" then ''
-        wallpaper {
-          monitor = DP-3
-          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg
-        }
-        wallpaper {
-          monitor = DP-1
-          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg
-        }
-      '' else if hostType == "laptop" then ''
-        wallpaper {
-          monitor = eDP-1
-          path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/shaded.png
-        }
-      '' else "";
+    settings = {
+      wallpaper =
+        lib.optionals (hostType == "desktop") [
+          {
+            monitor = "DP-3";
+            path = "${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg";
+          }
+          {
+            monitor = "DP-1";
+            path = "${config.home.homeDirectory}/.config/backgrounds/my_bgs/alien.jpg";
+          }
+        ]
+        ++ lib.optionals (hostType == "laptop") [
+          {
+            monitor = "eDP-1";
+            path = "${config.home.homeDirectory}/.config/backgrounds/my_bgs/shaded.png";
+          }
+        ];
+    };
   };
   wayland.windowManager.hyprland = {
     enable = true;
