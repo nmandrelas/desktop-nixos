@@ -19,7 +19,6 @@
           path = ${config.home.homeDirectory}/.config/backgrounds/my_bgs/shaded.png
         }
       '' else "";
-    };
   };
   wayland.windowManager.hyprland = {
     enable = true;
