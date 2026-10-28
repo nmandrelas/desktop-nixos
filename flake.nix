@@ -40,7 +40,6 @@
       unstablePkgs = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ openldapNoCheckOverlay ];
       };
     in
     {

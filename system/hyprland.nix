@@ -19,7 +19,7 @@
     pkgs.waybar
     pkgs.mako
     pkgs.libnotify
-    pkgs.swww
+    pkgs.awww
     pkgs.wofi
     pkgs.hyprshot
     pkgs.swaynotificationcenter
