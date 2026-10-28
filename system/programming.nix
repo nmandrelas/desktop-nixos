@@ -1,9 +1,4 @@
 { config, pkgs, pkgs-unstable, ... }: {
-  environment.systemPackages = with pkgs; [
-    pkgs-unstable.elixir-ls
-  ];
-  environment.sessionVariables = {
-    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
-  };
+  environment.systemPackages = [ ];
   systemd.coredump.enable = true;
 }

@@ -1,59 +1,12 @@
 { config, pkgs, pkgs-unstable, ... }: {
   home.packages = with pkgs; [
-    erlang # beam vm <3 #
-    podman # docker alt -> more features #
-    postgresql # psql client#
-    pgadmin4-desktopmode # postgres sql ui#
-    kitty # terminal emulator #
-    yazi # terminal file manager #
-    git
-    gcc
-    gnumake
-    fastfetch
-    gtk3 # Multi-platform toolkit for creating graphical user interfaces
-    gtk3-x11
-    gsettings-desktop-schemas
-    glibc
-    libGL
-    mesa
-    mono
-    alsa-lib
-    libpulseaudio
-    libxkbcommon
-    freetype
-    libreoffice-qt6-fresh
-    ntfs3g #mount drives for read/write#
-    wireshark
-    iftop #network monitoring#
-    nethogs #network monitoring#
-    networkmanager
+    pkgs-unstable.antigravity-ide
+    yazi
+    zip
+    pstree
+    iftop
+    nethogs
     networkmanagerapplet
     blueman
-    pstree
-    zip
-    pkgs-unstable.beamMinimal28Packages.elixir_1_19
-    zlib
-    icu
-    openssl
-    nss
-    nspr
-    #stable diffusion start
-    python3
-    python3Packages.pip
-    cudatoolkit
-    #end
-    #dotnet
-    dotnet-sdk_10
-    # Debugger
-    netcoredbg
-    # Nice to have
-    csharpier          # formatter
-    fantomas           # F# formatter (if needed)
-    #dotnet end
-    go
-    pkgs-unstable.antigravity-ide
-    pgadmin4-desktopmode
-    pkgs-unstable.opencode
-    pkgs-unstable.virtualbox
   ];
 }

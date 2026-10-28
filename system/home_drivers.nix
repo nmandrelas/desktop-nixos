@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, nixpkgs-24-11,... }: {
+{ config, pkgs, pkgs-unstable, ... }: {
   environment.systemPackages =
     [
       pkgs-unstable.epson_201207w 

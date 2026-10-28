@@ -6,17 +6,7 @@
   ];
   
   environment.systemPackages = [ 
-    pkgs.SDL2
-    pkgs.SDL2_ttf
-    pkgs.raylib
-    pkgs.gnumake
-    pkgs.gdb
-    pkgs.gimp
-    #audio
     pkgs.usbutils
     pkgs.alsa-utils
-    pkgs.guitarix
-    pkgs.qpwgraph
-    #end audio
   ];
 }

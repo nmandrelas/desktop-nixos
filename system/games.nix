@@ -2,7 +2,6 @@
   programs.steam = {
     enable = true;
     dedicatedServer.openFirewall = true;
-    gamescopeSession.enable = true;
     remotePlay.openFirewall = true;
     fontPackages = with pkgs; [
       corefonts

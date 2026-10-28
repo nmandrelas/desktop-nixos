@@ -3,10 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    nixpkgs-24-11.url = "github:nixos/nixpkgs/nixos-24.11";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
     nixvim.url = "github:nix-community/nixvim";
 
     home-manager = {
@@ -20,23 +18,13 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
-      nixpkgs-24-11,
       home-manager,
-      nvf,
       nixvim,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      openldapNoCheckOverlay = final: prev: {
-        openldap = prev.openldap.overrideAttrs (_: {
-          doCheck = false;
-          checkPhase = "";
-          preCheck = "";
-          postCheck = "";
-        });
-      };
       unstablePkgs = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
@@ -54,16 +42,6 @@
           specialArgs = {
             hostType = "desktop";
               pkgs-unstable = unstablePkgs;
-            nixpkgs-24-11 = import nixpkgs-24-11 {
-              inherit system;
-              config.allowUnfree = true;
-              config.permittedInsecurePackages = [
-                "dotnet-runtime-7.0.20"
-                "electron-33.4.11"
-                "libxml2-2.13.8"
-                "qtwebengine-5.15.19"
-              ];
-            };
             inherit inputs system;
           };
 
@@ -75,15 +53,6 @@
           specialArgs = {
             hostType = "laptop";
               pkgs-unstable = unstablePkgs;
-            nixpkgs-24-11 = import nixpkgs-24-11 {
-              inherit system;
-              config.allowUnfree = true;
-              config.permittedInsecurePackages = [
-                "dotnet-runtime-7.0.20"
-                "electron-33.4.11"
-                "libxml2-2.13.8"
-              ];
-            };
             inherit inputs system;
           };
 

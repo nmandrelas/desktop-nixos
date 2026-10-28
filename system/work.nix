@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, nixpkgs-24-11,... }: {
+{ config, pkgs, pkgs-unstable, ... }: {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages =

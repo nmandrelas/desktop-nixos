@@ -17,16 +17,11 @@
   };
   environment.systemPackages = with pkgs; [
     pkgs.waybar
-    pkgs.mako
     pkgs.libnotify
-    pkgs.awww
     pkgs.wofi
     pkgs.hyprshot
     pkgs.swaynotificationcenter
     pkgs.hyprlock
-    pkgs.stow
-    pkgs.starship
-    pkgs.fastfetch
     pkgs.nwg-look
   ];
 }

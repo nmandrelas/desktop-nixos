@@ -72,7 +72,6 @@
     };
   };
   services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
   
   services.displayManager.autoLogin = {
     # Enable automatic login for the user.
